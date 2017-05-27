@@ -1,0 +1,43 @@
+tesOnly CreateCustomTest
+ls
+project seleniumdemo
+testOnly selenium.CreateCustomTest
+clean compile 
+cleanCompile 
+project seleniumdemo
+cleanFiles
+compile 
+project seleniumdemo
+testOnly selenium.CreateCustomTest
+sbt cucumber
+cucumber
+project seleniumdemo
+testOnly selenium.CreateCustomTest
+sbt compile sbt cucumber
+sbt compile cucumber
+sbt compile sbt cucumber
+cucumber
+testOnly selenium.CreateCustomTest
+project selenium
+abt
+testOnly selenium.CreateCustomTest
+test
+project seleniumdemo
+testOnly CreateCustomTest
+testOnly selenium.CreateCustomTest
+testOnly selenium.convertCsvToJson
+testOnly selenium.CreateCustomTest
+testOnly selenium.convertCsvToJson
+testOnly selenium.downloadFileFromAmazonS3
+project seleniumdemo
+testOnly selenium.downloadFileFromAmazonS3
+free - m
+testOnly selenium.downloadFileFromAmazonS3
+project seleniumdemo
+testOnly selenium.downloadFileFromAmazonS3
+testOnly selenium.convertCsvToJson
+testOnly selenium.downloadFileFromAmazonS3
+testOnly selenium.convertCsvToJson
+testOnly selenium.downloadFileFromAmazonS3
+gunzip /home/knoldus/Downloads/*.csv.gz
+testOnly selenium.downloadFileFromAmazonS3
