@@ -1,0 +1,2 @@
+compile
+testOnly com.amazon.downloadFilesFromS3

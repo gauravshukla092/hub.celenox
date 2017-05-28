@@ -1,0 +1,31 @@
+[0m[[0minfo[0m] [0m[32mdownloadFilesFromS3:[0m[0m
+[0m[[0minfo[0m] [0m[32mUser[0m[0m
+[0m[[0minfo[0m] [0m[31m- should Login to Amazon S3 Console *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: search-box-input (tried for 30 second(s) with 500 MILLISECONDS interval)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.amazon.TestSetup.loginOnAWSConsole(TestSetup.scala:33)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.amazon.TestSetup.loginOnAWSConsole$(TestSetup.scala:29)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.amazon.downloadFilesFromS3.loginOnAWSConsole(downloadFilesFromS3.scala:7)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.amazon.downloadFilesFromS3.$anonfun$new$1(downloadFilesFromS3.scala:13)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  Cause: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.id: search-box-input[0m[0m
+[0m[[0minfo[0m] [0m[31mFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html[0m[0m
+[0m[[0minfo[0m] [0m[31mBuild info: version: '3.4.0', revision: 'unknown', time: 'unknown'[0m[0m
+[0m[[0minfo[0m] [0m[31mSystem info: host: 'knoldus-Inspiron-5558', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-52-generic', java.version: '1.8.0_121'[0m[0m
+[0m[[0minfo[0m] [0m[31mDriver info: driver.version: unknown[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at java.util.Optional.orElseThrow(Optional.java:290)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.amazon.TestSetup.loginOnAWSConsole(TestSetup.scala:33)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.amazon.TestSetup.loginOnAWSConsole$(TestSetup.scala:29)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.amazon.downloadFilesFromS3.loginOnAWSConsole(downloadFilesFromS3.scala:7)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
