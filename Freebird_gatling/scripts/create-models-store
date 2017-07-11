@@ -1,0 +1,51 @@
+#!/usr/bin/env python
+import sys
+
+import boto3
+
+import util
+
+ROLE = "modelsStore"
+
+env_id = sys.argv[1]
+util.verify_setup([env_id])
+
+env = util.load_config()["env"][env_id]
+client_ec2 = boto3.client('ec2', region_name=env["region"])
+client_elasticache = boto3.client('elasticache', region_name=env["region"])
+ec2 = boto3.resource('ec2', region_name=env["region"])
+
+util.create_sg(client_ec2, ec2, env_id, "modelsStoreClient")
+
+ingress = {
+    "IpPermissions": [
+        {
+            "IpProtocol": "tcp",
+            "FromPort": 6379,
+            "ToPort": 6379,
+            "UserIdGroupPairs": [{
+                "GroupName": util.resource_name(env_id, "modelsStoreClient")
+            }]
+        }
+    ]
+}
+sg_created = util.create_sg(client_ec2, ec2, env_id, "modelsStore", ingress)
+
+print "Creating Elasticache cluster..."
+name = util.resource_name(env_id, ROLE)
+created = client_elasticache.create_cache_cluster(
+    CacheClusterId=name,
+    AZMode='single-az',
+    NumCacheNodes=1,
+    CacheNodeType='cache.t2.micro',
+    Engine='redis',
+    SecurityGroupIds=[sg_created["GroupId"]],
+    Tags=util.standard_tags(env_id, ROLE),
+)
+print created
+
+print "Waiting for Elasticache cluster to be running..."
+waiter = client_elasticache.get_waiter('cache_cluster_available')
+waiter.wait(CacheClusterId=name)
+
+print "Models store launched."

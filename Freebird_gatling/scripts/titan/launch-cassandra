@@ -1,0 +1,166 @@
+#!/usr/bin/env bash
+# This runs on a Cassandra node on launch
+set -e
+
+# Update packages
+yum -y --quiet update
+
+# Set up AWS creds
+mkdir -p /home/ec2-user/.aws
+cat << END-OF-AWS-CREDS > /home/ec2-user/.aws/credentials
+[default]
+aws_access_key_id = {aws_access_key_id}
+aws_secret_access_key = {aws_secret_access_key}
+END-OF-AWS-CREDS
+
+# Install Oracle Java 8
+yum -y --quiet remove java-1.7.0-openjdk
+yum -y --quiet install java-1.8.0
+
+# Install Cassandra and related packages
+cat << END-OF-DATASTAX-REPO > /etc/yum.repos.d/datastax.repo
+[datastax]
+name = DataStax Repo for Apache Cassandra
+baseurl = https://rpm.datastax.com/community
+enabled = 1
+gpgcheck = 0
+END-OF-DATASTAX-REPO
+yum -y --quiet install cassandra22 cassandra22-tools
+
+# Install python packages
+pip install boto3
+
+# Set up the EBS volume
+mkfs -t ext4 /dev/xvdf
+mount /dev/xvdf /mnt
+mkdir /mnt/cassandra
+chown cassandra /mnt/cassandra/
+chgrp cassandra /mnt/cassandra/
+
+# Set up "my-private-ip" as a hostname
+echo $(hostname -i) my-private-ip >> /etc/hosts
+
+# Fill out Cassandra template file
+cat << END-OF-CASSANDRA-TEMPLATE > /etc/cassandra/conf/cassandra.yaml
+cluster_name: '{cluster_name}'
+
+num_tokens: 256
+
+hinted_handoff_enabled: true
+hinted_handoff_throttle_in_kb: 1024
+max_hints_delivery_threads: 2
+
+batchlog_replay_throttle_in_kb: 1024
+
+authenticator: AllowAllAuthenticator
+authorizer: AllowAllAuthorizer
+role_manager: CassandraRoleManager
+permissions_validity_in_ms: 2000
+
+partitioner: org.apache.cassandra.dht.Murmur3Partitioner
+
+data_file_directories:
+    - /mnt/cassandra/data
+commitlog_directory: /mnt/cassandra/commitlog
+
+disk_failure_policy: stop
+commit_failure_policy: stop
+
+key_cache_save_period: 14400
+row_cache_size_in_mb: 0
+row_cache_save_period: 0
+counter_cache_save_period: 7200
+saved_caches_directory: /var/lib/cassandra/saved_caches
+
+commitlog_sync: periodic
+commitlog_sync_period_in_ms: 10000
+commitlog_segment_size_in_mb: 32
+
+concurrent_reads: 32
+concurrent_writes: 32
+concurrent_counter_writes: 32
+
+memtable_allocation_type: heap_buffers
+
+index_summary_capacity_in_mb:
+index_summary_resize_interval_in_minutes: 60
+
+trickle_fsync: false
+trickle_fsync_interval_in_kb: 10240
+
+storage_port: 7000
+ssl_storage_port: 7001
+
+listen_interface: eth0
+
+start_native_transport: true
+native_transport_port: 9042
+
+start_rpc: true
+rpc_interface: eth0
+rpc_port: 9160
+rpc_keepalive: true
+rpc_server_type: sync
+
+seed_provider:
+    - class_name: org.apache.cassandra.locator.SimpleSeedProvider
+      parameters:
+          - seeds: "my-private-ip"
+
+thrift_framed_transport_size_in_mb: 200
+thrift_max_message_length_in_mb: 40
+incremental_backups: true
+
+snapshot_before_compaction: false
+
+tombstone_warn_threshold: 1000
+tombstone_failure_threshold: 100000
+
+column_index_size_in_kb: 64
+
+batch_size_warn_threshold_in_kb: 5
+batch_size_fail_threshold_in_kb: 50
+unlogged_batch_across_partitions_warn_threshold: 10
+
+compaction_throughput_mb_per_sec: 16
+compaction_large_partition_warning_threshold_mb: 100
+
+sstable_preemptive_open_interval_in_mb: 50
+
+read_request_timeout_in_ms: 5000
+range_request_timeout_in_ms: 10000
+write_request_timeout_in_ms: 2000
+counter_write_request_timeout_in_ms: 5000
+cas_contention_timeout_in_ms: 1000
+truncate_request_timeout_in_ms: 60000
+request_timeout_in_ms: 10000
+
+cross_node_timeout: false
+
+endpoint_snitch: SimpleSnitch
+dynamic_snitch_update_interval_in_ms: 100
+dynamic_snitch_reset_interval_in_ms: 600000
+dynamic_snitch_badness_threshold: 0.1
+
+request_scheduler: org.apache.cassandra.scheduler.NoScheduler
+
+tracetype_query_ttl: 86400
+tracetype_repair_ttl: 604800
+END-OF-CASSANDRA-TEMPLATE
+
+# Datadog conf
+mkdir -p /etc/dd-agent
+cat << END-OF-DATADOG-CONF > /etc/dd-agent/datadog.conf
+[Main]
+dd_url: https://app.datadoghq.com
+api_key: {dd_api_key}
+tags: env:{env_id}, role:cassandra
+END-OF-DATADOG-CONF
+
+# Install Datadog
+DD_API_KEY={dd_api_key} bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/install_agent.sh)"
+
+# Make it so that root can use AWS CLI
+echo 'export AWS_CONFIG_FILE=/home/ec2-user/.aws/credentials' >> /etc/environment
+
+service cassandra start

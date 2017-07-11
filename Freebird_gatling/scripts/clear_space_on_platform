@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+# Usage example: ./clear_space_on_instance uat
+
+import os
+import sys
+import boto3
+import util
+
+env_id = sys.argv[1]
+util.verify_setup([env_id])
+
+env = util.load_config()["env"][env_id]
+ec2 = boto3.resource('ec2', region_name=env["region"])
+
+print "Creating space on {} environment".format(env_id)
+instance_platform, = util.get_instances(ec2, env_id, "platform")
+runner_platform = util.RemoteRunner(env, instance_platform)
+command = "rm -fr /mnt/deployment && sudo service docker restart && mkdir /mnt/deployment && chown -R ec2-user /mnt/deployment"
+runner_platform.run(command)
+os.system("./get-env-vars {} | ./set-env-vars {}".format(env_id,env_id))

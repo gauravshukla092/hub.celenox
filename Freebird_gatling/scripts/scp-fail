@@ -1,0 +1,49 @@
+#!/usr/bin/env python
+import os
+import re
+import sys
+
+import boto3
+
+import util
+
+REMOTE_PATH_REGEX = re.compile("^(\w+)-(\w+):(.*)$")
+REMOTE_PATH_REGEX_WITH_INDEX = re.compile("^(\w+)-(\w+)-(\d):(.*)$")
+
+from_arg = sys.argv[1]
+to_arg = sys.argv[2]
+
+if REMOTE_PATH_REGEX.match(from_arg):
+    from_remote = True
+    env_id, role, from_path = REMOTE_PATH_REGEX.match(from_arg).groups()
+    to_remote = False
+    to_path = os.path.expanduser(to_arg)
+    index = None
+elif REMOTE_PATH_REGEX.match(to_arg):
+    from_remote = False
+    from_path = os.path.expanduser(from_arg)
+    to_remote = True
+    env_id, role, to_path = REMOTE_PATH_REGEX.match(to_arg).groups()
+    index = None
+elif REMOTE_PATH_REGEX_WITH_INDEX.match(from_arg):
+    from_remote = True
+    print from_arg
+    env_id, role, index, from_path = REMOTE_PATH_REGEX_WITH_INDEX.match(from_arg).groups()
+    to_remote = False
+    to_path = os.path.expanduser(to_arg)
+elif REMOTE_PATH_REGEX_WITH_INDEX.match(to_arg):
+    from_remote = False
+    from_path = os.path.expanduser(from_arg)
+    to_remote = True
+    env_id, role, index, to_path = REMOTE_PATH_REGEX_WITH_INDEX.match(to_arg).groups()
+else:
+    raise AssertionError("Neither path looks like a remote path")
+
+util.verify_setup([env_id])
+
+env = util.load_config()["env"][env_id]
+ec2 = boto3.resource('ec2', region_name=env["region"])
+instance, = list(util.get_instances(ec2, env_id, role, index))
+
+runner = util.RemoteRunner(env, instance)
+runner.scp(from_remote, from_path, to_remote, to_path)

@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+import json
+import os
+import subprocess
+
+env_id = os.environ["FREEBIRD_ENV"]
+config = json.loads(open("config.json").read())
+env = config["env"][env_id]
+
+print "Stopping services..."
+for service_id, service in config["platform"].iteritems():
+    print "Stopping {}...".format(service_id)
+    subprocess.call(["docker", "stop", service_id])
+    subprocess.call(["docker", "rm", service_id])
+
+print "Services stopped."

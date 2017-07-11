@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+cd scripts/ssh-tunnel/host
+docker build -t ssh-tunnel-host .
+`aws ecr get-login --region us-west-2`
+docker tag ssh-tunnel-host:latest 966044814082.dkr.ecr.us-west-2.amazonaws.com/ssh-tunnel-host:latest
+docker push 966044814082.dkr.ecr.us-west-2.amazonaws.com/ssh-tunnel-host:latest

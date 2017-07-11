@@ -1,0 +1,102 @@
+#!/usr/bin/env python
+
+# See http://docs.datastax.com/en/cassandra/2.2/cassandra/operations/opsBackupRestore.html
+# Using http://docs.datastax.com/en/cassandra/2.0/cassandra/operations/ops_backup_noderestart_t.html
+# Except we're restoring from S3, not restoring from a local snapshot
+
+# http://datascale.io/restoring-cassandra-data/
+import os
+from subprocess import check_call, check_output, CalledProcessError, call
+import sys
+from time import sleep
+
+import boto3
+
+KEYSPACES = {"titan"}
+
+
+def stop_cassandra():
+    call(["sudo", "service", "cassandra", "stop"])
+
+
+def restart_cassandra():
+    check_call(["sudo", "service", "cassandra", "restart"])
+
+    while call(["cqlsh", "-e", "DESCRIBE KEYSPACES;"]):
+        print "Waiting for Cassandra to be up..."
+        sleep(1)
+
+env_id = sys.argv[1]
+timestamp = sys.argv[2]
+
+print "Removing existing data..."
+stop_cassandra()
+check_call("sudo rm -rf /mnt/cassandra", shell=True)
+check_call("sudo mkdir /mnt/cassandra", shell=True)
+check_call("sudo chown cassandra /mnt/cassandra/", shell=True)
+check_call("sudo chgrp cassandra /mnt/cassandra/", shell=True)
+restart_cassandra()
+
+print "Recreating schemas..."
+for keyspace in KEYSPACES:
+    print "Keyspace {}...".format(keyspace)
+    check_call([
+        "aws",
+        "s3",
+        "sync",
+        "s3://freebird-fail/env/cassandra-backup/{env_id}/{timestamp}/schema/".format(
+            env_id=env_id,
+            timestamp=timestamp,
+            keyspace=keyspace,
+        ),
+        "/home/ec2-user/schema-backup/{}".format(timestamp),
+        "--delete",
+    ])
+    check_call(["cqlsh", "-f", "/home/ec2-user/schema-backup/{timestamp}/{keyspace}.cql".format(
+        timestamp=timestamp,
+        keyspace=keyspace,
+    )])
+stop_cassandra()
+
+print "Copying data from S3..."
+client_s3 = boto3.client("s3", region_name="us-west-2")
+for keyspace in KEYSPACES:
+    print "Keyspace {}...".format(keyspace)
+
+    for table_dir in os.listdir("/mnt/cassandra/data/{}".format(keyspace)):
+        table, _1, _2 = table_dir.partition("-")
+        print "Table {}...".format(table)
+
+        # Find the matching table in S3
+        common_prefix, = client_s3.list_objects_v2(
+            Bucket="freebird-fail",
+            Prefix="env/cassandra-backup/{env_id}/{timestamp}/data/{keyspace}/{table}-".format(
+                env_id=env_id,
+                timestamp=timestamp,
+                keyspace=keyspace,
+                table=table,
+            ),
+            Delimiter="/",
+        )["CommonPrefixes"]
+        table_s3 = common_prefix["Prefix"]
+
+        check_call(["sudo", "rm", "-rf", "/mnt/cassandra/data/{keyspace}/{table_dir}/*".format(
+            keyspace=keyspace,
+            table_dir=table_dir
+        )])
+        check_call([
+            "sudo",
+            "aws",
+            "s3",
+            "sync",
+            "s3://freebird-fail/{}".format(table_s3),
+            "/mnt/cassandra/data/{keyspace}/{table_dir}".format(
+                keyspace=keyspace,
+                table_dir=table_dir,
+            ),
+        ])
+
+print "Refreshing node..."
+restart_cassandra()
+
+print "Success!"

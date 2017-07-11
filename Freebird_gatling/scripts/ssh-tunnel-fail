@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+import boto3
+import util
+import argparse
+import sys
+
+parser = argparse.ArgumentParser()
+
+# optional
+parser.add_argument("--index", "-i",
+                    help="The index identifier of the server to connect to in a server group.",
+                    type=str)
+parser.add_argument("--command", "-c", help="The command to run on the remote host", type=str)
+
+# required
+parser.add_argument("env", help="The environment of which to connect", type=str)
+parser.add_argument("role", help="The role to use when connecting", type=str)
+parser.add_argument("local_port", help="The local port to listen on", type=str)
+parser.add_argument("remote_port", help="The remote port to forward", type=str)
+
+args = parser.parse_args()
+
+util.verify_setup([args.env])
+env = util.load_config()["env"][args.env]
+
+ec2 = boto3.resource('ec2', region_name=env["region"])
+instances_collection = util.get_instances(ec2, env_id=args.env, role=args.role, index=args.index)
+if sum(1 for _ in instances_collection) > 1:
+    print "Something has gone horribly wrong, there should only be " \
+          "a single result in the instances collection returned from ec2"
+    sys.exit(-1)
+
+instance, = list(instances_collection)
+
+runner = util.RemoteRunner(env, instance)
+runner.open_tunnel(args.local_port, args.remote_port)

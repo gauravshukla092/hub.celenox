@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+# Usage example: ./execute-on-gremlin uat path
+
+import os
+import sys
+import boto3
+import util
+
+env_id = sys.argv[1]
+file_path = sys.argv[2]
+util.verify_setup([env_id])
+
+assert file_path.endswith(".groovy")
+
+file_name = os.path.basename(file_path)
+
+os.system("scp-fail {file_path} {env_id}-gremlin:/tmp/boot".format(file_path=file_path,env_id=env_id))
+
+env = util.load_config()["env"][env_id]
+ec2 = boto3.resource('ec2', region_name=env["region"])
+
+print "Running gremlin scripts..."
+instance_gremlin, = util.get_instances(ec2, env_id, "gremlin")
+runner_gremlin = util.RemoteRunner(env, instance_gremlin)
+runner_gremlin.run("gremlin.sh -e /tmp/boot/{}".format(file_name))
+runner_gremlin.run("rm /tmp/boot/{}".format(file_name))

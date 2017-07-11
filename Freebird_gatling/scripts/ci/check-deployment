@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+sbt clean-files
+sbt clean compile test
+sbt it:compile

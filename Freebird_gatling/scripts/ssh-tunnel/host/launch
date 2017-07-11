@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+import os
+import subprocess
+
+main_service_name = os.environ["MAIN_SERVICE_NAME"]
+with open("/etc/ssh/authorized_keys", "w") as authorized_keys:
+    authorized_keys.write('permitopen="{}:{}" {}\n'.format(os.environ["{}_HOST".format(main_service_name)], os.environ["{}_PORT".format(main_service_name)], os.environ["SSH_PUBLIC_KEY"]))
+
+subprocess.call("sshd-keygen")
+subprocess.call(["/usr/sbin/sshd", "-D", "-p", "222"])

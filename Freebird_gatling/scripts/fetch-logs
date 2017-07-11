@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+
+#will take 4 arguments environment type, the type of instance(platform/platformClient), container/service name and destination to put logs 
+
+import os
+import sys
+import boto3
+import util
+
+env_id = sys.argv[1]
+instance_role = sys.argv[2]
+container_name = sys.argv[3]
+logs_destination = sys.argv[4]
+util.verify_setup([env_id])
+
+env = util.load_config()["env"][env_id]
+ec2 = boto3.resource('ec2', region_name=env["region"])
+
+print "Fetching remote path of {} logs".format(container_name)
+instance, = util.get_instances(ec2, env_id, instance_role)
+runner = util.RemoteRunner(env, instance)
+command = "docker inspect --format='{{.LogPath}}' "+container_name
+logs_remote_path = runner.run(command, capture_output=True)
+logs_remote_path = logs_remote_path.replace('\n', '')
+runner.run("sudo chmod 755 /mnt/docker && sudo chmod -R 755 /mnt/docker/containers")
+print "downloading logs to {}".format(logs_destination)
+scp_command = "scp-fail {env_id}-{instance_role}:{logs_remote_path} {logs_destination}".format(env_id=env_id,instance_role=instance_role,logs_remote_path=logs_remote_path,logs_destination=logs_destination)
+os.system(scp_command)

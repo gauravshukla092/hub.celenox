@@ -1,0 +1,64 @@
+#!/usr/bin/env python
+
+# See http://datascale.io/backing-up-cassandra-data/
+from datetime import datetime
+import os
+from subprocess import check_call
+import sys
+
+env_id = sys.argv[1]
+
+check_call(["nodetool", "clearsnapshot"])
+
+timestamp = datetime.utcnow().isoformat()
+check_call(["nodetool", "snapshot", "-t", timestamp])
+
+print "Deleting backups..."
+check_call('''sudo sh -c "find /mnt/cassandra/data -wholename '/mnt/cassandra/data/*/*/backups/*' -print0 | xargs -r -0 rm"''', shell=True)
+
+for keyspace in os.listdir("/mnt/cassandra/data"):
+    print "Keyspace {}...".format(keyspace)
+    schema_backup_path = "/home/ec2-user/schema-backup/{}".format(timestamp)
+
+    print "Saving schema..."
+    check_call(["mkdir", "-p", schema_backup_path])
+    check_call(
+        "cqlsh -e 'DESC KEYSPACE {keyspace}' > {schema_backup_path}/{keyspace}.cql".format(
+            keyspace=keyspace,
+            schema_backup_path=schema_backup_path,
+        ),
+        shell=True,
+    )
+
+    schema_s3_path = "s3://freebird-fail/env/cassandra-backup/{env_id}/{timestamp}/schema/".format(
+        env_id=env_id,
+        timestamp=timestamp,
+    )
+
+    check_call(["aws", "s3", "sync", schema_backup_path, schema_s3_path])
+
+    print "Saving tables..."
+    for table in os.listdir("/mnt/cassandra/data/{}".format(keyspace)):
+        from_path = "/mnt/cassandra/data/{keyspace}/{table}/snapshots/{timestamp}".format(
+            keyspace=keyspace,
+            table=table,
+            timestamp=timestamp,
+        )
+        if not os.path.exists(from_path):
+            print "Skipping nonexistent table", table
+            continue
+
+        check_call([
+            "aws",
+            "s3",
+            "sync",
+            from_path,
+            "s3://freebird-fail/env/cassandra-backup/{env_id}/{timestamp}/data/{keyspace}/{table}".format(
+                env_id=env_id,
+                timestamp=timestamp,
+                keyspace=keyspace,
+                table=table,
+            )
+        ])
+
+print "Snapshot finished successfully."

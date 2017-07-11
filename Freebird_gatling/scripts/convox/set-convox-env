@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+import json
+import os
+import subprocess
+import sys
+
+env_id = sys.argv[1]
+
+with open(os.path.expanduser("~/.convox/auth")) as convoxHostsFile:
+    convoxHosts = json.load(convoxHostsFile)
+
+for host in convoxHosts.keys():
+    if host.startswith(env_id):
+        selectedHost = host
+
+subprocess.check_call(["convox", "login", selectedHost])

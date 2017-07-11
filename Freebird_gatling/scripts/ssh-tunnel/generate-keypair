@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+
+KEY_NAME=$1
+if [[ -z $KEY_NAME ]]; then echo "Please specify a name"; exit 1; fi
+KEYS_DIR=~/.ssh/freebird
+
+mkdir -p $KEYS_DIR
+ssh-keygen -b 2048 -t rsa -f $KEYS_DIR/$KEY_NAME -N "" -C ""

@@ -1,0 +1,95 @@
+#!/usr/bin/env python
+import json
+import os
+import sys
+
+import boto3
+
+my_dir = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(my_dir, os.pardir))
+import util
+
+env_id = sys.argv[1]
+util.verify_setup([env_id])
+
+env = util.load_config()["env"][env_id]
+client = boto3.client('ec2', region_name=env["region"])
+
+env_vars = json.loads(util.get_env_vars(env_id))
+user = env_vars["platform"]["user"]
+
+sg_opts = [
+	("platformClient", None),
+    ("platform", {
+        "IpPermissions": [
+            {
+                "IpProtocol": "tcp",
+                "FromPort": 8181,
+                "ToPort": 8181,
+                "IpRanges": [{
+                    "CidrIp": "0.0.0.0/0"
+                }]
+            },
+            {
+                "IpProtocol": "tcp", 
+                "FromPort": 9191,
+                "ToPort": 9191,
+                "UserIdGroupPairs": [{
+                    "GroupName": util.resource_name(env_id, "platformClient")
+                }]
+            },
+            {
+                "IpProtocol": "tcp",
+                "FromPort": 8282,
+                "ToPort": 8282,
+                "UserIdGroupPairs": [{
+                    "GroupName": util.resource_name(env_id, "platformClient")
+                }]
+            }
+        ]
+    })
+]
+
+run_instance_opts = {
+    "UserData": open(os.path.join(my_dir, "launch-platform")).read().format(
+        aws_access_key_id=user["awsAccessKeyId"],
+        aws_secret_access_key=user["awsSecretAccessKey"],
+        env=env_id,
+        region=env["region"],
+        authorized_keys="\n".join(env_vars["platform"]["authorizedKeys"]),
+    ),
+    "InstanceType": "m4.xlarge",
+    "BlockDeviceMappings": [
+        {
+            'DeviceName': '/dev/sdf',
+            'Ebs': {
+                'VolumeSize': 200,
+                'DeleteOnTermination': True,
+                'VolumeType': 'gp2',
+            },
+        }
+    ]
+}
+
+more_sg_roles = ["cassandraClient", "kafkaClient"]
+created = util.create_instance(env_id, "platform", sg_opts, run_instance_opts, more_sg_roles)
+
+print "Setting env vars..."
+runner = created["runner"]
+util.add_programmatic_env_vars(env_vars, env_id)
+util.upload_env_file(runner, util.make_env_file(env_vars["vars"]))
+
+print "Starting platform..."
+util.sync_remote_scripts(env_id, "platform")
+# Paul: Why isn't /etc/profile already being sourced!?
+runner.run("source /etc/profile && cd scripts && ./update-services-platform")
+
+print "Associating elastic IP..."
+instance = created["instance"]
+print client.associate_address(
+    InstanceId=instance["InstanceId"],
+    PublicIp=env["platformElasticIp"],
+    AllowReassociation=False
+)
+
+print "Platform created."

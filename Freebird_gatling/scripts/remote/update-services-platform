@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+import json
+import os
+import subprocess
+
+env_id = os.environ["FREEBIRD_ENV"]
+config = json.loads(open("config.json").read())
+env = config["env"][env_id]
+docker_repo = config["dockerRepo"]
+
+print "Logging into Docker repo..."
+subprocess.check_call("aws ecr get-login | source /dev/stdin", shell=True)
+
+print "Stopping services..."
+subprocess.check_call(["./restart-logspout"])
+subprocess.check_call(["./stop-services-platform"])
+
+print "Starting services..."
+for service_id, service in config["platform"].iteritems():
+    print "Starting {}...".format(service_id)
+    port_expose_args = []
+    for port in service.get("ports", []):
+        port_expose_args += ["-p", "{port}:{port}".format(port=port)]
+
+    image = "{}:{}".format(docker_repo.format(service=service_id), env_id)
+    subprocess.check_call(["docker", "pull", image])
+    subprocess.check_call(
+        [
+            "docker",
+            "run",
+            "-d",
+            "--link", "logspout:logspout",
+            "--env-file", "/home/ec2-user/.freebird/env-vars",
+            "--name", service_id
+        ] +
+        port_expose_args +
+        [image]
+    )
+
+print "Services started."

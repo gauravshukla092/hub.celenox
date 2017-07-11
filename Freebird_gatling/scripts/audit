@@ -1,0 +1,151 @@
+#!/usr/bin/env python
+from datetime import datetime
+
+import boto3
+import botocore
+
+import util
+
+
+OLD = datetime(1970, 1, 1)
+ACCESS_MAX_AGE_DAYS = 100
+INSTANCE_MAX_AGE_DAYS = 100
+DESIRED_TAGS_ELASTICACHE = ["Environment", "Role", "CreatedBy", "CreatedWith"]
+DESIRED_TAGS_ELB = ["Environment", "Role", "CreatedBy", "CreatedWith"]
+DESIRED_TAGS_INSTANCE = ["Name", "Environment", "Role", "CreatedBy", "CreatedWith"]
+DESIRED_TAGS_SG = ["Environment", "Role", "CreatedBy", "CreatedWith"]
+DESIRED_TAGS_BUCKET = ["CreatedBy"]
+
+
+totals = {True: 0, False: 0}
+
+
+def process_output(region, resource_type, resource_id, status_name, is_good, **kwargs):
+    kwargs_string = " ".join(v for k, v in sorted(kwargs.iteritems()))
+    resource_name_id = resource_id
+    if "name" in kwargs:
+        # The human name is usually more stable than the resource ID, so print it first
+        resource_name_id = kwargs.pop("name") + " " + resource_id
+    print resource_type, resource_name_id, region, status_name, kwargs_string, "good" if is_good else "bad"
+    totals[is_good] += 1
+
+
+util.verify_setup([])
+utcnow = datetime.utcnow()
+client_iam = boto3.client('iam')
+for user in client_iam.list_users()["Users"]:
+    access_days_ago = [
+        (utcnow - user.get("PasswordLastUsed", OLD).replace(tzinfo=None)).days,
+        (utcnow - user["CreateDate"].replace(tzinfo=None)).days
+    ]
+    user_name = user["UserName"]
+
+    for policy in client_iam.list_attached_user_policies(UserName=user_name)["AttachedPolicies"]:
+        # AWS default policies are bad b/c they're usually too permissive
+        if policy["PolicyArn"].startswith("arn:aws:iam::aws:policy"):
+            process_output("none", "user", user_name, "no default policies", False, policy=policy["PolicyName"])
+
+    for keys in client_iam.list_access_keys(UserName=user_name)["AccessKeyMetadata"]:
+        last_used = client_iam.get_access_key_last_used(
+            AccessKeyId=keys["AccessKeyId"]
+        )["AccessKeyLastUsed"].get("LastUsedDate", OLD)
+        key_used_days_ago = min([
+            (utcnow - last_used.replace(tzinfo=None)).days,
+            (utcnow - keys["CreateDate"].replace(tzinfo=None)).days
+        ])
+        access_days_ago.append(key_used_days_ago)
+        is_good = key_used_days_ago < ACCESS_MAX_AGE_DAYS
+        process_output("none", "keys", keys["AccessKeyId"], "recent access", is_good, name=user_name)
+
+    process_output("none", "user", user_name, "recent access", min(access_days_ago) < ACCESS_MAX_AGE_DAYS)
+
+for region in ["us-west-2", "us-west-1", "us-east-1"]:
+    ec2 = boto3.resource('ec2', region_name=region)
+    client_ec2 = boto3.client('ec2', region_name=region)
+    client_elasticache = boto3.client('elasticache', region_name=region)
+    client_elb = boto3.client('elb', region_name=region)
+
+    all_instances = []
+    for reservation in client_ec2.describe_instances()["Reservations"]:
+        for instance in reservation["Instances"]:
+            all_instances.append(instance)
+
+            simple_tags = util.simplify_tags(instance.get("Tags"))
+            instance_id = instance["InstanceId"]
+            name = simple_tags.get("Name", "")
+
+            is_not_old = (utcnow - instance["LaunchTime"].replace(tzinfo=None)).days < INSTANCE_MAX_AGE_DAYS
+            process_output(region, "instance", instance_id, "is not old", is_not_old, name=name)
+
+            is_eb = "elasticbeanstalk:environment-id" in simple_tags
+            is_ds = simple_tags.get("Environment") == "ds"
+            if not is_eb and not is_ds:
+                for tag in DESIRED_TAGS_INSTANCE:
+                    status_name = "has tag {}".format(tag)
+                    process_output(region, "instance", instance_id, status_name, tag in simple_tags, name=name)
+
+            is_stopped = instance["State"]["Name"] != "stopped"
+            process_output(region, "instance", instance_id, "is not stopped", is_stopped, name=name)
+
+    for cluster in client_elasticache.describe_cache_clusters()["CacheClusters"]:
+        cluster_id = cluster["CacheClusterId"]
+        tags = client_elasticache.list_tags_for_resource(
+            ResourceName="arn:aws:elasticache:{}:{}:cluster:{}".format(region, util.ACCOUNT_NUMBER, cluster_id)
+        )
+        simple_tags = util.simplify_tags(tags["TagList"])
+        for tag in DESIRED_TAGS_ELASTICACHE:
+            process_output(region, "elasticache", cluster_id, "has tag {}".format(tag), tag in simple_tags)
+
+    for key_pair in client_ec2.describe_key_pairs()["KeyPairs"]:
+        has_instances = any(i.get("KeyName") == key_pair["KeyName"] for i in all_instances)
+        process_output(region, "key pair", key_pair["KeyName"], "has instances", has_instances)
+
+    elb_names = [elb["LoadBalancerName"] for elb in client_elb.describe_load_balancers()["LoadBalancerDescriptions"]]
+
+    if elb_names:
+        for elb in client_elb.describe_tags(LoadBalancerNames=elb_names)["TagDescriptions"]:
+            simple_tags = util.simplify_tags(elb.get("Tags"))
+            if "elasticbeanstalk:environment-id" not in simple_tags:
+                for tag in DESIRED_TAGS_ELB:
+                    process_output(region, "elb", elb["LoadBalancerName"], "has tag {}".format(tag), tag in simple_tags)
+
+    for sg in ec2.security_groups.all():
+        for ip_permission in sg.ip_permissions:
+            from_port = ip_permission.get("FromPort", float("-inf"))
+            to_port = ip_permission.get("ToPort", float("inf"))
+            process_output(region, "sg", sg.id, "few open ports", from_port == to_port, name=sg.group_name)
+            for ip_range in ip_permission.get("IpRanges", []):
+                process_output(
+                    region, "sg", sg.id, "restrictive cidr", ip_range["CidrIp"] != "0.0.0.0/0", name=sg.group_name
+                )
+
+        has_instances = any(sg.id == s["GroupId"] for i in all_instances for s in i["SecurityGroups"])
+        simple_tags = util.simplify_tags(sg.tags)
+
+        if simple_tags.get("Role") == "default":
+            process_output(region, "sg", sg.id, "default has no instances", not has_instances, name=sg.group_name)
+
+        else:  # For non-default SGs
+            process_output(region, "sg", sg.id, "has instances", has_instances, name=sg.group_name)
+
+            if "elasticbeanstalk:environment-id" not in simple_tags:
+                for tag in DESIRED_TAGS_SG:
+                    process_output(region, "sg", sg.id, "has tag {}".format(tag), tag in simple_tags, name=sg.group_name)
+
+
+for bucket in boto3.resource('s3').buckets.all():
+    try:
+        simple_tags = util.simplify_tags(bucket.Tagging().tag_set)
+    except botocore.exceptions.ClientError as e:
+        assert e.response["Error"]["Code"] == "NoSuchTagSet"
+        simple_tags = {}
+
+    for tag in DESIRED_TAGS_BUCKET:
+        process_output(None, "bucket", bucket.name, "has tag {}".format(tag), tag in simple_tags)
+
+
+total = totals[True] + totals[False]
+# ! is for sorting
+print "! total good {}, total bad {}, total {}, {:.1f}%".format(
+    totals[True], totals[False], total, totals[True] * 100. / total
+)

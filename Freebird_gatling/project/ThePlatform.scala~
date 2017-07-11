@@ -1,0 +1,264 @@
+import Dependencies.{compile => _, test => _}
+import io.gatling.sbt.{GatlingKeys, GatlingPlugin}
+import sbt.Keys._
+import sbt._
+import sbtassembly.AssemblyKeys._
+
+
+object ThePlatform extends Build {
+
+  import BuildSettings._
+  import Dependencies._
+
+  lazy val root = Project("ThePlatform", file("."))
+    .settings(projectSettings: _*)
+    .settings(scoverageSettings: _*)
+    .settings(sbtAssemblySettings: _*)
+    .aggregate(ingestion, api, flightStatsAlert, migration, flightMonitor, disruptedPassengeFiner, spiritDisruptionFinder, notifier, flightAlternateGenerator, flightStatsSchedule)
+
+
+  // ##############SERVICES #######################################
+  lazy val ingestion = BaseProject("ingestion")
+    .settings(Defaults.itSettings: _*)
+    .enablePlugins(GatlingPlugin)
+    .settings(libraryDependencies ++= compile(mail, s3WithDatabind, typesafeConfig, akkaActor, logback, json4sNative, json4sExt,
+      elasticSearch, jodaDate, titanCore, titanCassandra, gremlinScala, csvReader, saaj, akkaHttpExperimental, kafka, akkaQuartz)
+      ++ it(scalaTest, csvReader, akkaTestKit, akkaHttpTestKit, mockito)
+      ++ test(scalaTest, mockito, akkaHttpTestKit, gatlingCore, gatlingHighcharts, gatlingTestFramework))
+    .settings(mainClass in assembly := Some("com.freebird.ingestion.IngestionApp"))
+    .configs(IntegrationTest, GatlingKeys.GatlingIt)
+    .dependsOn(oagFlightStatus, util, es, common, weather, routeTemplates, flightSayerStatus, flightStatsSchedule, kafkaService)
+    .aggregate(oagFlightStatus, util, es, common, weather, routeTemplates, flightSayerStatus, flightStatsSchedule, kafkaService)
+
+
+  lazy val api = BaseProject("api")
+    .settings(Defaults.itSettings: _*)
+    .enablePlugins(GatlingPlugin)
+    .settings(libraryDependencies ++=
+      compile(jwt, mail, s3, swagger, typesafeConfig, akkaActor, logback, akkaHttpExperimental, akkaHttpJson4s, json4sNative, csvReader,
+        json4sExt, shapeless, jodaDate, titanCore, gremlinScala, titanCassandra, breeze, breezeNatives, breezeViz, elasticSearch, yaml)
+        ++ test(akkaTestKit, scalaTest, akkaHttpTestKit, mockito)
+        ++ it(akkaTestKit, scalaTest, akkaHttpTestKit, gatlingCore, gatlingHighcharts, gatlingTestFramework, mockito))
+    .settings(mainClass in assembly := Some("com.freebird.api.StartFreeBirdApi"))
+    .dependsOn(eventApi, pricingApi, purchaseApi, judgeApi, identity, util, routeTemplates,
+      financialManagement, authorizationServer, rebookingApi, todayFlightsView, es, notifier)
+    .aggregate(eventApi, pricingApi, purchaseApi, judgeApi, identity, util, routeTemplates,
+      financialManagement, authorizationServer, rebookingApi, todayFlightsView, es)
+
+  lazy val gatling = BaseProject("gatling")
+    .settings(Defaults.itSettings: _*)
+    .enablePlugins(GatlingPlugin)
+    .settings(libraryDependencies ++=
+      it(akkaTestKit, scalaTest, akkaHttpTestKit, gatlingCore, gatlingHighcharts, gatlingTestFramework, mockito))
+    .dependsOn(util)
+
+
+
+
+  //###############Modules##########################################
+  lazy val oagFlightStatus = BaseProject("oag-flight-status")
+    .settings(libraryDependencies ++= provided(typesafeConfig, akkaActor, logback,  json4sNative,
+      json4sExt, shapeless, titanCore, titanCassandra, gremlinScala, jodaDate, csvReader, kafka) ++ test(scalaTest, akkaTestKit, mockito))
+    .dependsOn(es, util, common, kafkaService)
+
+
+  lazy val flightSayerStatus = BaseProject("flight-sayer-status")
+    .settings(libraryDependencies ++= provided(elasticSearch, typesafeConfig, akkaActor, logback, akkaHttpExperimental, json4sNative,
+      json4sExt, shapeless, titanCore, titanCassandra, gremlinScala, jodaDate, csvReader, kafka) ++ test(scalaTest, akkaTestKit, akkaHttpTestKit, mockito))
+    .dependsOn(es, util, common, kafkaService, es)
+
+
+  lazy val flightStatsAlert = BaseProject("flight-stats-alert")
+    .settings(Defaults.itSettings: _*)
+    .settings(libraryDependencies ++= compile(s3, typesafeConfig, logback, json4sNative, akkaHttpExperimental,
+      json4sExt, titanCore, titanCassandra, gremlinScala, jodaDate, akkaActor, elasticSearch, kafka, mail) ++ test(scalaTest, mockito, akkaTestKit, akkaHttpTestKit)
+      ++ it(elasticSearch, scalaTest, akkaHttpTestKit, akkaTestKit, elasicSearchJNA, kafka))
+    .configs(IntegrationTest)
+    .dependsOn(es, util, common, kafkaService, flightStatsSchedule)
+
+  lazy val flightStatsSchedule = BaseProject("flight-stats-schedule")
+    .settings(libraryDependencies ++= compile(s3WithDatabind, typesafeConfig, logback, json4sNative, akkaHttpExperimental,
+      json4sExt, titanCore, titanCassandra, gremlinScala, jodaDate, akkaActor,  elasticSearch, kafka, akkaQuartz)
+      ++ test(scalaTest, mockito,  akkaTestKit, akkaHttpTestKit))
+    .dependsOn(es, util, common, es, kafkaService, routeTemplates)
+
+  lazy val weather = BaseProject("weather")
+    .settings(libraryDependencies ++=
+      provided(typesafeConfig, akkaActor, logback, json4sNative, akkaHttpExperimental, json4sExt, shapeless,
+        titanCore, titanCassandra, gremlinScala, jodaDate)
+        ++ test(scalaTest, akkaTestKit, mockito))
+    .dependsOn(es, util, common)
+
+  lazy val es = BaseProject("es-service")
+    .settings(libraryDependencies ++=
+      provided(typesafeConfig, akkaActor, logback, elasticSearch, json4sNative) ++ test(scalaTest, elasicSearchJNA, akkaTestKit))
+    .dependsOn(util)
+
+
+  lazy val util = BaseProject("util")
+    .settings(libraryDependencies ++=
+      provided(json4sNative, json4sExt, typesafeConfig, akkaActor, logback, jbcrypt, s3WithDatabind, csvReader,
+        mail, akkaHttpExperimental) ++ test(scalaTest)
+    )
+
+  lazy val common = BaseProject("common")
+    .settings(libraryDependencies ++=
+      provided(typesafeConfig, json4sExt, json4sNative, jodaDate, logback, titanCoreApi, gremlinScala, shapeless, akkaActor, titanCassandra, yaml)
+        ++ test(akkaTestKit, scalaTest, akkaHttpTestKit, tinkerGraphGremlin, mockito, akkaTestKit))
+    .dependsOn(util)
+
+
+
+
+  lazy val pricingApi = BaseProject("pricing-api")
+    .settings(libraryDependencies ++=
+      provided(swagger, typesafeConfig, akkaActor, logback, akkaHttpExperimental, akkaHttpJson4s, json4sNative, json4sExt,
+        shapeless, nscalaTime, titanCoreApi, gremlinScala, breeze, breezeNatives, breezeViz, csvReader)
+        ++ test(akkaTestKit, scalaTest, akkaHttpTestKit, mockito))
+    .dependsOn(util, common, routeTemplates)
+
+  lazy val rebookingApi = BaseProject("rebooking-api")
+    .settings(libraryDependencies ++=
+      provided(swagger, typesafeConfig, akkaActor, logback, akkaHttpExperimental, akkaHttpJson4s, json4sNative, json4sExt,
+        shapeless, nscalaTime, titanCoreApi, gremlinScala, kafka)
+        ++ test(akkaTestKit, scalaTest, akkaHttpTestKit, mockito))
+    .dependsOn(util, common, routeTemplates, kafkaService)
+
+  lazy val purchaseApi = BaseProject("purchase-api")
+    .settings(libraryDependencies ++=
+      provided(swagger, typesafeConfig, akkaActor, logback, akkaHttpExperimental, akkaHttpJson4s, json4sNative, json4sExt,
+        shapeless, nscalaTime, titanCoreApi, gremlinScala)
+        ++ test(akkaTestKit, scalaTest, akkaHttpTestKit, mockito, gatlingCore, gatlingHighcharts, gatlingTestFramework))
+    .dependsOn(util, common, routeTemplates)
+
+  lazy val identity = BaseProject("identity")
+    .settings(libraryDependencies ++=
+      provided(jwt, swagger, typesafeConfig, akkaActor, logback, akkaHttpExperimental, akkaHttpJson4s, json4sNative, json4sExt,
+        shapeless, nscalaTime, titanCoreApi, gremlinScala)
+        ++ test(akkaTestKit, scalaTest, akkaHttpTestKit, mockito, gatlingCore, gatlingHighcharts, gatlingTestFramework))
+    .dependsOn(util, common, routeTemplates)
+
+  lazy val routeTemplates = BaseProject("route-templates")
+    .settings(libraryDependencies ++=
+      provided(swagger, typesafeConfig, akkaActor, logback, akkaHttpExperimental, akkaHttpJson4s, json4sNative, json4sExt,
+        shapeless, nscalaTime, titanCoreApi, gremlinScala)
+        ++ test(akkaTestKit, scalaTest, akkaHttpTestKit, mockito, gatlingCore, gatlingHighcharts, gatlingTestFramework))
+    .dependsOn(util, common)
+
+  lazy val eventApi = BaseProject("event-api")
+    .settings(Defaults.itSettings: _*)
+    .settings(libraryDependencies ++=
+      compile(typesafeConfig, akkaActor, logback, akkaHttpExperimental, akkaHttpJson4s, jodaDate, json4sNative, json4sExt,
+        shapeless, nscalaTime, titanCore, gremlinScala)
+        ++ test(akkaTestKit, scalaTest, akkaHttpTestKit, mockito, gatlingCore, gatlingHighcharts, gatlingTestFramework))
+    .dependsOn(util, common)
+
+  lazy val migration = BaseProject("migration")
+    .settings(Defaults.itSettings: _*)
+    .settings(libraryDependencies ++=
+      compile(typesafeConfig, akkaActor, logback, akkaHttpExperimental, akkaHttpJson4s, json4sNative, json4sExt, shapeless,
+        nscalaTime, titanCore, gremlinScala, titanCassandra, slick, jodaDate, postgresDriver, hikariCP)
+        ++ test(scalaTest, h2database, akkaTestKit, mockito) ++ it(scalaTest, h2database, akkaTestKit))
+    .configs(IntegrationTest)
+    .dependsOn(pricingApi)
+
+  lazy val judgeApi = BaseProject("judge-api")
+    .settings(libraryDependencies ++=
+      provided(swagger, typesafeConfig, akkaActor, logback, akkaHttpExperimental, akkaHttpJson4s, json4sNative, json4sExt,
+        shapeless, nscalaTime, titanCoreApi, gremlinScala, breeze, breezeNatives, breezeViz)
+        ++ test(akkaTestKit, scalaTest, akkaHttpTestKit, mockito))
+    .dependsOn(pricingApi, util, common, routeTemplates)
+
+  lazy val financialManagement = BaseProject("financial-management")
+    .settings(libraryDependencies ++=
+      provided(akkaActor, logback, akkaHttpExperimental, json4sNative, json4sExt, titanCoreApi, gremlinScala, csvReader, s3WithDatabind, mail)
+        ++ test(akkaTestKit, scalaTest, akkaHttpTestKit, mockito))
+    .dependsOn(util, common, routeTemplates)
+
+  lazy val kafkaService = BaseProject("kafka-service")
+    .settings(libraryDependencies ++= provided(kafka, akkaActor) ++ test(scalaTest))
+    .dependsOn(util)
+
+  lazy val flightMonitor = BaseProject("flight-monitor")
+    .settings(libraryDependencies ++= compile(kafka, typesafeConfig, json4sExt, json4sNative, jodaDate, logback, titanCore,
+      gremlinScala, shapeless, akkaActor, titanCassandra, mail)
+      ++ test(scalaTest, akkaTestKit, mockito)
+      ++ it(scalaTest, akkaTestKit, mockito)
+    )
+    .dependsOn(kafkaService, common)
+    .settings(Defaults.itSettings: _*)
+    .configs(IntegrationTest)
+
+  lazy val flightAlternateGenerator = BaseProject("flight-alternate-generator")
+    .settings(libraryDependencies ++= compile(kafka, typesafeConfig, json4sExt, akkaHttpExperimental, json4sNative,
+      jodaDate, logback, titanCore, gremlinScala, shapeless, akkaActor, titanCassandra, mail, elasticSearch)
+      ++ test(scalaTest, akkaTestKit, mockito, elasticSearch)
+      ++ it(scalaTest, akkaTestKit, mockito, elasticSearch)
+    )
+    .dependsOn(kafkaService, common, util, es)
+    .settings(Defaults.itSettings: _*)
+    .configs(IntegrationTest)
+
+  lazy val authorizationServer = BaseProject("authorization-server")
+    .settings(libraryDependencies ++=
+      provided(swagger, typesafeConfig, akkaActor, logback, akkaHttpExperimental, akkaHttpJson4s, json4sNative, json4sExt,
+        shapeless, nscalaTime, titanCoreApi, gremlinScala)
+        ++ test(akkaTestKit, scalaTest, akkaHttpTestKit, mockito, gatlingCore, gatlingHighcharts, gatlingTestFramework))
+    .dependsOn(util, common, routeTemplates, oauth2ScalaCore)
+
+  lazy val oauth2ScalaCore = BaseProject("oauth2-scala-core")
+    .settings(libraryDependencies ++=
+      provided(swagger, typesafeConfig, akkaActor, logback, akkaHttpExperimental, akkaHttpJson4s, json4sNative, json4sExt,
+        shapeless, nscalaTime, titanCoreApi, gremlinScala)
+        ++ test(akkaTestKit, scalaTest, akkaHttpTestKit, mockito, gatlingCore, gatlingHighcharts, gatlingTestFramework))
+    .dependsOn(common)
+
+  lazy val disruptedPassengeFiner = BaseProject("disrupted-passenger-finder")
+    .settings(libraryDependencies ++= compile(kafka, typesafeConfig, json4sExt, json4sNative, jodaDate, logback, titanCore,
+      gremlinScala, shapeless, akkaActor, titanCassandra, mail)
+      ++ test(scalaTest, akkaTestKit, mockito)
+      ++ it(scalaTest, akkaTestKit, mockito)
+    )
+    .dependsOn(kafkaService, common)
+    .settings(Defaults.itSettings: _*)
+    .configs(IntegrationTest)
+
+  lazy val spiritDisruptionFinder = BaseProject("spirit-disruption-finder")
+    .settings(libraryDependencies ++= compile(kafka, typesafeConfig, json4sExt, json4sNative, jodaDate, logback, mail, titanCore,
+      gremlinScala, shapeless, akkaActor, titanCassandra,  akkaHttpExperimental)
+      ++ test(scalaTest, akkaTestKit, mockito)
+      ++ it(scalaTest, akkaTestKit, mockito)
+    )
+    .dependsOn(kafkaService, common)
+    .settings(Defaults.itSettings: _*)
+    .configs(IntegrationTest)
+
+  lazy val todayFlightsView = BaseProject("flights-view")
+    .settings(libraryDependencies ++= compile(kafka, typesafeConfig, json4sExt, json4sNative, jodaDate, logback, titanCore,
+      gremlinScala, shapeless, akkaActor, titanCassandra, akkaHttpExperimental, swagger)
+      ++ test(akkaTestKit, scalaTest, akkaHttpTestKit, mockito)
+      ++ it(scalaTest, akkaHttpTestKit, akkaTestKit)
+    )
+    .dependsOn(util, common, routeTemplates, es)
+    .settings(Defaults.itSettings: _*)
+    .configs(IntegrationTest)
+
+  lazy val notifier = BaseProject("notifier")
+    .settings(libraryDependencies ++= compile(kafka, typesafeConfig, json4sExt, akkaHttpExperimental, json4sNative,
+      jodaDate, logback, titanCore, gremlinScala, shapeless, akkaActor, titanCassandra, mail, twilio)
+      ++ test(scalaTest, akkaTestKit, mockito)
+      ++ it(scalaTest, akkaTestKit, mockito)
+    )
+    .dependsOn(kafkaService, common, util)
+    .settings(Defaults.itSettings: _*)
+    .configs(IntegrationTest)
+
+  lazy val bootstrap = BaseProject("bootstrap")
+    .settings(libraryDependencies ++=
+      provided(typesafeConfig, json4sExt, json4sNative, jodaDate, akkaHttpExperimental,logback, titanCoreApi, gremlinScala, akkaActor, titanCassandra, yaml)
+    )
+    .dependsOn(common, util, routeTemplates)
+
+
+
+}

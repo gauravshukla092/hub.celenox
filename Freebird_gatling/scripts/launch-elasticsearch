@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# This runs on a elasticsearch node on launch
+# Switch to super user before running the script via (sudo su) 
+# Use like ./launch-elasticsearch elasticsearch 172.31.32.101 172.31.40.239
+set -e
+
+CLUSTER_NAME=$1
+LOCAL_PRIVATE_IP=$2
+NODE_PRIVATE_IP=$3
+
+echo "Mounting Disk Volume"
+mkfs -t ext4 /dev/xvdf
+mount /dev/xvdf /mnt
+
+echo "Installing elasticsearch and kopf"
+wget https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.3.0/elasticsearch-2.3.0.rpm
+yum install -y elasticsearch-2.3.0.rpm
+/usr/share/elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/2.02.1.1
+
+echo "Making required directory structure"
+mkdir /mnt/elasticsearch
+chown elasticsearch /mnt/elasticsearch
+chgrp elasticsearch /mnt/elasticsearch
+
+echo "Setting up required confugration"
+sed -i "s|# cluster.name: my-application|cluster.name: $CLUSTER_NAME|" /etc/elasticsearch/elasticsearch.yml
+sed -i "s|# network.host: 192.168.0.1|network.host: $LOCAL_PRIVATE_IP|" /etc/elasticsearch/elasticsearch.yml
+sed -i "s|# discovery.zen.ping.unicast.hosts: \[\"host1\", \"host2\"\]|discovery.zen.ping.unicast.hosts: \[\"$LOCAL_PRIVATE_IP\", \"$NODE_PRIVATE_IP\"\]|" /etc/elasticsearch/elasticsearch.yml
+
+sed -i "s|#DATA_DIR=/var/lib/elasticsearch|DATA_DIR=/mnt/elasticsearch/lib/elasticsearch|" /etc/sysconfig/elasticsearch
+sed -i "s|#LOG_DIR=/var/log/elasticsearch|LOG_DIR=/mnt/elasticsearch/log/elasticsearch|" /etc/sysconfig/elasticsearch
+sed -i "s|#ES_HEAP_SIZE=2g|ES_HEAP_SIZE=4g|" /etc/sysconfig/elasticsearch
+
+echo "Starting elasticsearch"
+service elasticsearch start
+

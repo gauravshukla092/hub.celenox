@@ -1,0 +1,21 @@
+#!/usr/bin/env python2
+import json
+import os
+import subprocess
+import sys
+
+env_id = sys.argv[1]
+
+with open(os.path.expanduser("~/.convox/auth")) as convoxHostsFile:
+    convoxHosts = json.load(convoxHostsFile)
+
+for host in convoxHosts.keys():
+    if host == "console.convox.com":
+        continue  # We don't use Convox Console
+
+    host_env, _, _ = host.partition("-")
+    if env_id == "all" or host_env == env_id:
+        command = ["convox"] + sys.argv[2:]
+        print "Running {} in {}...".format(" ".join(command), host_env)
+        subprocess.check_call(["convox", "login", host])
+        subprocess.check_call(command)
