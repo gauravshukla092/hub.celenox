@@ -1,0 +1,63 @@
+#!/usr/bin/env python
+import os
+import subprocess
+import sys
+
+import boto3
+
+my_dir = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(my_dir, os.pardir))
+import util
+
+env_id = sys.argv[1]
+util.verify_setup([env_id])
+timestamp = sys.argv[2]
+config = util.load_config()
+env = config["env"][env_id]
+ec2 = boto3.resource('ec2', region_name=env["region"])
+
+print "Verifying deploy window..."
+util.verify_deploy_window_for_env(env_id)
+
+print "Syncing scripts to platform..."
+util.sync_remote_scripts(env_id, "platform")
+
+print "Building services..."
+instance, = util.get_instances(ec2, env_id=env_id, role="platform")
+runner = util.RemoteRunner(env, instance)
+for service_id, service in config["platform"].iteritems():
+    print "Building {}...".format(service_id)
+    docker_repo = config["dockerRepo"].format(service=service_id)
+
+    deployment_dir = "/mnt/deployment/docker/{timestamp}/{service}".format(timestamp=timestamp, service=service_id)
+    runner.run("mkdir -p {}".format(deployment_dir))
+
+    subprocess.check_call(["sbt", "project {}".format(service_id), "assembly"])
+    runner.scp(
+        False,
+        "{service}/target/scala-2.11/{service}-assembly-1.0.jar".format(service=service_id),
+        True,
+        deployment_dir
+    )
+    runner.scp(
+        False,
+        "{service}/Dockerfile".format(service=service_id),
+        True,
+        deployment_dir
+    )
+    runner.run(
+        "cd {deployment_dir} && docker build -t {service} -t {docker_repo}:{env} -t {docker_repo}:{timestamp} .".format(
+            deployment_dir=deployment_dir,
+            service=service_id,
+            docker_repo=docker_repo,
+            env=env_id,
+            timestamp=timestamp,
+        )
+    )
+    runner.run("aws ecr get-login | source /dev/stdin && docker push {}".format(docker_repo))
+    print "Built {}".format(service_id)
+
+print "Updating services..."
+runner.run("cd scripts && ./update-services-platform")
+
+print "Deployed services"

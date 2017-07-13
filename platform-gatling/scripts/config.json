@@ -1,0 +1,103 @@
+{
+    "dockerRepo": "966044814082.dkr.ecr.us-west-2.amazonaws.com/{service}",
+    "env": {
+        "fail": {
+            "sshKeyName": "uat",
+            "region": "us-west-2"
+        },
+        "uat": {
+            "sshKeyName": "uat",
+            "region": "us-west-2",
+            "cassandraRole": "cassandra",
+            "logspoutUrl": "syslog://logs4.papertrailapp.com:39382",
+            "platformElasticIp": "52.32.106.42",
+            "convox": {
+                "vpc": "vpc-fe2fb09b",
+                "internetGateway": "igw-1a44f47f",
+                "vpcCidr": "172.31.0.0/16",
+                "subnetCidrs": [
+                    "172.31.64.0/24",
+                    "172.31.65.0/24",
+                    "172.31.66.0/24"
+                ]
+            },
+            "hostedElasticsearch": {
+                "clusterName": "3619b175c8fc89b2e137cbdce68870b3",
+                "port": 9343,
+                "shieldUsername": "readwrite"
+            }
+        },
+        "staging": {
+            "sshKeyName": "staging",
+            "region": "us-west-2",
+            "cassandraRole": "cassandra",
+            "logspoutUrl": "syslog://logs4.papertrailapp.com:25712",
+            "deployWindowStartUtc": "02:00",
+            "deployWindowEndUtc": "20:00",
+            "convox": {
+                "vpc": "vpc-fe2fb09b",
+                "internetGateway": "igw-1a44f47f",
+                "vpcCidr": "172.31.0.0/16",
+                "subnetCidrs": [
+                    "172.31.80.0/24",
+                    "172.31.81.0/24",
+                    "172.31.82.0/24"
+                ]
+            },
+            "hostedElasticsearch": {
+                "clusterName": "6f4ab29cc18f8debc2e541ce6481baae",
+                "port": 9343,
+                "shieldUsername": "readwrite"
+            }
+        },
+        "prod": {
+            "sshKeyName": "prod",
+            "region": "us-west-2",
+            "cassandraRole": "cassandra",
+            "logspoutUrl": "syslog://logs4.papertrailapp.com:24973",
+            "deployWindowStartUtc": "02:00",
+            "deployWindowEndUtc": "20:00",
+            "convox": {
+                "vpc": "vpc-fe2fb09b",
+                "internetGateway": "igw-1a44f47f",
+                "vpcCidr": "172.31.0.0/16",
+                "subnetCidrs": [
+                    "172.31.96.0/24",
+                    "172.31.97.0/24",
+                    "172.31.98.0/24"
+                ]
+            },
+            "hostedElasticsearch": {
+                "clusterName": "6fe17fec28fc23c39b39cb8eb9b3e1fe",
+                "port": 9343,
+                "shieldUsername": "readwrite"
+            }
+        }
+    },
+    "platform": {
+        "api": {
+            "ports": [8181]
+        },
+        "flight-alternate-generator": {
+            "ports": [9004]
+        },
+        "flight-monitor": {
+            "ports": [9002]
+        },
+        "flight-stats-alert": {
+            "ports": [9191]
+        },
+        "disrupted-passenger-finder": {
+            "ports": [9003]
+        },
+        "ingestion": {
+            "ports": [8282]
+        },
+        "notifier": {
+            "ports": [9006]
+        },
+        "partner": {
+            "ports": [8383]
+        }
+    }
+}

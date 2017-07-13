@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# This runs on a platform node on launch
+set -e
+
+echo "Updating packages..."
+yum -y --quiet update
+
+echo "Installing Docker..."
+yum install -y docker
+usermod -aG docker ec2-user
+
+echo "Setting up the EBS volume..."
+mkfs -t ext4 /dev/xvdf
+mount /dev/xvdf /mnt
+mkdir /mnt/docker
+mkdir /mnt/deployment
+chown -R ec2-user /mnt/deployment
+sed -i 's|nofile=1024:4096|nofile=1024:4096 -g /mnt/docker --storage-driver=overlay|' /etc/sysconfig/docker
+
+echo "Setting up AWS config..."
+mkdir -p /home/ec2-user/.aws
+cat << END-OF-AWS-CREDS > /home/ec2-user/.aws/credentials
+[default]
+aws_access_key_id = {aws_access_key_id}
+aws_secret_access_key = {aws_secret_access_key}
+END-OF-AWS-CREDS
+cat << END-OF-AWS-CONFIG > /home/ec2-user/.aws/config
+[default]
+region = {region}
+END-OF-AWS-CONFIG
+
+echo "Setting up env vars..."
+echo "export FREEBIRD_ENV={env}" >> /etc/profile.d/freebird.sh
+
+echo "Adding authorized keys..."
+cat << END-OF-AUTHORIZED-KEYS >> /home/ec2-user/.ssh/authorized_keys
+{authorized_keys}
+END-OF-AUTHORIZED-KEYS
+
+echo "Starting Docker..."
+service docker start

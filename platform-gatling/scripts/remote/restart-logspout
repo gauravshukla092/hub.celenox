@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+import json
+import os
+import subprocess
+
+env_id = os.environ["FREEBIRD_ENV"]
+config = json.loads(open("config.json").read())
+env = config["env"][env_id]
+
+print "Stopping Logspout..."
+subprocess.call(["docker", "stop", "logspout"])
+subprocess.call(["docker", "rm", "logspout"])
+
+print "Starting Logspout..."
+subprocess.check_call(
+    [
+        "docker",
+        "run",
+        "-d",
+        "--name", "logspout",
+        "-v", "/var/run/docker.sock:/var/run/docker.sock",
+        "gliderlabs/logspout",
+        env["logspoutUrl"],
+    ]
+)
+
+print "Logspout started."

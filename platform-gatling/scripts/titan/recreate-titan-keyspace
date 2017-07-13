@@ -1,0 +1,62 @@
+#!/usr/bin/env python
+
+# Run set-env-vars before running this script so gremlin and platform are all pointing to the right cassandra
+# Usage example: ./recreate-titan-keyspace uat
+import os
+import sys
+
+import boto3
+
+my_dir = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(my_dir, os.pardir))
+import util
+
+env_id = sys.argv[1]
+util.verify_setup([env_id])
+
+env = util.load_config()["env"][env_id]
+ec2 = boto3.resource('ec2', region_name=env["region"])
+
+print "Stopping services..."
+instance_platform, = util.get_instances(ec2, env_id, "platform")
+runner_platform = util.RemoteRunner(env, instance_platform)
+runner_platform.run("cd scripts && ./stop-services-platform")
+
+print "Dropping Titan keyspace..."
+instance_cassandra, = util.get_instances(ec2, env_id, "cassandra")
+runner_cassandra = util.RemoteRunner(env, instance_cassandra)
+runner_cassandra.run("cqlsh -e 'DROP KEYSPACE IF EXISTS titan;'")
+
+print "Bootstrapping..."
+instance_gremlin, = util.get_instances(ec2, env_id, "gremlin")
+runner_gremlin = util.RemoteRunner(env, instance_gremlin)
+
+runner_gremlin.run("rm -rf bootstrap/titan && mkdir bootstrap/titan")
+
+os.system("scp-fail /home/sahil/FreeBirdProject/thePlatform/titan-bootstrap/target/scala-2.11/titan-bootstrap-assembly-1.0.jar {}-gremlin:/home/ec2-user/bootstrap/titan".format(env_id))
+
+
+# TODO: This is the worst way to stop a script... the bootstrap script should ideally exit by itself
+util.wait_for_log(
+    runner_gremlin,
+    None,
+    "Airport processing done for airport id: 9541 and airport code: OLT",
+    command = "chmod 755 -R bootstrap/titan && export TITAN_HOST={} && cd bootstrap/titan && java -jar titan-bootstrap-assembly-1.0.jar".format(instance_cassandra.private_ip_address),
+    kill_regex = "com.freebird.bootstrap.titan.airport.AirportIngestionApp"
+)
+
+print "Syncing gremlin scripts..."
+util.sync_remote_scripts(
+    env_id,
+    "gremlin",
+    local_path=os.path.join(my_dir, "../../api/src/main/resources/boot"),
+    remote_path="boot"
+)
+
+print "Running gremlin scripts..."
+runner_gremlin.run("gremlin.sh -e boot/{}-user.groovy && gremlin.sh -e boot/boot.groovy ".format(env_id))
+
+print "Starting services..."
+runner_platform.run("cd scripts && ./update-services-platform")
+
+print "Titan keyspace recreated."

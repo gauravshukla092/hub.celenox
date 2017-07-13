@@ -1,0 +1,56 @@
+#!/usr/bin/env python
+import sys
+from difflib import context_diff
+
+import boto3
+
+import util
+
+
+env_id = sys.argv[1]
+
+env = util.load_config()["env"][env_id]
+ec2 = boto3.resource('ec2', region_name=env["region"])
+
+stdin = sys.stdin.read()
+
+print "Validating input..."
+as_obj = util.parse_env_vars(stdin)
+
+print "Uploading vars to S3..."
+util.upload_env_vars_to_s3(env_id, as_obj)
+
+print "Verifying setup..."
+# Verifying this later on so we verify using the new variables
+# We also don't want this script to crash before it finishes receiving stdin
+util.verify_setup([env_id])
+
+print "Filling in programmatic env vars..."
+util.add_programmatic_env_vars(as_obj, env_id)
+
+print "Uploading vars to platform..."
+env_file = util.make_env_file(as_obj["vars"])
+print env_file
+instance_platform, = list(util.get_instances(ec2, env_id, "platform"))
+runner_platform = util.RemoteRunner(env, instance_platform)
+current_env_vars = runner_platform.run("cat .freebird/env-vars", capture_output=True)
+diff = list(context_diff(current_env_vars.split("\n"), env_file.split("\n")))
+print "Env vars are {}".format("different" if diff else "the same")
+for diff_line in diff:
+    print diff_line
+sys.stdin = open('/dev/tty')
+if raw_input("Set env vars in platform? (y/n) ") != "y":
+    quit()
+util.upload_env_file(runner_platform, env_file)
+
+print "Restarting platform services..."
+runner_platform.run("cd scripts && ./update-services-platform")
+
+if env_id == "uat":
+    print "Uploading vars to dev..."
+    instance_dev, = list(util.get_instances(ec2, env_id, "dev"))
+    runner_dev = util.RemoteRunner(env, instance_dev)
+    env_vars_bash = util.export_env_vars_bash(as_obj)
+    runner_dev.run('cat << "END-OF-ENV-VARS" > env-vars\n{}END-OF-ENV-VARS'.format(env_vars_bash))
+
+print "Env vars set"

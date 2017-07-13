@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ThePlatform.iml" filepath="$PROJECT_DIR$/.idea/modules/ThePlatform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ThePlatform-build.iml" filepath="$PROJECT_DIR$/.idea/modules/ThePlatform-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gatling.iml" filepath="$PROJECT_DIR$/.idea/modules/gatling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gatling-build.iml" filepath="$PROJECT_DIR$/.idea/modules/gatling-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util.iml" filepath="$PROJECT_DIR$/.idea/modules/util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util-build.iml" filepath="$PROJECT_DIR$/.idea/modules/util-build.iml" />
+    </modules>
+  </component>
+</project>

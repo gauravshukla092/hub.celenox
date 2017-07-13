@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+
+# Usage example: ./delete-kafka uat
+import sys
+
+import util
+
+env_id = sys.argv[1]
+util.verify_setup([env_id])
+
+util.delete_instance(env_id, "kafka", ["kafka", "kafkaClient"])

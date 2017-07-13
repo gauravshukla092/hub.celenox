@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This runs on a Kafka node on launch
+set -e
+
+wget --no-verbose http://mirror.cc.columbia.edu/pub/software/apache/kafka/0.10.0.0/kafka_2.11-0.10.0.0.tgz
+tar -xzf kafka_2.11-0.10.0.0.tgz
+rm kafka_2.11-0.10.0.0.tgz
+cd kafka_2.11-0.10.0.0
+nohup bin/zookeeper-server-start.sh config/zookeeper.properties &
+nohup bin/kafka-server-start.sh config/server.properties &
+
+# Datadog conf
+mkdir -p /etc/dd-agent
+cat << END-OF-DATADOG-CONF > /etc/dd-agent/datadog.conf
+[Main]
+dd_url: https://app.datadoghq.com
+api_key: {dd_api_key}
+tags: env:{env_id}, role:kafka
+END-OF-DATADOG-CONF
+
+# Install Datadog
+DD_API_KEY={dd_api_key} bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/install_agent.sh)"

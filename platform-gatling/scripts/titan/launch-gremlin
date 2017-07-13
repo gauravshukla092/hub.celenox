@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# This runs on a Gremlin node on launch
+set -e
+
+echo "Updating packages..."
+yum -y --quiet update
+
+echo "Installing Oracle Java 8..."
+yum -y --quiet remove java-1.7.0-openjdk
+yum -y --quiet install java-1.8.0
+
+echo "Installing Titan..."
+# Is it bad that this jar is publicly available? I don't think there's anything interesting in it...
+wget --no-verbose https://s3-us-west-2.amazonaws.com/freebird-fail/titan/titan11-build-with-freebird-jars.tgz
+tar -xzf titan11-build-with-freebird-jars.tgz
+rm titan11-build-with-freebird-jars.tgz
+
+echo "Adding Titan bin to user PATH..."
+echo 'export PATH=$PATH:/titan-titan11/bin/' >> /home/ec2-user/.bashrc
+
+echo "Linking Gremlin properties..."
+mkdir -p /home/ec2-user/conf
+ln -s /titan-titan11/conf/freebird.properties /home/ec2-user/conf/titan-cassandra.properties
+
+echo "Creating Titan conf file..."
+cat << END-OF-TITAN-CONF > titan-titan11/conf/freebird.properties
+gremlin.graph=com.thinkaurelius.titan.core.TitanFactory
+storage.backend=cassandrathrift
+storage.hostname={storage_hostname}
+
+echo "Creating README..."
+echo "graph = TitanFactory.open('conf/titan-cassandra.properties')" >> /home/ec2-user/README
+
+attributes.custom.attribute1.attribute-class=java.util.HashMap
+attributes.custom.attribute1.serializer-class=com.freebird.titan.serializer.MapSerializerScala
+attributes.custom.attribute2.attribute-class=org.joda.time.DateTime
+attributes.custom.attribute2.serializer-class=com.freebird.titan.serializer.DateTimeSerializer
+attributes.custom.attribute3.attribute-class=org.joda.time.LocalDate
+attributes.custom.attribute3.serializer-class=com.freebird.titan.serializer.LocalDateSerializer
+
+cache.db-cache = true
+cache.db-cache-clean-wait = 20
+cache.db-cache-time = 180000
+cache.db-cache-size = 0.5
+END-OF-TITAN-CONF

@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+import sys
+
+import boto3
+
+import util
+
+ROLE = "ssh"
+
+env_id = sys.argv[1]
+util.verify_setup([env_id])
+
+env = util.load_config()["env"][env_id]
+client = boto3.client('ec2', region_name=env["region"])
+ec2 = boto3.resource('ec2', region_name=env["region"])
+
+print "Creating security group..."
+sg_created = client.create_security_group(
+    GroupName=util.resource_name(env_id, ROLE),
+    Description='Created by F.A.I.L.'
+)
+print sg_created
+
+print "Configuring security group..."
+sg, = util.get_sgs(ec2, env_id, ROLE)
+sg.authorize_ingress(
+    IpPermissions=[
+        {
+            "IpProtocol": "tcp",
+            "FromPort": 22,
+            "ToPort": 22,
+            "IpRanges": [{
+                "CidrIp": "0.0.0.0/0"
+            }]
+        }
+    ]
+)
+
+print "Tagging security group..."
+print sg.create_tags(Tags=util.standard_tags(env_id, ROLE))
+
+print "Successfully created SSH security group."

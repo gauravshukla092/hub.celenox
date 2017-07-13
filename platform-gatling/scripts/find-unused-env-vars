@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+import json
+import sys
+
+import subprocess
+
+import util
+
+PROBABLY_USED_ENV_VARS = {
+    "AWS_SECRET_KEY"
+}
+
+env_id = sys.argv[1]
+env_vars = json.loads(util.get_env_vars(env_id))["vars"]
+for env in env_vars:
+    if env["name"] in PROBABLY_USED_ENV_VARS:
+        continue
+
+    return_code = subprocess.call("ag {} > /dev/null".format(env["name"]), shell=True)
+    if return_code == 0:
+        pass  # This var was found in the code
+    elif return_code == 1:
+        print "{} for {} seems unused".format(env["name"], env_id   )
+    else:
+        raise subprocess.CalledProcessError(return_code, "command")

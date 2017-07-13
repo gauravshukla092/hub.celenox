@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.freebird"
+		module="theplatform$sources_2.11"
+		revision="1.0"
+		conf="cpd"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, cpd"
+		date="20170711152147"/>
+	<dependencies>
+		<module organisation="dom4j" name="dom4j">
+			<revision name="1.6.1" status="release" pubdate="20060210123318" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://dom4j.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="9">
+				<metadata-artifact status="no" details="" size="3851" time="0" location="/home/knoldus/.ivy2/cache/dom4j/dom4j/ivy-1.6.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom"/>
+				<caller organisation="com.freebird" name="theplatform$sources_2.11" conf="cpd" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="dom4j" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="432186" time="0" location="/home/knoldus/.ivy2/cache/dom4j/dom4j/srcs/dom4j-1.6.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.sourceforge.pmd" name="pmd">
+			<revision name="5.1.1" status="release" pubdate="20140427063123" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://pmd.sourceforge.net/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="8">
+				<license name="BSD-style" url="http://pmd.sourceforge.net/license.html"/>
+				<metadata-artifact status="no" details="" size="6982" time="0" location="/home/knoldus/.ivy2/cache/net.sourceforge.pmd/pmd/ivy-5.1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/sourceforge/pmd/pmd/5.1.1/pmd-5.1.1.pom"/>
+				<caller organisation="com.freebird" name="theplatform$sources_2.11" conf="cpd" rev="5.1.1" rev-constraint-default="5.1.1" rev-constraint-dynamic="5.1.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="pmd" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1462189" time="0" location="/home/knoldus/.ivy2/cache/net.sourceforge.pmd/pmd/srcs/pmd-5.1.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/net/sourceforge/pmd/pmd/5.1.1/pmd-5.1.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.ow2.asm" name="asm">
+			<revision name="5.0_BETA" status="release" pubdate="20131012144622" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="11">
+				<license name="BSD" url="http://asm.objectweb.org/license.html"/>
+				<metadata-artifact status="no" details="" size="3974" time="0" location="/home/knoldus/.ivy2/cache/org.ow2.asm/asm/ivy-5.0_BETA.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/ow2/asm/asm/5.0_BETA/asm-5.0_BETA.pom"/>
+				<caller organisation="com.freebird" name="theplatform$sources_2.11" conf="cpd" rev="5.0_BETA" rev-constraint-default="5.0_BETA" rev-constraint-dynamic="5.0_BETA" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="asm" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1032538" time="0" location="/home/knoldus/.ivy2/cache/org.ow2.asm/asm/srcs/asm-5.0_BETA-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/ow2/asm/asm/5.0_BETA/asm-5.0_BETA-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.beust" name="jcommander">
+			<revision name="1.27" status="release" pubdate="20120705180702" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://beust.com/jcommander" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="10">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3298" time="0" location="/home/knoldus/.ivy2/cache/com.beust/jcommander/ivy-1.27.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/beust/jcommander/1.27/jcommander-1.27.pom"/>
+				<caller organisation="com.freebird" name="theplatform$sources_2.11" conf="cpd" rev="1.27" rev-constraint-default="1.27" rev-constraint-dynamic="1.27" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="jcommander" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="48193" time="0" location="/home/knoldus/.ivy2/cache/com.beust/jcommander/srcs/jcommander-1.27-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/beust/jcommander/1.27/jcommander-1.27-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="junit" name="junit">
+			<revision name="4.4" status="release" pubdate="20070821174743" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://junit.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="7">
+				<license name="Common Public License Version 1.0" url="http://www.opensource.org/licenses/cpl1.0.txt"/>
+				<metadata-artifact status="no" details="" size="2581" time="0" location="/home/knoldus/.ivy2/cache/junit/junit/ivy-4.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/junit/junit/4.4/junit-4.4.pom"/>
+				<caller organisation="com.freebird" name="theplatform$sources_2.11" conf="cpd" rev="4.4" rev-constraint-default="4.4" rev-constraint-dynamic="4.4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="junit" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="88758" time="0" location="/home/knoldus/.ivy2/cache/junit/junit/srcs/junit-4.4-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/junit/junit/4.4/junit-4.4-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="jdom" name="jdom">
+			<revision name="1.0" status="release" pubdate="20051222122056" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="6">
+				<metadata-artifact status="no" details="" size="2901" time="0" location="/home/knoldus/.ivy2/cache/jdom/jdom/ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/jdom/jdom/1.0/jdom-1.0.pom"/>
+				<caller organisation="com.freebird" name="theplatform$sources_2.11" conf="cpd" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="jdom" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="229136" time="0" location="/home/knoldus/.ivy2/cache/jdom/jdom/srcs/jdom-1.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/jdom/jdom/1.0/jdom-1.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.mozilla" name="rhino">
+			<revision name="1.7R3" status="release" pubdate="20110720060040" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.mozilla.org/rhino/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
+				<license name="Mozilla Public License, Version 1.1" url="http://www.mozilla.org/MPL/MPL-1.1.txt"/>
+				<license name="GNU General Public License, Version 2" url="http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3130" time="0" location="/home/knoldus/.ivy2/cache/org.mozilla/rhino/ivy-1.7R3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/mozilla/rhino/1.7R3/rhino-1.7R3.pom"/>
+				<caller organisation="com.freebird" name="theplatform$sources_2.11" conf="cpd" rev="1.7R3" rev-constraint-default="1.7R3" rev-constraint-dynamic="1.7R3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="rhino" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="775646" time="0" location="/home/knoldus/.ivy2/cache/org.mozilla/rhino/srcs/rhino-1.7R3-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/mozilla/rhino/1.7R3/rhino-1.7R3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.java.dev.javacc" name="javacc">
+			<revision name="5.0" status="release" pubdate="20090918200457" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://javacc.dev.java.net/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="4">
+				<license name="Berkeley Software Distribution (BSD) License" url="http://www.opensource.org/licenses/bsd-license.html"/>
+				<metadata-artifact status="no" details="" size="2532" time="0" location="/home/knoldus/.ivy2/cache/net.java.dev.javacc/javacc/ivy-5.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/java/dev/javacc/javacc/5.0/javacc-5.0.pom"/>
+				<caller organisation="com.freebird" name="theplatform$sources_2.11" conf="cpd" rev="5.0" rev-constraint-default="5.0" rev-constraint-dynamic="5.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="javacc" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="259274" time="0" location="/home/knoldus/.ivy2/cache/net.java.dev.javacc/javacc/srcs/javacc-5.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/net/java/dev/javacc/javacc/5.0/javacc-5.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="xml-apis" name="xml-apis">
+			<revision name="1.3.04" status="release" pubdate="20061222133752" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://xml.apache.org/commons/components/external/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="3">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3060" time="0" location="/home/knoldus/.ivy2/cache/xml-apis/xml-apis/ivy-1.3.04.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.pom"/>
+				<caller organisation="com.freebird" name="theplatform$sources_2.11" conf="cpd" rev="1.3.04" rev-constraint-default="1.3.04" rev-constraint-dynamic="1.3.04" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="xml-apis" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="527816" time="0" location="/home/knoldus/.ivy2/cache/xml-apis/xml-apis/srcs/xml-apis-1.3.04-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-io" name="commons-io">
+			<revision name="2.2" status="release" pubdate="20120326151438" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="2">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="8256" time="0" location="/home/knoldus/.ivy2/cache/commons-io/commons-io/ivy-2.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom"/>
+				<caller organisation="com.freebird" name="theplatform$sources_2.11" conf="cpd" rev="2.2" rev-constraint-default="2.2" rev-constraint-dynamic="2.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="commons-io" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="242243" time="0" location="/home/knoldus/.ivy2/cache/commons-io/commons-io/srcs/commons-io-2.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/commons-io/commons-io/2.2/commons-io-2.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.sourceforge.saxon" name="saxon">
+			<revision name="9.1.0.8" status="release" pubdate="20100226055342" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://saxon.sourceforge.net/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="1">
+				<license name="Mozilla Public License Version 1.0" url="http://www.mozilla.org/MPL/MPL-1.0.txt"/>
+				<metadata-artifact status="no" details="" size="2609" time="0" location="/home/knoldus/.ivy2/cache/net.sourceforge.saxon/saxon/ivy-9.1.0.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/sourceforge/saxon/saxon/9.1.0.8/saxon-9.1.0.8.pom"/>
+				<caller organisation="com.freebird" name="theplatform$sources_2.11" conf="cpd" rev="9.1.0.8" rev-constraint-default="9.1.0.8" rev-constraint-dynamic="9.1.0.8" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="saxon" type="jar" ext="jar" extra-classifier="dom" status="no" details="" size="129236" time="0" location="/home/knoldus/.ivy2/cache/net.sourceforge.saxon/saxon/jars/saxon-9.1.0.8-dom.jar">
+						<origin-location is-local="false" location="UNKNOWN"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.commons" name="commons-lang3">
+			<revision name="3.1" status="release" pubdate="20111115072705" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/lang/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="0">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="8033" time="0" location="/home/knoldus/.ivy2/cache/org.apache.commons/commons-lang3/ivy-3.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.pom"/>
+				<caller organisation="com.freebird" name="theplatform$sources_2.11" conf="cpd" rev="3.1" rev-constraint-default="3.1" rev-constraint-dynamic="3.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="commons-lang3" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="393048" time="0" location="/home/knoldus/.ivy2/cache/org.apache.commons/commons-lang3/srcs/commons-lang3-3.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

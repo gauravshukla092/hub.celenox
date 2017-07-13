@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Writing SSH key..."
+TUNNEL_KEY_DIR=~/.ssh
+mkdir -p $TUNNEL_KEY_DIR
+# Decode hex using ruby
+echo -n $TUNNEL_SSH_PRIVATE_KEY | ruby -e "puts [STDIN.read].pack('H*')" > $TUNNEL_KEY_DIR/$TUNNEL_KEY_NAME || echo "WARN: SSH tunnel private key could not be decoded"
+chmod 700 $TUNNEL_KEY_DIR/$TUNNEL_KEY_NAME || echo "WARN: SSH tunnel private key could not be chmod'ed"
+
+echo "Opening SSH tunnel..."
+ssh -fnNT -o ExitOnForwardFailure=yes -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -L $TUNNEL_LOCAL_PORT:$TUNNEL_SERVICE_HOST:$TUNNEL_SERVICE_PORT -i $TUNNEL_KEY_DIR/$TUNNEL_KEY_NAME -p $TUNNEL_SSH_PORT $TUNNEL_SSH_USER@$TUNNEL_SSH_HOST || echo "WARN: SSH tunnel could not be opened"
+
+echo "SSH tunnel script completed."

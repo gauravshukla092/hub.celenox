@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+# For pulling from ECR: https://convox.com/docs/private-registries/
+import os
+import sys
+
+my_dir = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(my_dir, os.pardir))
+import util
+
+util.create_user_by_name("convox", ["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"])

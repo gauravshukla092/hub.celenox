@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -e
+
+ENVIRONMENT=$1
+
+echo "Tests should be run before this."
+
+echo "Codesquad is disabled."
+
+echo "Installing FAIL dependencies..."
+pip install boto3
+pip install pytest
+pytest scripts/test.py
+
+echo "Deploying..."
+TIMESTAMP=`date +"%F-%H-%M-%S"`-${CI_COMMIT_ID:0:10}
+./scripts/ci/deploy-platform $ENVIRONMENT $TIMESTAMP
+
+echo "Deploy complete."
