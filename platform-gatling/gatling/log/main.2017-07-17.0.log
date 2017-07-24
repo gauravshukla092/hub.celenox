@@ -1,0 +1,370 @@
+[WARN] - [2017-07-17 11:09:37,524] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: status.find.is(200), but actually found 422
+[WARN] - [2017-07-17 11:09:38,484] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: status.find.is(200), but actually found 422
+[ERROR] - [2017-07-17 11:09:42,544] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:09:42,544] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:09:42,548] - [akka.dispatch.TaskInvocation] key not found: priceRequestId
+java.util.NoSuchElementException: key not found: priceRequestId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.Authenticate$$anonfun$purchaseOutBoundTrip$1.apply(Authenticate.scala:60)
+	at com.freebird.stresstest.Authenticate$$anonfun$purchaseOutBoundTrip$1.apply(Authenticate.scala:59)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[ERROR] - [2017-07-17 11:09:43,501] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:09:43,502] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:09:43,503] - [akka.dispatch.TaskInvocation] key not found: priceRequestId
+java.util.NoSuchElementException: key not found: priceRequestId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.Authenticate$$anonfun$purchaseOutBoundTrip$1.apply(Authenticate.scala:60)
+	at com.freebird.stresstest.Authenticate$$anonfun$purchaseOutBoundTrip$1.apply(Authenticate.scala:59)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[WARN] - [2017-07-17 11:09:43,946] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 500
+[INFO] - [2017-07-17 11:09:43,947] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 7049de81-d728-41fa-9924-095853b401b6, 746fe58a-8a7e-4c4f-9cb3-13d683fe7dd1
+[INFO] - [2017-07-17 11:09:43,947] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 7049de81-d728-41fa-9924-095853b401b6, 746fe58a-8a7e-4c4f-9cb3-13d683fe7dd1
+[INFO] - [2017-07-17 11:09:44,847] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 190ed1cc-3e77-4978-9f5e-b827914a292f, 78c56ec6-7494-485f-a989-35bd9355b92d
+[INFO] - [2017-07-17 11:09:44,847] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 190ed1cc-3e77-4978-9f5e-b827914a292f, 78c56ec6-7494-485f-a989-35bd9355b92d
+[INFO] - [2017-07-17 11:09:45,388] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 83eb6ff6-1ac9-40d0-ad0f-9b06f84c7061, 44cd2307-4e7b-4f84-becf-208e313dc729
+[INFO] - [2017-07-17 11:09:45,388] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 83eb6ff6-1ac9-40d0-ad0f-9b06f84c7061, 44cd2307-4e7b-4f84-becf-208e313dc729
+[INFO] - [2017-07-17 11:09:45,435] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 24c8b595-76d0-4c1f-a20d-518b7a01f42d, 2e5eea72-2fda-4a95-975c-89a9001cc027
+[INFO] - [2017-07-17 11:09:45,435] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 24c8b595-76d0-4c1f-a20d-518b7a01f42d, 2e5eea72-2fda-4a95-975c-89a9001cc027
+[WARN] - [2017-07-17 11:09:45,813] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 500
+[INFO] - [2017-07-17 11:09:45,814] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 2066f78a-e516-41f0-ba32-13c7f1c33200, b3a29de6-c4ff-4b27-a193-76267053d531
+[INFO] - [2017-07-17 11:09:45,814] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 2066f78a-e516-41f0-ba32-13c7f1c33200, b3a29de6-c4ff-4b27-a193-76267053d531
+[INFO] - [2017-07-17 11:09:45,938] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: fbd17a97-3879-4292-b982-65bc70c7f817, 61c24ed9-f635-44d5-b038-7ab70c028311
+[INFO] - [2017-07-17 11:09:45,938] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: fbd17a97-3879-4292-b982-65bc70c7f817, 61c24ed9-f635-44d5-b038-7ab70c028311
+[WARN] - [2017-07-17 11:09:46,107] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 500
+[INFO] - [2017-07-17 11:09:46,108] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: a94640d8-c6ea-470b-af55-c01d0225ffba, 78e54fe4-5e41-4900-9ceb-a0531cf739ab
+[INFO] - [2017-07-17 11:09:46,108] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: a94640d8-c6ea-470b-af55-c01d0225ffba, 78e54fe4-5e41-4900-9ceb-a0531cf739ab
+[INFO] - [2017-07-17 11:09:46,912] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: b956c056-c796-45d6-8f42-d65d2f292644, d453fbd9-b8bb-4257-ab9f-e8b6cc0fd318
+[INFO] - [2017-07-17 11:09:46,912] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: b956c056-c796-45d6-8f42-d65d2f292644, d453fbd9-b8bb-4257-ab9f-e8b6cc0fd318
+[INFO] - [2017-07-17 11:30:32,487] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 772be022-3cc8-4d1f-a32e-4bdd842e4acf, 596936d2-749d-47f2-9f98-08faba3c6980
+[INFO] - [2017-07-17 11:30:32,487] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 772be022-3cc8-4d1f-a32e-4bdd842e4acf, 596936d2-749d-47f2-9f98-08faba3c6980
+[INFO] - [2017-07-17 11:31:56,427] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 72580bd7-4f1c-4370-80dd-5990cedfcc64, e217865c-926e-4596-8c69-b5bbb12d8aea
+[INFO] - [2017-07-17 11:31:56,427] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 72580bd7-4f1c-4370-80dd-5990cedfcc64, e217865c-926e-4596-8c69-b5bbb12d8aea
+[INFO] - [2017-07-17 11:31:56,791] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 4214c409-31df-4ae0-bd23-19827fa910fc, 3b63b114-90e9-43fe-9a13-160c640cb010
+[INFO] - [2017-07-17 11:31:56,791] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 4214c409-31df-4ae0-bd23-19827fa910fc, 3b63b114-90e9-43fe-9a13-160c640cb010
+[INFO] - [2017-07-17 11:31:56,908] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 8352a45d-089a-4d5d-867a-15560d181af3, 4bb30a87-8b9d-42ab-a40d-410f81fd0340
+[INFO] - [2017-07-17 11:31:56,908] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 8352a45d-089a-4d5d-867a-15560d181af3, 4bb30a87-8b9d-42ab-a40d-410f81fd0340
+[INFO] - [2017-07-17 11:31:57,079] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 9f2060e4-bcb6-4151-8dad-eb32b0b6cb43, 1382cea6-ea1d-47e8-a960-ce8e84216239
+[INFO] - [2017-07-17 11:31:57,079] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 9f2060e4-bcb6-4151-8dad-eb32b0b6cb43, 1382cea6-ea1d-47e8-a960-ce8e84216239
+[INFO] - [2017-07-17 11:31:57,124] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 70e66d3a-38d7-4a51-8046-c0af2c5b7e59, 87ddd78b-9cf4-4e37-bfb7-85813830db8b
+[INFO] - [2017-07-17 11:31:57,124] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 70e66d3a-38d7-4a51-8046-c0af2c5b7e59, 87ddd78b-9cf4-4e37-bfb7-85813830db8b
+[INFO] - [2017-07-17 11:32:46,023] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 4c71c38b-bf31-4dde-a270-4829f613883a, ed553200-a5d1-493c-91cd-972b8c25bbcc
+[INFO] - [2017-07-17 11:32:46,023] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 4c71c38b-bf31-4dde-a270-4829f613883a, ed553200-a5d1-493c-91cd-972b8c25bbcc
+[INFO] - [2017-07-17 11:32:46,050] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 55b30939-6831-4e01-bb81-4a8b3652daf8, d5030c8a-2964-4e43-915b-881157de158a
+[INFO] - [2017-07-17 11:32:46,050] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 55b30939-6831-4e01-bb81-4a8b3652daf8, d5030c8a-2964-4e43-915b-881157de158a
+[INFO] - [2017-07-17 11:32:46,113] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 9529e9ba-bd67-4958-82aa-467232063393, 4bb61393-6e31-48d8-9c57-72b2a4a7cd12
+[INFO] - [2017-07-17 11:32:46,113] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 9529e9ba-bd67-4958-82aa-467232063393, 4bb61393-6e31-48d8-9c57-72b2a4a7cd12
+[INFO] - [2017-07-17 11:32:46,159] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: ab7397fa-27d8-4bab-ba2e-ec0f90cacd48, 6e41e590-2415-4b97-a9d2-5c3631c3e8ad
+[INFO] - [2017-07-17 11:32:46,159] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: ab7397fa-27d8-4bab-ba2e-ec0f90cacd48, 6e41e590-2415-4b97-a9d2-5c3631c3e8ad
+[INFO] - [2017-07-17 11:32:46,641] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: a37aa8d3-cdcf-42a2-9c45-1fb025506069, 8d797403-a526-4a32-969c-8825e9d15d21
+[INFO] - [2017-07-17 11:32:46,641] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: a37aa8d3-cdcf-42a2-9c45-1fb025506069, 8d797403-a526-4a32-969c-8825e9d15d21
+[INFO] - [2017-07-17 11:32:46,653] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 7b73bc3b-462a-42ab-a811-20746cc7924b, 1a3d4298-c9d4-40aa-b569-26e45281e1b2
+[INFO] - [2017-07-17 11:32:46,653] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 7b73bc3b-462a-42ab-a811-20746cc7924b, 1a3d4298-c9d4-40aa-b569-26e45281e1b2
+[INFO] - [2017-07-17 11:32:46,739] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 9b48c489-8947-4171-aa0f-5dd89a84097b, 6ce0c32b-4610-49f3-b59f-d2187e7be1da
+[INFO] - [2017-07-17 11:32:46,739] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 9b48c489-8947-4171-aa0f-5dd89a84097b, 6ce0c32b-4610-49f3-b59f-d2187e7be1da
+[INFO] - [2017-07-17 11:32:47,522] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: c4c68f9f-f741-441c-aa01-2a821d460dcc, ba484c16-4593-4053-93dc-4238a0ee09b1
+[INFO] - [2017-07-17 11:32:47,522] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: c4c68f9f-f741-441c-aa01-2a821d460dcc, ba484c16-4593-4053-93dc-4238a0ee09b1
+[INFO] - [2017-07-17 11:32:48,150] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 5a77726d-cdaf-48b1-8bd9-6b558bfb59e6, 06651438-67a0-4e34-8d01-43077bb7ab20
+[INFO] - [2017-07-17 11:32:48,150] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 5a77726d-cdaf-48b1-8bd9-6b558bfb59e6, 06651438-67a0-4e34-8d01-43077bb7ab20
+[INFO] - [2017-07-17 11:32:48,236] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 395d6600-da49-49ae-a2a5-f1855085a245, b3d221ba-e785-47f1-ab69-ed02fe1f2310
+[INFO] - [2017-07-17 11:32:48,236] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 395d6600-da49-49ae-a2a5-f1855085a245, b3d221ba-e785-47f1-ab69-ed02fe1f2310
+[ERROR] - [2017-07-17 11:37:12,978] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,705] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,706] - [io.gatling.core.controller.Controller] Simulation crashed
+java.lang.IllegalStateException: Feeder is now empty, stopping engine
+	at io.gatling.core.action.SingletonFeed$$anonfun$receive$1.applyOrElse(SingletonFeed.scala:61)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:497)
+	at io.gatling.core.akka.BaseActor.aroundReceive(BaseActor.scala:23)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:526)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:495)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[ERROR] - [2017-07-17 11:37:13,712] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,713] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,713] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,714] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,714] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,715] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,715] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,716] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,716] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,718] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,718] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,722] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,723] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,724] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,724] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,725] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,725] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,726] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,726] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,726] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,726] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,727] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,727] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,728] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,728] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,729] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:13,730] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:13,731] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:14,048] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,049] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,065] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,066] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,067] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,068] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,069] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,069] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,070] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,070] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,072] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,072] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,073] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,074] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,075] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,075] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,077] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,077] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,079] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,080] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,081] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,081] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,084] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,085] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,087] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,087] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,090] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,091] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:14,092] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:14,093] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,175] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,180] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,185] - [io.gatling.core.controller.Controller] Simulation crashed
+java.lang.IllegalStateException: Feeder is now empty, stopping engine
+	at io.gatling.core.action.SingletonFeed$$anonfun$receive$1.applyOrElse(SingletonFeed.scala:61)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:497)
+	at io.gatling.core.akka.BaseActor.aroundReceive(BaseActor.scala:23)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:526)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:495)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[ERROR] - [2017-07-17 11:37:55,186] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,190] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,190] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,191] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,191] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,192] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,192] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,193] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,193] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,194] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,194] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,195] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,196] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,196] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,197] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,198] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,199] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,200] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,201] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,201] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,202] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,208] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,209] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,211] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,212] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,213] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,214] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-17 11:37:55,215] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'airline_code' is defined
+[ERROR] - [2017-07-17 11:37:55,304] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[WARN] - [2017-07-17 11:37:55,305] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: j.n.ConnectException: http://52.32.106.42:8181
+[WARN] - [2017-07-17 11:37:55,307] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: j.n.ConnectException: http://52.32.106.42:8181
+[WARN] - [2017-07-17 11:37:55,307] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: j.n.ConnectException: http://52.32.106.42:8181
+[WARN] - [2017-07-17 11:37:55,307] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: j.n.ConnectException: http://52.32.106.42:8181
+[WARN] - [2017-07-17 11:37:55,307] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: j.n.ConnectException: http://52.32.106.42:8181
+[WARN] - [2017-07-17 11:37:55,308] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: j.n.ConnectException: http://52.32.106.42:8181
+[WARN] - [2017-07-17 11:37:55,308] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: j.n.ConnectException: http://52.32.106.42:8181
+[WARN] - [2017-07-17 11:37:55,309] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: j.n.ConnectException: http://52.32.106.42:8181
+[WARN] - [2017-07-17 11:37:55,311] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: j.n.ConnectException: http://52.32.106.42:8181
+[WARN] - [2017-07-17 11:37:55,311] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: j.n.ConnectException: http://52.32.106.42:8181
+[ERROR] - [2017-07-17 11:37:55,312] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,320] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,321] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,324] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,324] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,326] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,326] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,327] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,328] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,329] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,330] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,331] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,332] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,333] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,334] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,335] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,337] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,340] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,341] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,343] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,343] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,345] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,345] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,346] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,347] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,348] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,349] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 11:37:55,350] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 11:37:55,350] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[INFO] - [2017-07-17 11:38:53,508] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: e942b931-0fa3-44ff-8b85-d16a8e93abd4, 450b17de-4eda-49fe-b2fe-1f72348cfcde
+[INFO] - [2017-07-17 11:38:53,508] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: e942b931-0fa3-44ff-8b85-d16a8e93abd4, 450b17de-4eda-49fe-b2fe-1f72348cfcde
+[INFO] - [2017-07-17 11:38:53,898] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 72d93ff7-6fbe-455c-8d3d-06b9c3e14f12, 4551bfaa-cd77-410b-9ef8-61f12a1918e3
+[INFO] - [2017-07-17 11:38:53,898] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 72d93ff7-6fbe-455c-8d3d-06b9c3e14f12, 4551bfaa-cd77-410b-9ef8-61f12a1918e3
+[INFO] - [2017-07-17 11:38:53,927] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 44fae4d5-e30f-49e6-932d-6a94da8d2e8b, 23227a5d-9f38-43b8-b36e-933ba774350f
+[INFO] - [2017-07-17 11:38:53,927] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 44fae4d5-e30f-49e6-932d-6a94da8d2e8b, 23227a5d-9f38-43b8-b36e-933ba774350f
+[INFO] - [2017-07-17 11:38:53,933] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: d1914c69-4d28-499b-bc52-653f77ef4ca7, 88f6a35f-0b97-407f-a15f-b50fa5356fdc
+[INFO] - [2017-07-17 11:38:53,933] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: d1914c69-4d28-499b-bc52-653f77ef4ca7, 88f6a35f-0b97-407f-a15f-b50fa5356fdc
+[INFO] - [2017-07-17 11:38:53,956] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: ac32e7bc-f864-43d6-bb52-8418a5d8c3ec, ebb5b206-03f1-45f6-b7d0-8b440ead1c8d
+[INFO] - [2017-07-17 11:38:53,956] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: ac32e7bc-f864-43d6-bb52-8418a5d8c3ec, ebb5b206-03f1-45f6-b7d0-8b440ead1c8d
+[INFO] - [2017-07-17 11:38:53,962] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: ec6bf632-bf4d-480c-af06-52bbc2ca961c, 3e9eea5c-008a-4f89-9cf1-3e92f6634a30
+[INFO] - [2017-07-17 11:38:53,962] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: ec6bf632-bf4d-480c-af06-52bbc2ca961c, 3e9eea5c-008a-4f89-9cf1-3e92f6634a30
+[INFO] - [2017-07-17 11:38:53,974] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: f3a54bec-204a-451e-8a00-3101727c91cf, 33730996-04bc-4017-adf2-8672b1e8fd61
+[INFO] - [2017-07-17 11:38:53,974] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: f812a6e0-a8d1-4bed-bdf7-b8b8e90fd8fe, 2c64bc72-bc7f-4041-9f89-6e9de7c6f1ca
+[INFO] - [2017-07-17 11:38:53,974] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: f3a54bec-204a-451e-8a00-3101727c91cf, 33730996-04bc-4017-adf2-8672b1e8fd61
+[INFO] - [2017-07-17 11:38:53,974] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: f812a6e0-a8d1-4bed-bdf7-b8b8e90fd8fe, 2c64bc72-bc7f-4041-9f89-6e9de7c6f1ca
+[INFO] - [2017-07-17 11:38:54,017] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 19c4b86c-f0cd-4b70-9518-c37057474ee8, 3eafb587-6c77-4f27-8556-0dfab193f6c5
+[INFO] - [2017-07-17 11:38:54,017] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 19c4b86c-f0cd-4b70-9518-c37057474ee8, 3eafb587-6c77-4f27-8556-0dfab193f6c5
+[INFO] - [2017-07-17 11:38:54,074] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 7d7a9c89-1d42-46ea-bcdf-999283b6ed48, f87ec9e0-30c8-4647-aabd-598bbf153ba4
+[INFO] - [2017-07-17 11:38:54,074] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 7d7a9c89-1d42-46ea-bcdf-999283b6ed48, f87ec9e0-30c8-4647-aabd-598bbf153ba4
+[INFO] - [2017-07-17 11:38:54,158] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 97b57ab5-1c33-4ebf-bb88-aa705683fc32, 3e00a6f9-efb9-4faa-ac03-acc552955f0a
+[INFO] - [2017-07-17 11:38:54,158] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 97b57ab5-1c33-4ebf-bb88-aa705683fc32, 3e00a6f9-efb9-4faa-ac03-acc552955f0a
+[INFO] - [2017-07-17 11:38:54,668] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 10d1e1f4-5d02-45dc-9d21-182003bb1c9f, 365e02aa-6d73-4b60-b55a-9952f37de12e
+[INFO] - [2017-07-17 11:38:54,668] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 10d1e1f4-5d02-45dc-9d21-182003bb1c9f, 365e02aa-6d73-4b60-b55a-9952f37de12e
+[INFO] - [2017-07-17 11:38:54,826] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: c5360e9b-8ee5-4ebf-990e-a183e434b83a, c3d9aa6c-b9dc-47ff-81d9-8d99878035a6
+[INFO] - [2017-07-17 11:38:54,826] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: c5360e9b-8ee5-4ebf-990e-a183e434b83a, c3d9aa6c-b9dc-47ff-81d9-8d99878035a6
+[INFO] - [2017-07-17 11:38:55,044] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 79463431-43f6-42c4-ad1c-3bbf0f4eca81, b9891d33-d612-4bf8-b03e-a4ed507b5995
+[INFO] - [2017-07-17 11:38:55,044] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 79463431-43f6-42c4-ad1c-3bbf0f4eca81, b9891d33-d612-4bf8-b03e-a4ed507b5995
+[INFO] - [2017-07-17 11:38:55,060] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 3716b20c-1b2c-4a7a-b985-4da3bc4d3b94, daccd439-e3ec-4f25-84f3-946a92ee75b2
+[INFO] - [2017-07-17 11:38:55,060] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 3716b20c-1b2c-4a7a-b985-4da3bc4d3b94, daccd439-e3ec-4f25-84f3-946a92ee75b2
+[INFO] - [2017-07-17 11:38:56,823] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 4ce09d20-c6a7-4bb0-82f6-9614484a7526, 0d38e81a-fa7d-414c-8bd3-34806d0d2bd4
+[INFO] - [2017-07-17 11:38:56,823] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 4ce09d20-c6a7-4bb0-82f6-9614484a7526, 0d38e81a-fa7d-414c-8bd3-34806d0d2bd4
+[INFO] - [2017-07-17 11:38:57,216] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: eb3e5b1a-8565-4869-a206-267443ddcc43, 2f11562c-39c9-4578-985a-cf0cd9c9e7e6
+[INFO] - [2017-07-17 11:38:57,216] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: eb3e5b1a-8565-4869-a206-267443ddcc43, 2f11562c-39c9-4578-985a-cf0cd9c9e7e6
+[INFO] - [2017-07-17 11:38:57,228] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 12675ecf-de75-465c-8a47-4f40da7f8fd9, 228e4047-bd05-40c5-a49b-6a2dca704074
+[INFO] - [2017-07-17 11:38:57,228] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 12675ecf-de75-465c-8a47-4f40da7f8fd9, 228e4047-bd05-40c5-a49b-6a2dca704074
+[INFO] - [2017-07-17 11:38:57,303] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 6e0a37d3-a9b4-434f-bfea-56a655f42780, 84b2b24d-9cce-4807-a6d4-c4cfabc1adeb
+[INFO] - [2017-07-17 11:38:57,303] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 6e0a37d3-a9b4-434f-bfea-56a655f42780, 84b2b24d-9cce-4807-a6d4-c4cfabc1adeb
+[INFO] - [2017-07-17 11:38:57,315] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: fa69c578-6fc6-4c04-bdf6-130de41c73cc, 0b0a6a42-85ce-4e88-902a-c0d8ab28823d
+[INFO] - [2017-07-17 11:38:57,315] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: fa69c578-6fc6-4c04-bdf6-130de41c73cc, 0b0a6a42-85ce-4e88-902a-c0d8ab28823d
+[INFO] - [2017-07-17 11:38:57,692] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: b33e28b0-8cb4-4b4d-9575-b66262d48981, cecd041b-2f8c-4675-a109-3362621978f0
+[INFO] - [2017-07-17 11:38:57,692] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: b33e28b0-8cb4-4b4d-9575-b66262d48981, cecd041b-2f8c-4675-a109-3362621978f0
+[INFO] - [2017-07-17 11:38:57,844] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: ab442e5f-f64b-4cf0-86c9-f7b27bb411c9, 0c4054be-b418-4b86-9423-eda0e3287394
+[INFO] - [2017-07-17 11:38:57,844] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: ab442e5f-f64b-4cf0-86c9-f7b27bb411c9, 0c4054be-b418-4b86-9423-eda0e3287394
+[INFO] - [2017-07-17 11:38:58,202] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: d76beda6-fa88-4c15-9436-4a64ba284809, f4fc4c72-8e2a-4ae1-b32c-1c6563160d80
+[INFO] - [2017-07-17 11:38:58,202] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: d76beda6-fa88-4c15-9436-4a64ba284809, f4fc4c72-8e2a-4ae1-b32c-1c6563160d80
+[INFO] - [2017-07-17 11:38:58,483] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: b8ae3e00-b9fc-4983-9d0b-9b95969aa642, dfa75256-650d-4217-945e-62ada23865a9
+[INFO] - [2017-07-17 11:38:58,483] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: b8ae3e00-b9fc-4983-9d0b-9b95969aa642, dfa75256-650d-4217-945e-62ada23865a9
+[INFO] - [2017-07-17 11:38:58,488] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: f9071879-8994-4f37-8578-9cae1fc7717a, c4e43d67-9769-478a-97d0-f4552b1c12c5
+[INFO] - [2017-07-17 11:38:58,488] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: f9071879-8994-4f37-8578-9cae1fc7717a, c4e43d67-9769-478a-97d0-f4552b1c12c5
+[INFO] - [2017-07-17 12:14:07,596] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 2d30e98a-69dc-4a7f-be73-3e3a5a72b8e2, 1ba10a83-be3d-449a-b06e-82131e74b203
+[INFO] - [2017-07-17 12:14:07,596] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 2d30e98a-69dc-4a7f-be73-3e3a5a72b8e2, 1ba10a83-be3d-449a-b06e-82131e74b203
+[INFO] - [2017-07-17 13:56:30,094] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 1e00eeb9-3bcb-48a5-988e-c8b885ae4c18, a2e93368-2709-485d-9761-f424d136746e
+[INFO] - [2017-07-17 13:56:30,094] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 1e00eeb9-3bcb-48a5-988e-c8b885ae4c18, a2e93368-2709-485d-9761-f424d136746e
+[INFO] - [2017-07-17 13:59:51,614] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 0f76e9ce-2fe9-4bd5-b7e4-e2dc9e68a82d, 9c037bd0-a444-44d8-8c74-7ba59a12a0c9
+[INFO] - [2017-07-17 13:59:51,614] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 0f76e9ce-2fe9-4bd5-b7e4-e2dc9e68a82d, 9c037bd0-a444-44d8-8c74-7ba59a12a0c9
+[INFO] - [2017-07-17 14:00:55,758] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 158586f3-741c-4acb-8087-66e24288100f, 2bd30e6d-0f8f-4398-b9ba-30a0c9d6de71
+[INFO] - [2017-07-17 14:00:55,758] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: 158586f3-741c-4acb-8087-66e24288100f, 2bd30e6d-0f8f-4398-b9ba-30a0c9d6de71
+[WARN] - [2017-07-17 14:01:56,173] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: status.find.is(200), but actually found 422
+[ERROR] - [2017-07-17 14:02:01,098] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-17 14:02:01,100] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-17 14:02:01,115] - [akka.dispatch.TaskInvocation] key not found: priceRequestId
+java.util.NoSuchElementException: key not found: priceRequestId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.Authenticate$$anonfun$purchaseOutBoundTrip$1.apply(Authenticate.scala:79)
+	at com.freebird.stresstest.Authenticate$$anonfun$purchaseOutBoundTrip$1.apply(Authenticate.scala:78)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[WARN] - [2017-07-17 14:03:11,592] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[ERROR] - [2017-07-17 14:03:16,591] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'rebookingOpportunity' is defined
+[ERROR] - [2017-07-17 14:03:21,600] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'optionId' is defined
+[ERROR] - [2017-07-17 14:03:21,601] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[ERROR] - [2017-07-17 14:03:21,640] - [akka.dispatch.TaskInvocation] key not found: rebookingOpportunity
+java.util.NoSuchElementException: key not found: rebookingOpportunity
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.TestSetup$class.extractedResponseForRebookedTrip(TestSetup.scala:193)
+	at com.freebird.stresstest.getScenarioBuilder$.extractedResponseForRebookedTrip(getScenarioBuilder.scala:8)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:117)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:116)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)

@@ -1,0 +1,5 @@
+RUN	com.freebird.stresstest.Authenticate		authenticate	1500271223389	 	2.0
+USER	***************Purchase  Outbound Trip****************	1	START	1500271225512	1500271225512
+REQUEST	***************Purchase  Outbound Trip****************	1		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271225577	1500271226291	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	1		PURCHASE A TRIP FOR QUOTED PRICE.	1500271231313	1500271232440	OK	 
+USER	***************Purchase  Outbound Trip****************	1	END	1500271225512	1500271232525

@@ -1,0 +1,4 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/knoldus/hub.celenox/platform-gatling/util/src/main/resources/logback-test.xml,/home/knoldus/hub.celenox/platform-gatling/util/target/scala-2.11/classes/logback-test.xml)[0m
+[0m[[0mdebug[0m] [0m	(/home/knoldus/hub.celenox/platform-gatling/util/src/main/resources/application.conf,/home/knoldus/hub.celenox/platform-gatling/util/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/knoldus/hub.celenox/platform-gatling/util/src/main/resources/logback.xml,/home/knoldus/hub.celenox/platform-gatling/util/target/scala-2.11/classes/logback.xml)[0m

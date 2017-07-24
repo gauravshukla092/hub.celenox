@@ -1,0 +1,27 @@
+RUN	com.freebird.stresstest.Authenticate		authenticate	1500271631521	 	2.0
+USER	***************Purchase  Outbound Trip****************	1	START	1500271632871	1500271632871
+USER	***************Purchase  Outbound Trip****************	2	START	1500271632887	1500271632887
+USER	***************Purchase  Outbound Trip****************	3	START	1500271632887	1500271632887
+USER	***************Purchase  Outbound Trip****************	4	START	1500271632887	1500271632887
+USER	***************Purchase  Outbound Trip****************	5	START	1500271632887	1500271632887
+USER	***************Purchase  Outbound Trip****************	6	START	1500271632888	1500271632888
+USER	***************Purchase  Outbound Trip****************	7	START	1500271632888	1500271632888
+USER	***************Purchase  Outbound Trip****************	8	START	1500271632889	1500271632889
+USER	***************Purchase  Outbound Trip****************	9	START	1500271632889	1500271632889
+USER	***************Purchase  Outbound Trip****************	10	START	1500271632889	1500271632889
+USER	***************Purchase  Outbound Trip****************	11	START	1500271632889	1500271632889
+USER	***************Purchase  Outbound Trip****************	12	START	1500271632889	1500271632889
+USER	***************Purchase  Outbound Trip****************	13	START	1500271632889	1500271632889
+USER	***************Purchase  Outbound Trip****************	14	START	1500271632889	1500271632889
+USER	***************Purchase  Outbound Trip****************	15	START	1500271632889	1500271632889
+USER	***************Purchase  Outbound Trip****************	16	START	1500271632889	1500271632889
+USER	***************Purchase  Outbound Trip****************	17	START	1500271632890	1500271632890
+USER	***************Purchase  Outbound Trip****************	18	START	1500271632890	1500271632890
+USER	***************Purchase  Outbound Trip****************	19	START	1500271632890	1500271632890
+USER	***************Purchase  Outbound Trip****************	20	START	1500271632890	1500271632890
+USER	***************Purchase  Outbound Trip****************	21	START	1500271632890	1500271632890
+USER	***************Purchase  Outbound Trip****************	22	START	1500271632890	1500271632890
+USER	***************Purchase  Outbound Trip****************	23	START	1500271632890	1500271632890
+USER	***************Purchase  Outbound Trip****************	24	START	1500271632890	1500271632890
+USER	***************Purchase  Outbound Trip****************	25	START	1500271632890	1500271632890
+GROUP	Failed to build request QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.: No attribute named 'airline_code' is defined 	1500271633704

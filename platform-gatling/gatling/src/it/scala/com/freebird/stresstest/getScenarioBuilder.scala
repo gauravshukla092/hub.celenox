@@ -11,16 +11,14 @@ object getScenarioBuilder extends TestSetup {
 
   val flightFeeder = csv(Requests.flight).circular
 
+  val tripIdFeeder = csv(Requests.purchaseRequests).circular
+  //  val jdbcFileFeeder = jdbcFeeder("jdbc:postgresql://fp1fy7mh5nqwaso.cfapp5cxcqxb.us-west-2.rds.amazonaws.com", "staging4DBUX3GsPa59y",  "passyXWsuarrzfZhf6", "select access_token from users where user_name = 'support+knoldussoftwarellp@getfreebird.com'")
 
-  val tripIdFeeder = csv("test.csv").circular
-  val jdbcFileFeeder = jdbcFeeder("jdbc:postgresql://fp1fy7mh5nqwaso.cfapp5cxcqxb.us-west-2.rds.amazonaws.com", "staging4DBUX3GsPa59y",  "passyXWsuarrzfZhf6", "select access_token from users where user_name = 'support+knoldussoftwarellp@getfreebird.com'")
 
-
- def authenticate : ScenarioBuilder =
-   scenario("fetch accesstoken from RDBMS")
-      .feed(jdbcFileFeeder)
-    .exec(Scenario.authorizationRequestBuilder)
-
+  def authenticate: ScenarioBuilder =
+    scenario("fetch accesstoken from RDBMS")
+      //      .feed(jdbcFileFeeder)
+      .exec(Scenario.authorizationRequestBuilder)
 
 
   def quotePriceWithSingleSegment: ScenarioBuilder =
@@ -84,9 +82,9 @@ object getScenarioBuilder extends TestSetup {
   def tripInfo: ScenarioBuilder =
     scenario("GET TRIP INFO")
       .feed(tripIdFeeder)
-      .exec(Scenario.getTripInfo).pause(15)
+      .exec(Scenario.getTripInfo).pause(10)
       .exec(tripInfo => {
-        extractedResponseForRebookedTrip(tripInfo)
+//        extractedResponseForTripInfo(tripInfo)
         tripInfo
       })
 
@@ -109,12 +107,14 @@ object getScenarioBuilder extends TestSetup {
       .exec(Scenario.outboundTripPricingRequestBuilderForOneLeg)
       .exec(Scenario.purchaseRequestBuilder).pause(2)
       .exec(Scenario.getTripInfo).pause(5)
-      .exec(Scenario.disruptionRequestBuilder).pause(15)
+      .exec(Scenario.disruptionRequestBuilder).pause(180)
       .exec(Scenario.getRebookingOpportunity).pause(5)
       .exec(Scenario.getRebookingOptions).pause(5)
       .exec(Scenario.rebookingOptionSelectionBuilder)
       .exec(rebookingInfo => {
-        extractedResponseForRebookedTrip(rebookingInfo)
+        extractedResponseForTripInfo(rebookingInfo)
+        extractedRebookingOption(rebookingInfo)
+        extractedResponseForDirectedNearBy(rebookingInfo)
         rebookingInfo
       })
 
@@ -136,16 +136,25 @@ object getScenarioBuilder extends TestSetup {
 
   def searchTrip: ScenarioBuilder =
     scenario("SEARCH QUERY WITH DIFFERENT PARAMETERS")
-      .exec(Scenario.getTripSearchWithFirstName)
-      .exec(Scenario.getTripSearchWithLastName)
-      .exec(Scenario.getTripSearchWithEmail)
-      .exec(Scenario.getTripSearchWithPhone)
-      .exec(Scenario.getTripSearchWithDepartureLocal)
-      .exec(Scenario.getTripSearchWithUTCDepartureDate)
-      .exec(Scenario.getTripSearchWithPartnerName)
-      .exec(Scenario.getTripSearchWithConfirmationNumber)
-      .exec(Scenario.getTripSearchWithPurchaseDate)
+      //      .exec(Scenario.getTripSearchWithFirstName)
       .exec(Scenario.searchWithMultipleParameters)
+      .exec(tripId => {
+        val tripIdentifier = tripId("tripId").as[List[String]].mkString("\n")
+        logger.info(s"**********************************************${tripIdentifier}")
+        Requests.purchaseWrite(tripIdentifier)
+        tripId
+      }).pause(5)
+
+
+  /* .exec(Scenario.getTripSearchWithLastName)
+   .exec(Scenario.getTripSearchWithEmail)
+   .exec(Scenario.getTripSearchWithPhone)
+   .exec(Scenario.getTripSearchWithDepartureLocal)
+   .exec(Scenario.getTripSearchWithUTCDepartureDate)
+   .exec(Scenario.getTripSearchWithPartnerName)
+   .exec(Scenario.getTripSearchWithConfirmationNumber)
+   .exec(Scenario.getTripSearchWithPurchaseDate)
+   */
 
 
   def createMyPartner: ScenarioBuilder =

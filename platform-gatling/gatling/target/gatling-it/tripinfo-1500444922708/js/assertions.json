@@ -1,0 +1,10 @@
+{
+  "simulation": "com.freebird.stresstest.TripInfo",
+  "simulationId": "tripinfo",
+  "start": 1500444922708,
+  "description": "",
+  "scenarios": ["GET TRIP INFO"],
+  "assertions": [
+
+  ]
+}

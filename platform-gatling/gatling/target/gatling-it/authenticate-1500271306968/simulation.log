@@ -1,0 +1,21 @@
+RUN	com.freebird.stresstest.Authenticate		authenticate	1500271306968	 	2.0
+USER	***************Purchase  Outbound Trip****************	1	START	1500271308196	1500271308196
+USER	***************Purchase  Outbound Trip****************	2	START	1500271308206	1500271308206
+USER	***************Purchase  Outbound Trip****************	3	START	1500271308207	1500271308207
+USER	***************Purchase  Outbound Trip****************	4	START	1500271308207	1500271308207
+USER	***************Purchase  Outbound Trip****************	5	START	1500271308207	1500271308207
+REQUEST	***************Purchase  Outbound Trip****************	4		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271308267	1500271309035	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	1		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271308256	1500271309002	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	5		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271308269	1500271308999	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	3		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271308266	1500271309002	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	2		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271308265	1500271309023	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	5		PURCHASE A TRIP FOR QUOTED PRICE.	1500271314024	1500271316424	OK	 
+USER	***************Purchase  Outbound Trip****************	5	END	1500271308207	1500271316431
+REQUEST	***************Purchase  Outbound Trip****************	2		PURCHASE A TRIP FOR QUOTED PRICE.	1500271314041	1500271316790	OK	 
+USER	***************Purchase  Outbound Trip****************	2	END	1500271308206	1500271316792
+REQUEST	***************Purchase  Outbound Trip****************	1		PURCHASE A TRIP FOR QUOTED PRICE.	1500271314031	1500271316907	OK	 
+USER	***************Purchase  Outbound Trip****************	1	END	1500271308196	1500271316909
+REQUEST	***************Purchase  Outbound Trip****************	4		PURCHASE A TRIP FOR QUOTED PRICE.	1500271314062	1500271317078	OK	 
+USER	***************Purchase  Outbound Trip****************	4	END	1500271308207	1500271317079
+REQUEST	***************Purchase  Outbound Trip****************	3		PURCHASE A TRIP FOR QUOTED PRICE.	1500271314031	1500271317123	OK	 
+USER	***************Purchase  Outbound Trip****************	3	END	1500271308207	1500271317124

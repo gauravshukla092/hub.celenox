@@ -1,0 +1,131 @@
+[WARN] - [2017-07-13 16:51:56,170] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: status.find.is(200), but actually found 503
+[ERROR] - [2017-07-13 16:51:56,179] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-12' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-13 16:51:58,120] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-10' failed to execute: No attribute named 'tripId' is defined
+[WARN] - [2017-07-13 16:56:43,082] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: status.find.is(200), but actually found 503
+[ERROR] - [2017-07-13 16:56:43,088] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-12' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-13 16:56:45,074] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-10' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-13 16:56:50,071] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-8' failed to execute: No attribute named 'legId' is defined
+[ERROR] - [2017-07-13 16:57:05,071] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-13 16:57:10,072] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'rebookingOpportunity' is defined
+[ERROR] - [2017-07-13 16:57:15,072] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'optionId' is defined
+[ERROR] - [2017-07-13 16:57:15,072] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-13 16:57:15,076] - [akka.dispatch.TaskInvocation] key not found: tripId
+java.util.NoSuchElementException: key not found: tripId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.TestSetup$class.extractedResponseForRebookedTrip(TestSetup.scala:177)
+	at com.freebird.stresstest.getScenarioBuilder$.extractedResponseForRebookedTrip(getScenarioBuilder.scala:8)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:117)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:116)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[WARN] - [2017-07-13 17:01:30,250] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: status.find.is(200), but actually found 503
+[ERROR] - [2017-07-13 17:01:30,259] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-12' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-13 17:01:32,240] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-10' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-13 17:01:37,238] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-8' failed to execute: No attribute named 'legId' is defined
+[ERROR] - [2017-07-13 17:01:52,247] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-13 17:01:57,248] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'rebookingOpportunity' is defined
+[ERROR] - [2017-07-13 17:02:02,248] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'optionId' is defined
+[ERROR] - [2017-07-13 17:02:02,248] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-13 17:02:02,252] - [akka.dispatch.TaskInvocation] key not found: tripId
+java.util.NoSuchElementException: key not found: tripId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.TestSetup$class.extractedResponseForRebookedTrip(TestSetup.scala:177)
+	at com.freebird.stresstest.getScenarioBuilder$.extractedResponseForRebookedTrip(getScenarioBuilder.scala:8)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:117)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:116)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[WARN] - [2017-07-13 17:25:26,338] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: status.find.is(200), but actually found 503
+[ERROR] - [2017-07-13 17:25:26,368] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-12' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-13 17:25:28,277] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-10' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-13 17:25:33,284] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-8' failed to execute: No attribute named 'legId' is defined
+[ERROR] - [2017-07-13 17:25:48,285] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-13 17:25:53,284] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'rebookingOpportunity' is defined
+[ERROR] - [2017-07-13 17:25:58,285] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'optionId' is defined
+[ERROR] - [2017-07-13 17:25:58,286] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-13 17:25:58,289] - [akka.dispatch.TaskInvocation] key not found: tripId
+java.util.NoSuchElementException: key not found: tripId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.TestSetup$class.extractedResponseForRebookedTrip(TestSetup.scala:177)
+	at com.freebird.stresstest.getScenarioBuilder$.extractedResponseForRebookedTrip(getScenarioBuilder.scala:8)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:117)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:116)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[WARN] - [2017-07-13 17:46:17,898] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: status.find.is(200), but actually found 503
+[ERROR] - [2017-07-13 17:46:17,929] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-12' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-13 17:46:19,886] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-10' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-13 17:46:24,883] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-8' failed to execute: No attribute named 'legId' is defined
+[ERROR] - [2017-07-13 17:46:39,893] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-13 17:46:44,893] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'rebookingOpportunity' is defined
+[ERROR] - [2017-07-13 17:46:49,893] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'optionId' is defined
+[ERROR] - [2017-07-13 17:46:49,894] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-13 17:46:49,931] - [akka.dispatch.TaskInvocation] key not found: tripId
+java.util.NoSuchElementException: key not found: tripId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.TestSetup$class.extractedResponseForRebookedTrip(TestSetup.scala:177)
+	at com.freebird.stresstest.getScenarioBuilder$.extractedResponseForRebookedTrip(getScenarioBuilder.scala:8)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:117)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:116)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)

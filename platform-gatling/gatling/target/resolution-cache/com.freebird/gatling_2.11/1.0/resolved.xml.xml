@@ -4,7 +4,7 @@
 		module="gatling_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20170711152115"
+		publication="20170719123654"
 	>
 		<description>
 		gatling
@@ -52,5 +52,11 @@
 		<dependency org="io.gatling" name="gatling-test-framework" rev="2.2.5" conf="it->default(compile)"/>
 		<dependency org="org.mockito" name="mockito-core" rev="1.10.19" conf="it->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-http_2.11" rev="10.0.4" conf="it->default(compile)"/>
+		<dependency org="org.json4s" name="json4s-native_2.11" rev="3.5.0" conf="it->default(compile)">
+			<exclude org="joda-time" module="joda-time" name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-ext_2.11" rev="3.5.0" conf="it->default(compile)">
+			<exclude org="joda-time" module="joda-time" name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
 	</dependencies>
 </ivy-module>

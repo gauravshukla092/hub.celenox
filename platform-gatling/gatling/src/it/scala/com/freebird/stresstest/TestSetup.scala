@@ -1,18 +1,57 @@
 package com.freebird.stresstest
 
-
 import com.freebird.util.logger.FreebirdLogger
 import io.gatling.http.Predef._
 import io.gatling.core.Predef._
+
 
 trait TestSetup extends FreebirdLogger {
 
   import com.freebird.util.config.ConfigManager._
 
-  def prodBaseUrlBuilder =  http.baseURL(prod.apiUrl)
+  case class UAT(
+                  apiUrl: String,
+                  apiUserName: String,
+                  apiPassword: String,
+                  partnerAPIHost: String,
+                  flightStats: String
+                )
+
+  case class Uri(
+                  authenticateUri: String,
+                  pricingUri: String,
+                  purchaseUri: String,
+                  userUri: String,
+                  rebookingOppUri: String,
+                  rebookingSelectionUri: String,
+                  tripInfoUri: String,
+                  createPartnerUri: String,
+                  viewPartnerUri: String,
+                  updatePartnerUri: String,
+                  manualDisruptionUri: String,
+                  adminSearchUri: String
+                )
+
+
+  val getEnv = System.getenv("APP_ENV")
+  val commonHeader = Map(
+    "content-Type" -> """application/json""",
+    "Accept" -> """[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]""",
+    "User-Agent" -> """[Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:16.0) Gecko/20100101 Firefox/16.0]""",
+    "Accept-Language" -> """[en-US,en;q=0.5]""",
+    "Accept-Encoding" -> """[gzip, deflate]"""
+  )
+
+  def prodBaseUrlBuilder = http.baseURL(prod.apiUrl)
+
   def stgBaseUrlBuilder = http.baseURL(stg.apiUrl)
+
   def baseUrlBuilder = http.baseURL(ENV.apiUrl)
+    .headers(commonHeader)
+    .check(status.is(200))
+
   def baseUrl = http.baseURL(stg.flightStats)
+
   def partnerServiceBaseUrlBuilder = http.baseURL(ENV.partnerAPIHost)
 
   val CONTENT_TYPE = "Content-Type"
@@ -21,40 +60,22 @@ trait TestSetup extends FreebirdLogger {
   val OK = 200
   val FLIGHT_STATS_SCHEDULE = "http://52.32.106.42:9191/"
 
-  case class UAT (
-                   apiUrl : String,
-                   apiUserName : String,
-                   apiPassword :String,
-                   partnerAPIHost : String,
-                   flightStats: String
-                 )
+  val ENV = UAT({
+    config.getString("env.uat")}, {config.getString("userName")}, {config.getString("UATpassword")},
+    {config.getString("env.partnerhostuat")}, {config.getString("env.flightStatsScheduleUAT")})
 
-  case class Uri (
-                   authenticateUri : String,
-                   pricingUri: String,
-                   purchaseUri : String,
-                   userUri : String,
-                   rebookingOppUri : String,
-                   rebookingSelectionUri : String,
-                   tripInfoUri : String,
-                   createPartnerUri : String,
-                   viewPartnerUri : String,
-                   updatePartnerUri : String,
-                   manualDisruptionUri: String,
-                   adminSearchUri : String
-                 )
+  val prod = UAT({config.getString("env.prod")}, {config.getString("userName")}, {config.getString("PRODpassword")},
+    {config.getString("env.partnerhostprod")}, {config.getString("env.flightStatsSchedulePROD")})
 
-  val ENV = UAT({config.getString("env.uat")}, {config.getString("userName")}, {config.getString("UATpassword")}, {config.getString("env.partnerhostuat")}, {config.getString("env.flightStatsScheduleUAT")})
-  val prod = UAT({config.getString("env.prod")}, {config.getString("userName")}, {config.getString("PRODpassword")}, {config.getString("env.partnerhostprod")}, {config.getString("env.flightStatsSchedulePROD")})
-  val stg = UAT({config.getString("env.stg")}, {config.getString("userName")}, {config.getString("STGpassword")}, {config.getString("env.partnerhoststg")}, {config.getString("env.flightStatsScheduleSTG")})
+  val stg = UAT({config.getString("env.stg")}, {config.getString("userName")}, {config.getString("STGpassword")},
+    {config.getString("env.partnerhoststg")}, {config.getString("env.flightStatsScheduleSTG")})
 
-  val route = Uri(
-    {config.getString("url.authenticate")}, {config.getString("url.pricing")}, {config.getString("url.purchase")}, {config.getString("url.createUser")},
-    {config.getString("url.rebooking_Opp")}, {config.getString("url.rebooking_selection")}, {config.getString("url.tripInfo")}, {config.getString("url.createPartner")},
-    {config.getString("url.getPartner")}, {config.getString("url.createPartner")}, {config.getString("url.manual_Disruption")},{config.getString("url.admin_search")}
-  )
+  val route = Uri({config.getString("url.authenticate")}, {config.getString("url.pricing")}, {config.getString("url.purchase")},
+    {config.getString("url.createUser")}, {config.getString("url.rebooking_Opp")}, {config.getString("url.rebooking_selection")},
+    {config.getString("url.tripInfo")}, {config.getString("url.createPartner")}, {config.getString("url.getPartner")},
+    {config.getString("url.createPartner")}, {config.getString("url.manual_Disruption")}, {config.getString("url.admin_search")})
 
-  val nearByBWI= List("BWI", "DCA", "IAD").sortWith(_ < _).mkString(",")
+  val nearByBWI = List("BWI", "DCA", "IAD").sortWith(_ < _).mkString(",")
   val nearByEWR = List("EWR", "JFK", "LGA").sortWith(_ < _).mkString(",")
   val nearBySJC = List("SJC", "OAK", "SFO").sortWith(_ < _).mkString(",")
   val nearByORD = List("MDW", "ORD").sortWith(_ < _).mkString(",")
@@ -108,7 +129,7 @@ trait TestSetup extends FreebirdLogger {
     }
   }
 
-  def verifyRebookingOptionsOrigin(tripOrigin: String, nonStopOrigin: String, oneStopOrigin: String){
+  def verifyRebookingOptionsOrigin(tripOrigin: String, nonStopOrigin: String, oneStopOrigin: String) {
     try {
       val expectedRebookingOptionsOrigin = nearByAirports(tripOrigin)
 
@@ -131,7 +152,7 @@ trait TestSetup extends FreebirdLogger {
     }
   }
 
-  def verifyRebookingOptionsDestination(tripDestination: String, nonStopDestination: String, oneStopDestination: String){
+  def verifyRebookingOptionsDestination(tripDestination: String, nonStopDestination: String, oneStopDestination: String) {
     try {
       val expectedRebookingOptionsDestination = nearByAirports(tripDestination)
 
@@ -159,41 +180,75 @@ trait TestSetup extends FreebirdLogger {
   def extractedResponseForDirectedNearBy(rebookingInfo: Session) {
     val tripId = rebookingInfo("tripId").as[String]
     val rebookingOpp = rebookingInfo("rebookingOpportunity").as[String]
-    val purchaseTripOrigin = rebookingInfo("Original_Departure_Airport").as[String]
-    val purchaseTripDestination = rebookingInfo("Original_Arrival_Airport").as[String]
-    logger.info(s"Disrupted segment trip info: TripId -> ${tripId}\t, RebookingOpportunity -> ${rebookingOpp}\t, TripOrigin -> ${purchaseTripOrigin}\t, TripDestination ->${purchaseTripDestination}")
-    val nonStopOptionsOrigin = rebookingInfo("Non_stop_options_origins").as[List[String]].distinct.sortWith(_ < _).mkString(",")
-    val nonStopOptionsDestination = rebookingInfo("Non_stop_options_destination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
-    val oneStopFirstSegmentOrigin = rebookingInfo("one_stop_first_leg_origin").as[List[String]].distinct.sortWith(_ < _).mkString(",")
-    val oneStopFirstSegmentDestination = rebookingInfo("one_stop_first_leg_destination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
-    val oneStopSecondSegmentOrigin = rebookingInfo("one_stop_second_leg_origin").as[List[String]].distinct.sortWith(_ < _).mkString(",")
-    val oneStopSecondSegmentDestination = rebookingInfo("one_stop_second_leg_destination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
-    verifyNearBy(purchaseTripOrigin, purchaseTripDestination)
-    verifyRebookingOptionsOrigin(purchaseTripOrigin, nonStopOptionsOrigin, oneStopFirstSegmentOrigin)
-    verifyRebookingOptionsDestination(purchaseTripDestination, nonStopOptionsDestination, oneStopSecondSegmentDestination)
+    val origin = rebookingInfo("origin").as[String]
+    val destination = rebookingInfo("destination").as[String]
+    val sameDayOptionOrigin = rebookingInfo("sameDayNonStopOptionOrigin").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+    val sameDayOptionDestination = rebookingInfo("sameDayNonStopOptionDestination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+    val sameDayOneStopOptionOrigin = rebookingInfo("SameDayOneStopOrigin").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+    val sameDayOneStopOptionDestination = rebookingInfo("SameDayOneStopDestination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+    /*val sameDayOneStopOptionSecondLegOrigin = rebookingOption("sameDayOneStopSecondLegOrigin").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+    val sameDayOneStopOptionSecondLegDestination = rebookingOption("sameDayOneStopSecondLegDestination").as[List[String]].distinct.sortWith(_ < _).mkString(",")*/
+    verifyNearBy(origin,destination)
+    verifyRebookingOptionsOrigin(origin, sameDayOptionOrigin, sameDayOneStopOptionOrigin)
+    verifyRebookingOptionsDestination(destination, sameDayOptionDestination, sameDayOneStopOptionDestination)
   }
 
-  def extractedResponseForRebookedTrip(rebookingInfo: Session){
-    val tripId = rebookingInfo("tripId").as[String]
-    val rebookingOpp = rebookingInfo("rebookingOpportunity").as[String]
-    val purchaseTripOrigin = rebookingInfo("Original_Departure_Airport").as[String]
-    val purchaseTripDestination = rebookingInfo("Original_Arrival_Airport").as[String]
-    logger.info(s"Disrupted segment trip info: ${tripId}, ${rebookingOpp}, ${purchaseTripOrigin}, ${purchaseTripDestination}")
-    val nonStopOptionsOrigin = rebookingInfo("Non_stop_options_origins").as[List[String]].distinct.sortWith(_ < _).mkString(",")
-    val nonStopOptionsDestination = rebookingInfo("Non_stop_options_destination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
-    val oneStopFirstSegmentOrigin = rebookingInfo("one_stop_first_leg_origin").as[List[String]].distinct.sortWith(_ < _).mkString(",")
-    val oneStopFirstSegmentDestination = rebookingInfo("one_stop_first_leg_destination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
-    val oneStopSecondSegmentOrigin = rebookingInfo("one_stop_second_leg_origin").as[List[String]].distinct.sortWith(_ < _).mkString(",")
-    val oneStopSecondSegmentDestination = rebookingInfo("one_stop_second_leg_destination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
-  }
 
-  def extractedPricingInfo(priceForTrip: Session): Unit ={
+  def extractedPricingInfo(priceForTrip: Session): Unit = {
     val priceId = priceForTrip("priceRequestId").as[String]
     val tripId = priceForTrip("tripId").as[String]
     logger.info(s"Extracted Response attribute: ${priceId}, ${tripId}")
   }
 
 
+  def extractedResponseForTripInfo(tripInfo: Session) = {
+    val tripId = tripInfo("tripId").as[String]
+    val status = tripInfo("status").as[String]
+    val legId = tripInfo("legId").as[String]
+    val airline = tripInfo("airlineCode").as[String]
+    val flightNumber = tripInfo("flightNumber").as[String]
+    val origin = tripInfo("origin").as[String]
+    val destination = tripInfo("destination").as[String]
+    val arrival = tripInfo("itineraryArrival").as[String]
+    val departure = tripInfo("itineraryDeparture").as[String]
+    val arrivalLocal = tripInfo("itineraryArrivalLocal").as[String]
+    val departureLocal = tripInfo("itineraryDepartureLocal").as[String]
+    val rebookingOpportunity = tripInfo("rebookingOpportunity").asOption[String]
+    val partner = tripInfo("partner").as[String]
+    logger.info(s"tripId -> ${tripId},\n status -> ${status}, \n LegId -> ${legId},\n airline -> ${airline},\n flightNumber -> ${flightNumber},\n origin -> ${origin},\n destination -> ${destination},\n arrival -> ${arrival},\n departure -> ${departure},\n arrivalLocal -> ${arrivalLocal},\n departureLocal -> ${departureLocal},\n rebookingOpportunity -> ${rebookingOpportunity},\n partnerName -> ${partner}")
+    verifyNearBy(origin, destination)
+  }
 
+  def extractedRebookingOption(rebookingOption: Session) = {
+    val origin = rebookingOption("origin").as[String]
+    val destination = rebookingOption("destination").as[String]
+    val sameDayOptionOrigin = rebookingOption("sameDayNonStopOptionOrigin").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+    val sameDayOptionDestination = rebookingOption("sameDayNonStopOptionDestination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+    val sameDayOneStopOptionOrigin = rebookingOption("SameDayOneStopOrigin").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+    val sameDayOneStopOptionDestination = rebookingOption("SameDayOneStopDestination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+    val sameDayOneStopOptionSecondLegOrigin = rebookingOption("sameDayOneStopSecondLegOrigin").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+    val sameDayOneStopOptionSecondLegDestination = rebookingOption("sameDayOneStopSecondLegDestination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+    if (sameDayOneStopOptionDestination != sameDayOneStopOptionSecondLegOrigin) {
+      logger.info(s"Origin -> ${origin},\n destination -> ${destination}, \n sameDayOptionOrigin -> ${sameDayOptionOrigin},\n sameDayOptionDestination -> ${sameDayOptionDestination},\n sameDayOneStopOptionOrigin -> ${sameDayOneStopOptionOrigin},\n sameDayOneStopOptionDestination -> ${sameDayOneStopOptionDestination},\n sameDayOneStopOptionSecondLegOrigin -> ${sameDayOneStopOptionSecondLegOrigin},\n sameDayOneStopOptionSecondLegDestination -> ${sameDayOneStopOptionSecondLegDestination}")
+    }else{
+      logger.info(s"Origin -> ${origin},\n destination -> ${destination}, \n sameDayOptionOrigin -> ${sameDayOptionOrigin},\n sameDayOptionDestination -> ${sameDayOptionDestination},\n sameDayOneStopOptionOrigin -> ${sameDayOneStopOptionOrigin},\n sameDayOneStopOptionSecondLegOrigin -> ${sameDayOneStopOptionSecondLegOrigin},\n sameDayOneStopOptionSecondLegDestination -> ${sameDayOneStopOptionSecondLegDestination}")
+    }
+
+
+    def extractedResponseForRebookedTrip(rebookingInfo: Session) {
+      val tripId = rebookingInfo("tripId").as[String]
+      val rebookingOpp = rebookingInfo("rebookingOpportunity").asOption[String]
+      val purchaseTripOrigin = rebookingInfo("Original_Departure_Airport").as[String]
+      val purchaseTripDestination = rebookingInfo("Original_Arrival_Airport").as[String]
+      logger.info(s"Disrupted segment trip info: ${tripId}, ${rebookingOpp}, ${purchaseTripOrigin}, ${purchaseTripDestination}")
+      val nonStopOptionsOrigin = rebookingInfo("Non_stop_options_origins").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+      val nonStopOptionsDestination = rebookingInfo("Non_stop_options_destination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+      val oneStopFirstSegmentOrigin = rebookingInfo("one_stop_first_leg_origin").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+      val oneStopFirstSegmentDestination = rebookingInfo("one_stop_first_leg_destination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+      val oneStopSecondSegmentOrigin = rebookingInfo("one_stop_second_leg_origin").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+      val oneStopSecondSegmentDestination = rebookingInfo("one_stop_second_leg_destination").as[List[String]].distinct.sortWith(_ < _).mkString(",")
+    }
+
+  }
 
 }

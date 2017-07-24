@@ -6,7 +6,7 @@ import io.gatling.http.request.builder.HttpRequestBuilder
 
 object Scenario extends TestSetup {
 
-  val authorizationRequestBuilder: HttpRequestBuilder = http("authenticate User")
+  val authorizationRequestBuilder: HttpRequestBuilder = http("AUTHENTICATE USER")
     .get(route.authenticateUri).basicAuth("accessToken", "access_token")
     .check(status.is(200))
     .check(jsonPath("$..message").saveAs("accessToken"))
@@ -76,7 +76,9 @@ object Scenario extends TestSetup {
   val getTripInfo: HttpRequestBuilder = http("FETCH TRIP INFO OF MY PURCHASED TRIP.")
     .get(route.tripInfoUri).basicAuth(ENV.apiUserName, ENV.apiPassword)
     .check(status.is(200))
+    .check(jsonPath("$.data.tripID").saveAs("tripId"))
     .check(jsonPath("$.data.status").saveAs("status"))
+    .check(jsonPath("$.data.partner.partnerName").saveAs("partner"))
     .check(jsonPath("$.data.travelers[*].firstName").findAll.saveAs("firstName"))
     .check(jsonPath("$.data.travelers[*].lastName").findAll.saveAs("lastName"))
     .check(jsonPath("$.data.travelers[*].phone").findAll.saveAs("phone"))
@@ -90,7 +92,6 @@ object Scenario extends TestSetup {
     .check(jsonPath("$.data.itinerary[*].segments[*].legs[*].departure").saveAs("itineraryDeparture"))
     .check(jsonPath("$.data.itinerary[*].segments[*].legs[*].arrivalLocal").saveAs("itineraryArrivalLocal"))
     .check(jsonPath("$.data.itinerary[*].segments[*].legs[*].departureLocal").saveAs("itineraryDepartureLocal"))
-    .check(jsonPath("$.data.partner.partnerName").saveAs("partner"))
 
   val getRebookingOpportunity: HttpRequestBuilder = http("FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.")
     .get(route.tripInfoUri).basicAuth(ENV.apiUserName, ENV.apiPassword)
@@ -99,11 +100,14 @@ object Scenario extends TestSetup {
 
   val getRebookingOptions: HttpRequestBuilder = http("FETCH THE AVAILABLE REBOOKING OPTIONS FOR MY TRIP.")
     .get(route.rebookingOppUri).basicAuth(ENV.apiUserName, ENV.apiPassword)
-    .check(status.is(200))
-    .check(jsonPath("$.data.origin").saveAs("Original_Departure_Airport"), jsonPath("$.data.destination").saveAs("Original_Arrival_Airport"))
-    .check(jsonPath("$.data.sameDay.nonStop.slices[*].segments[*].legs[*].origin").findAll.saveAs("Non_stop_options_origins"), jsonPath("$.data.sameDay.nonStop.slices[*].segments[*].legs[*].destination").findAll.saveAs("Non_stop_options_destination"))
-    .check(jsonPath("$.data.sameDay.oneStop.slices[*].segments[0].legs[*].origin").findAll.saveAs("one_stop_first_leg_origin"), jsonPath("$.data.sameDay.oneStop.slices[*].segments[0].legs[*].destination").findAll.saveAs("one_stop_first_leg_destination"))
-    .check(jsonPath("$.data.sameDay.oneStop.slices[*].segments[1].legs[*].origin").findAll.saveAs("one_stop_second_leg_origin"), jsonPath("$.data.sameDay.oneStop.slices[*].segments[1].legs[*].destination").findAll.saveAs("one_stop_second_leg_destination"))
+    .check(jsonPath("$.data.origin").saveAs("trip_origin"))
+    .check(jsonPath("$.data.destination").saveAs("trip_destination"))
+    .check(jsonPath("$.data.sameDay.nonStop.slices[*].segments[*].legs[*].origin").findAll.saveAs("sameDayNonStopOptionOrigin"))
+    .check(jsonPath("$.data.sameDay.nonStop.slices[*].segments[*].legs[*].destination").findAll.saveAs("sameDayNonStopOptionDestination"))
+    .check(jsonPath("$.data.sameDay.oneStop.slices[*].segments[0].legs[*].origin").findAll.saveAs("SameDayOneStopOrigin"))
+    .check(jsonPath("$.data.sameDay.oneStop.slices[*].segments[0].legs[*].destination").findAll.saveAs("SameDayOneStopDestination"))
+    .check(jsonPath("$.data.sameDay.oneStop.slices[*].segments[1].legs[*].origin").findAll.saveAs("sameDayOneStopSecondLegOrigin"))
+    .check(jsonPath("$.data.sameDay.oneStop.slices[*].segments[1].legs[*].destination").findAll.saveAs("sameDayOneStopSecondLegDestination"))
     .check(jsonPath("$..id").saveAs("optionId"))
 
   val rebookingOptionSelectionBuilder: HttpRequestBuilder = http("SELECT A OPTION FROM AVAILABLE OPTIONS.")
@@ -143,17 +147,17 @@ object Scenario extends TestSetup {
     .check(status.is(200))
     .check(jsonPath("$..id").saveAs("partnerId"), jsonPath("$..companyName").saveAs("partnerName"))
 
-  val getTripSearchWithFirstName = http("Search Trip with traveller first name")
+  val getTripSearchWithFirstName: HttpRequestBuilder = http("Search Trip with traveller first name")
     .get(route.adminSearchUri).basicAuth(ENV.apiUserName, ENV.apiPassword)
-    .queryParam("firstName", "gaurav")
-    .check(status.is(200))
+    .queryParam("partnerName", "Knoldus Testing Partner")
+      .check(jsonPath("$.data[*].tripIdentifier").findAll.saveAs("tripId"))
 
-  val getTripSearchWithLastName = http("Search Trip with traveller Last name")
+  val getTripSearchWithLastName : HttpRequestBuilder= http("Search Trip with traveller Last name")
     .get(route.adminSearchUri).basicAuth(ENV.apiUserName, ENV.apiPassword)
     .queryParam("lastName", "Shukla")
     .check(status.is(200))
 
-  val getTripSearchWithEmail = http("Search Trip with traveller email address")
+  val getTripSearchWithEmail : HttpRequestBuilder = http("Search Trip with traveller email address")
     .get(route.adminSearchUri).basicAuth(ENV.apiUserName, ENV.apiPassword)
     .queryParam("email", "gaurav@knoldus.com")
     .check(status.is(200))
@@ -190,8 +194,9 @@ object Scenario extends TestSetup {
 
   val searchWithMultipleParameters = http("Search Trip with multiple query parameter")
     .get(route.adminSearchUri).basicAuth(ENV.apiUserName, ENV.apiPassword)
-    .queryParamMap(Map("firstName" -> "GAURAV", "lastName" -> "shukla", "email" -> "gaurav@knoldus.com"))
-    .check(status.is(200))
+    .queryParamMap(Map("partnerName" -> "knoldus Testing Partner", "purchaseDate" -> "2017-07-05", "email" -> "celenoxindia@gmail.com"))
+    .check(jsonPath("$.data[*].tripIdentifier").findAll.saveAs("tripId"))
+
 
 
 }

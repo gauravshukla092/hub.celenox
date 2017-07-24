@@ -1,0 +1,707 @@
+[WARN] - [2017-07-18 11:01:04,867] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: status.find.is(200), but actually found 404
+[ERROR] - [2017-07-18 11:01:04,946] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-12' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-18 11:01:06,783] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-10' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 11:01:11,791] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-8' failed to execute: No attribute named 'legId' is defined
+[ERROR] - [2017-07-18 11:01:26,790] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 11:01:31,790] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'rebookingOpportunity' is defined
+[ERROR] - [2017-07-18 11:01:36,791] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'optionId' is defined
+[ERROR] - [2017-07-18 11:01:36,791] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 11:01:36,795] - [akka.dispatch.TaskInvocation] key not found: tripId
+java.util.NoSuchElementException: key not found: tripId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.TestSetup$class.extractedResponseForRebookedTrip(TestSetup.scala:204)
+	at com.freebird.stresstest.getScenarioBuilder$.extractedResponseForRebookedTrip(getScenarioBuilder.scala:8)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:117)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:116)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[WARN] - [2017-07-18 11:02:32,814] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[ERROR] - [2017-07-18 11:02:37,801] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'rebookingOpportunity' is defined
+[ERROR] - [2017-07-18 11:02:42,809] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'optionId' is defined
+[ERROR] - [2017-07-18 11:02:42,810] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[ERROR] - [2017-07-18 11:02:42,814] - [akka.dispatch.TaskInvocation] key not found: rebookingOpportunity
+java.util.NoSuchElementException: key not found: rebookingOpportunity
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.TestSetup$class.extractedResponseForRebookedTrip(TestSetup.scala:205)
+	at com.freebird.stresstest.getScenarioBuilder$.extractedResponseForRebookedTrip(getScenarioBuilder.scala:8)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:117)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:116)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[WARN] - [2017-07-18 11:45:16,167] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[ERROR] - [2017-07-18 11:45:21,147] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'rebookingOpportunity' is defined
+[ERROR] - [2017-07-18 11:45:26,156] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'optionId' is defined
+[ERROR] - [2017-07-18 11:45:26,156] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[ERROR] - [2017-07-18 11:45:26,161] - [akka.dispatch.TaskInvocation] key not found: rebookingOpportunity
+java.util.NoSuchElementException: key not found: rebookingOpportunity
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.TestSetup$class.extractedResponseForRebookedTrip(TestSetup.scala:205)
+	at com.freebird.stresstest.getScenarioBuilder$.extractedResponseForRebookedTrip(getScenarioBuilder.scala:8)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:117)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:116)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[WARN] - [2017-07-18 12:30:11,220] - [io.gatling.http.ahc.ResponseProcessor] Request 'Search Trip with traveller first name' failed: jsonPath($.data.tripIdentifier).findAll.exists, found nothing
+[ERROR] - [2017-07-18 12:30:11,243] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-1' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 12:32:17,776] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-1' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 12:44:58,923] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 12:44:58,927] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: tripIdentifier', forwarding to the next one
+[ERROR] - [2017-07-18 12:44:58,931] - [io.gatling.http.ahc.ResponseProcessor] ResponseProcessor crashed on session=Session(SEARCH QUERY WITH DIFFERENT PARAMETERS,1,Map(gatling.http.cache.dns -> io.gatling.http.resolver.ShuffleJdkNameResolver@12ce00d4),1500362097851,0,OK,List(),io.gatling.core.protocol.ProtocolComponentsRegistry$$Lambda$208/1669736026@7fc2a0e7) request=Search Trip with traveller first name: http://52.32.106.42:8181/v1/search/trip/info?partnerName=Knoldus%20Testing%20Partner	GET	headers:	Accept:[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]	content-Type:application/json	Accept-Language:[en-US,en;q=0.5]	Accept-Encoding:[gzip, deflate]	User-Agent:[Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:16.0) Gecko/20100101 Firefox/16.0] resourceFetcher=None redirectCount=0, forwarding user to the next action
+java.util.NoSuchElementException: key not found: tripIdentifier
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$searchTrip$1.apply(getScenarioBuilder.scala:141)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$searchTrip$1.apply(getScenarioBuilder.scala:140)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.http.ahc.ResponseProcessor.executeNext(ResponseProcessor.scala:152)
+	at io.gatling.http.ahc.ResponseProcessor.logAndExecuteNext(ResponseProcessor.scala:178)
+	at io.gatling.http.ahc.ResponseProcessor.checkAndProceed$1(ResponseProcessor.scala:301)
+	at io.gatling.http.ahc.ResponseProcessor.processResponse(ResponseProcessor.scala:331)
+	at io.gatling.http.ahc.ResponseProcessor.onCompleted(ResponseProcessor.scala:66)
+	at io.gatling.http.ahc.AsyncHandler.io$gatling$http$ahc$AsyncHandler$$$anonfun$1(AsyncHandler.scala:136)
+	at io.gatling.http.ahc.AsyncHandler.io$gatling$http$ahc$AsyncHandler$$$anonfun$1$adapted(AsyncHandler.scala:134)
+	at io.gatling.http.ahc.AsyncHandler.withResponse(AsyncHandler.scala:127)
+	at io.gatling.http.ahc.AsyncHandler.onCompleted(AsyncHandler.scala:134)
+	at io.gatling.http.ahc.AsyncHandler.onCompleted(AsyncHandler.scala:47)
+	at org.asynchttpclient.netty.NettyResponseFuture.getContent(NettyResponseFuture.java:189)
+	at org.asynchttpclient.netty.NettyResponseFuture.done(NettyResponseFuture.java:223)
+	at org.asynchttpclient.netty.handler.HttpHandler.finishUpdate(HttpHandler.java:58)
+	at org.asynchttpclient.netty.handler.HttpHandler.handleChunk(HttpHandler.java:159)
+	at org.asynchttpclient.netty.handler.HttpHandler.handleRead(HttpHandler.java:187)
+	at org.asynchttpclient.netty.handler.AsyncHttpClientHandler.channelRead(AsyncHttpClientHandler.java:76)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:336)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:336)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:336)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:435)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:250)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:336)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1294)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:911)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:643)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:566)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:480)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:442)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:131)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] - [2017-07-18 12:44:58,932] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 12:44:58,932] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: tripIdentifier', forwarding to the next one
+[WARN] - [2017-07-18 12:44:58,934] - [io.gatling.http.ahc.ResponseProcessor] Request 'Search Trip with traveller first name' failed: j.u.NoSuchElementException: key not found: tripIdentifier
+[ERROR] - [2017-07-18 12:44:58,936] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 12:44:58,937] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: tripIdentifier', forwarding to the next one
+[ERROR] - [2017-07-18 12:44:58,937] - [io.gatling.http.ahc.ResponseProcessor] ResponseProcessor crashed on session=Session(SEARCH QUERY WITH DIFFERENT PARAMETERS,1,Map(gatling.http.cache.dns -> io.gatling.http.resolver.ShuffleJdkNameResolver@12ce00d4),1500362097851,0,OK,List(),io.gatling.core.protocol.ProtocolComponentsRegistry$$Lambda$208/1669736026@7fc2a0e7) request=Search Trip with traveller first name: http://52.32.106.42:8181/v1/search/trip/info?partnerName=Knoldus%20Testing%20Partner	GET	headers:	Accept:[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]	content-Type:application/json	Accept-Language:[en-US,en;q=0.5]	Accept-Encoding:[gzip, deflate]	User-Agent:[Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:16.0) Gecko/20100101 Firefox/16.0] resourceFetcher=None redirectCount=0, forwarding user to the next action
+java.util.NoSuchElementException: key not found: tripIdentifier
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$searchTrip$1.apply(getScenarioBuilder.scala:141)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$searchTrip$1.apply(getScenarioBuilder.scala:140)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.http.ahc.ResponseProcessor.executeNext(ResponseProcessor.scala:152)
+	at io.gatling.http.ahc.ResponseProcessor.logAndExecuteNext(ResponseProcessor.scala:178)
+	at io.gatling.http.ahc.ResponseProcessor.ko(ResponseProcessor.scala:182)
+	at io.gatling.http.ahc.ResponseProcessor.onThrowable(ResponseProcessor.scala:73)
+	at io.gatling.http.ahc.AsyncHandler.sendOnThrowable(AsyncHandler.scala:160)
+	at io.gatling.http.ahc.AsyncHandler.io$gatling$http$ahc$AsyncHandler$$$anonfun$1(AsyncHandler.scala:138)
+	at io.gatling.http.ahc.AsyncHandler.io$gatling$http$ahc$AsyncHandler$$$anonfun$1$adapted(AsyncHandler.scala:134)
+	at io.gatling.http.ahc.AsyncHandler.withResponse(AsyncHandler.scala:127)
+	at io.gatling.http.ahc.AsyncHandler.onCompleted(AsyncHandler.scala:134)
+	at io.gatling.http.ahc.AsyncHandler.onCompleted(AsyncHandler.scala:47)
+	at org.asynchttpclient.netty.NettyResponseFuture.getContent(NettyResponseFuture.java:189)
+	at org.asynchttpclient.netty.NettyResponseFuture.done(NettyResponseFuture.java:223)
+	at org.asynchttpclient.netty.handler.HttpHandler.finishUpdate(HttpHandler.java:58)
+	at org.asynchttpclient.netty.handler.HttpHandler.handleChunk(HttpHandler.java:159)
+	at org.asynchttpclient.netty.handler.HttpHandler.handleRead(HttpHandler.java:187)
+	at org.asynchttpclient.netty.handler.AsyncHttpClientHandler.channelRead(AsyncHttpClientHandler.java:76)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:336)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:336)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:336)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:435)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:250)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:336)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1294)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:911)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:643)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:566)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:480)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:442)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:131)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] - [2017-07-18 12:44:58,938] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 12:44:58,939] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: tripIdentifier', forwarding to the next one
+[WARN] - [2017-07-18 12:44:58,959] - [io.gatling.http.ahc.ResponseProcessor] Request 'Search Trip with traveller first name' failed: j.u.NoSuchElementException: key not found: tripIdentifier
+[ERROR] - [2017-07-18 12:44:58,959] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 12:44:58,960] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: tripIdentifier', forwarding to the next one
+[ERROR] - [2017-07-18 12:44:58,961] - [io.gatling.http.ahc.ResponseProcessor] ResponseProcessor crashed on session=Session(SEARCH QUERY WITH DIFFERENT PARAMETERS,1,Map(gatling.http.cache.dns -> io.gatling.http.resolver.ShuffleJdkNameResolver@12ce00d4),1500362097851,0,OK,List(),io.gatling.core.protocol.ProtocolComponentsRegistry$$Lambda$208/1669736026@7fc2a0e7) request=Search Trip with traveller first name: http://52.32.106.42:8181/v1/search/trip/info?partnerName=Knoldus%20Testing%20Partner	GET	headers:	Accept:[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]	content-Type:application/json	Accept-Language:[en-US,en;q=0.5]	Accept-Encoding:[gzip, deflate]	User-Agent:[Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:16.0) Gecko/20100101 Firefox/16.0] resourceFetcher=None redirectCount=0, forwarding user to the next action
+java.util.NoSuchElementException: key not found: tripIdentifier
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$searchTrip$1.apply(getScenarioBuilder.scala:141)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$searchTrip$1.apply(getScenarioBuilder.scala:140)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.http.ahc.ResponseProcessor.executeNext(ResponseProcessor.scala:152)
+	at io.gatling.http.ahc.ResponseProcessor.logAndExecuteNext(ResponseProcessor.scala:178)
+	at io.gatling.http.ahc.ResponseProcessor.ko(ResponseProcessor.scala:182)
+	at io.gatling.http.ahc.ResponseProcessor.onThrowable(ResponseProcessor.scala:73)
+	at io.gatling.http.ahc.AsyncHandler.sendOnThrowable(AsyncHandler.scala:160)
+	at io.gatling.http.ahc.AsyncHandler.withResponse(AsyncHandler.scala:129)
+	at io.gatling.http.ahc.AsyncHandler.onCompleted(AsyncHandler.scala:134)
+	at io.gatling.http.ahc.AsyncHandler.onCompleted(AsyncHandler.scala:47)
+	at org.asynchttpclient.netty.NettyResponseFuture.getContent(NettyResponseFuture.java:189)
+	at org.asynchttpclient.netty.NettyResponseFuture.done(NettyResponseFuture.java:223)
+	at org.asynchttpclient.netty.handler.HttpHandler.finishUpdate(HttpHandler.java:58)
+	at org.asynchttpclient.netty.handler.HttpHandler.handleChunk(HttpHandler.java:159)
+	at org.asynchttpclient.netty.handler.HttpHandler.handleRead(HttpHandler.java:187)
+	at org.asynchttpclient.netty.handler.AsyncHttpClientHandler.channelRead(AsyncHttpClientHandler.java:76)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:336)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:336)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:336)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:435)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:250)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:336)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1294)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:343)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:911)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:643)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:566)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:480)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:442)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:131)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] - [2017-07-18 12:44:58,962] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 12:44:58,963] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: tripIdentifier', forwarding to the next one
+[ERROR] - [2017-07-18 12:48:06,434] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-2' crashed with 'java.util.NoSuchElementException: key not found: tripIdentifier', forwarding to the next one
+[ERROR] - [2017-07-18 12:48:06,443] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-1' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 12:50:02,897] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-2' crashed with 'java.lang.ClassCastException: scala.collection.immutable.Vector cannot be cast to java.lang.String', forwarding to the next one
+[ERROR] - [2017-07-18 12:50:02,905] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-1' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 12:52:34,885] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-1' failed to execute: No attribute named 'tripId' is defined
+[WARN] - [2017-07-18 12:56:18,249] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH TRIP INFO OF MY PURCHASED TRIP.' failed: status.find.is(200), but actually found 500
+[WARN] - [2017-07-18 13:04:25,920] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH TRIP INFO OF MY PURCHASED TRIP.' failed: status.find.is(200), but actually found 500
+[WARN] - [2017-07-18 13:16:16,777] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH TRIP INFO OF MY PURCHASED TRIP.' failed: status.find.is(200), but actually found 500
+[INFO] - [2017-07-18 13:19:15,615] - [com.freebird.stresstest.getScenarioBuilder$] **********************************************13148881128,1024421920,1024458784,2867634424,2867691768,2867843320,286883848,286908424,287014992,287187024,328007736,3359051800,3359191064,5038297320,5038358760,5038518504,860463224,860491896,860495992,9666638064
+
+[INFO] - [2017-07-18 13:19:15,615] - [com.freebird.stresstest.getScenarioBuilder$] **********************************************13148881128,1024421920,1024458784,2867634424,2867691768,2867843320,286883848,286908424,287014992,287187024,328007736,3359051800,3359191064,5038297320,5038358760,5038518504,860463224,860491896,860495992,9666638064
+
+[WARN] - [2017-07-18 13:19:16,021] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH TRIP INFO OF MY PURCHASED TRIP.' failed: status.find.is(200), but actually found 500
+[INFO] - [2017-07-18 13:21:58,497] - [com.freebird.stresstest.getScenarioBuilder$] **********************************************13148881128
+1024421920
+1024458784
+2867634424
+2867691768
+2867843320
+286883848
+286908424
+287014992
+287187024
+328007736
+3359051800
+3359191064
+5038297320
+5038358760
+5038518504
+860463224
+860491896
+860495992
+9666638064
+[INFO] - [2017-07-18 13:21:58,497] - [com.freebird.stresstest.getScenarioBuilder$] **********************************************13148881128
+1024421920
+1024458784
+2867634424
+2867691768
+2867843320
+286883848
+286908424
+287014992
+287187024
+328007736
+3359051800
+3359191064
+5038297320
+5038358760
+5038518504
+860463224
+860491896
+860495992
+9666638064
+[WARN] - [2017-07-18 13:21:58,878] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH TRIP INFO OF MY PURCHASED TRIP.' failed: status.find.is(200), but actually found 500
+[INFO] - [2017-07-18 13:23:40,386] - [com.freebird.stresstest.getScenarioBuilder$] **********************************************13148881128
+1024421920
+1024458784
+2867634424
+2867691768
+2867843320
+286883848
+286908424
+287014992
+287187024
+328007736
+3359051800
+3359191064
+5038297320
+5038358760
+5038518504
+860463224
+860491896
+860495992
+9666638064
+[INFO] - [2017-07-18 13:23:40,386] - [com.freebird.stresstest.getScenarioBuilder$] **********************************************13148881128
+1024421920
+1024458784
+2867634424
+2867691768
+2867843320
+286883848
+286908424
+287014992
+287187024
+328007736
+3359051800
+3359191064
+5038297320
+5038358760
+5038518504
+860463224
+860491896
+860495992
+9666638064
+[WARN] - [2017-07-18 13:23:41,947] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH TRIP INFO OF MY PURCHASED TRIP.' failed: jsonPath($.data.itinerary[*].segments[*].legs[*].arrival).find.exists, found nothing
+[INFO] - [2017-07-18 13:26:22,245] - [com.freebird.stresstest.getScenarioBuilder$] **********************************************13148881128
+1024421920
+1024458784
+2867634424
+2867691768
+2867843320
+286883848
+286908424
+287014992
+287187024
+328007736
+3359051800
+3359191064
+5038297320
+5038358760
+5038518504
+860463224
+860491896
+860495992
+9666638064
+[INFO] - [2017-07-18 13:26:22,245] - [com.freebird.stresstest.getScenarioBuilder$] **********************************************13148881128
+1024421920
+1024458784
+2867634424
+2867691768
+2867843320
+286883848
+286908424
+287014992
+287187024
+328007736
+3359051800
+3359191064
+5038297320
+5038358760
+5038518504
+860463224
+860491896
+860495992
+9666638064
+[WARN] - [2017-07-18 13:26:22,988] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH TRIP INFO OF MY PURCHASED TRIP.' failed: jsonPath($.data.itinerary[*].segments[*].legs[*].arrival).find.exists, found nothing
+[ERROR] - [2017-07-18 13:32:39,766] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-5' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[WARN] - [2017-07-18 13:32:40,558] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH TRIP INFO OF MY PURCHASED TRIP.' failed: jsonPath($.data.itinerary[*].segments[*].legs[*].arrival).find.exists, found nothing
+[ERROR] - [2017-07-18 13:32:58,008] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-5' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:32:58,014] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:32:58,071] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:32:58,089] - [io.gatling.core.controller.Controller] Simulation crashed
+java.lang.IllegalStateException: Feeder is now empty, stopping engine
+	at io.gatling.core.action.SingletonFeed$$anonfun$receive$1.applyOrElse(SingletonFeed.scala:61)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:497)
+	at io.gatling.core.akka.BaseActor.aroundReceive(BaseActor.scala:23)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:526)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:495)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[ERROR] - [2017-07-18 13:33:36,810] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-6' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:33:46,815] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:33:46,821] - [io.gatling.core.controller.Controller] Simulation crashed
+java.lang.IllegalStateException: Feeder is now empty, stopping engine
+	at io.gatling.core.action.SingletonFeed$$anonfun$receive$1.applyOrElse(SingletonFeed.scala:61)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:497)
+	at io.gatling.core.akka.BaseActor.aroundReceive(BaseActor.scala:23)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:526)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:495)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[ERROR] - [2017-07-18 13:33:46,824] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:48:00,624] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:48:00,673] - [io.gatling.core.controller.Controller] Simulation crashed
+java.lang.IllegalStateException: Feeder is now empty, stopping engine
+	at io.gatling.core.action.SingletonFeed$$anonfun$receive$1.applyOrElse(SingletonFeed.scala:61)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:497)
+	at io.gatling.core.akka.BaseActor.aroundReceive(BaseActor.scala:23)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:526)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:495)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[ERROR] - [2017-07-18 13:48:00,678] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:48:00,683] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:48:00,683] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:48:00,684] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:48:00,685] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:48:00,685] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:48:00,686] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:48:00,686] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:48:00,686] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:48:00,687] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:48:00,687] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:48:00,688] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:48:00,689] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:48:00,690] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:48:00,691] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:48:00,692] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:48:00,692] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:48:00,693] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:48:00,694] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:48:00,766] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[WARN] - [2017-07-18 13:48:00,768] - [io.gatling.http.ahc.ResponseProcessor] Request 'Search Trip with multiple query parameter' failed: j.n.ConnectException: http://52.32.106.42:8181
+[ERROR] - [2017-07-18 13:48:00,771] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:48:00,771] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-2' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:48:00,772] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:48:00,772] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:48:00,773] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:48:00,773] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:48:00,774] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:48:00,774] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:48:00,774] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:48:00,775] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:50:44,389] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:50:44,396] - [io.gatling.core.controller.Controller] Simulation crashed
+java.lang.IllegalStateException: Feeder is now empty, stopping engine
+	at io.gatling.core.action.SingletonFeed$$anonfun$receive$1.applyOrElse(SingletonFeed.scala:61)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:497)
+	at io.gatling.core.akka.BaseActor.aroundReceive(BaseActor.scala:23)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:526)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:495)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[ERROR] - [2017-07-18 13:50:44,401] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:50:44,406] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:50:44,406] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:50:44,407] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:50:44,407] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:50:44,408] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:50:44,408] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:50:44,409] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:50:44,410] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:50:44,411] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:50:44,412] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:50:44,413] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:50:44,414] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:50:44,414] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:50:44,423] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:50:44,424] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:50:44,425] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 13:50:44,425] - [io.gatling.core.action.SingletonFeed] Feed failed: Feeder is now empty, stopping engine, please report.
+[ERROR] - [2017-07-18 13:50:44,426] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[WARN] - [2017-07-18 13:50:44,528] - [io.gatling.http.ahc.ResponseProcessor] Request 'Search Trip with multiple query parameter' failed: j.n.ConnectException: http://52.32.106.42:8181
+[ERROR] - [2017-07-18 13:50:44,531] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-2' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:50:44,538] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:50:44,539] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:50:44,540] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:50:44,541] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:50:44,541] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:50:44,542] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:50:44,542] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:50:44,542] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:50:44,543] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:50:44,546] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-4' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[ERROR] - [2017-07-18 13:58:29,556] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-2' crashed with 'java.util.NoSuchElementException: key not found: tripId', forwarding to the next one
+[INFO] - [2017-07-18 14:01:07,191] - [com.freebird.stresstest.getScenarioBuilder$] **********************************************25068216344
+16590975144
+16591220904
+16591270056
+4875026656
+5571305560
+16590581928
+4875104480
+4588118064
+[INFO] - [2017-07-18 14:01:07,191] - [com.freebird.stresstest.getScenarioBuilder$] **********************************************25068216344
+16590975144
+16591220904
+16591270056
+4875026656
+5571305560
+16590581928
+4875104480
+4588118064
+[WARN] - [2017-07-18 14:01:37,564] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH TRIP INFO OF MY PURCHASED TRIP.' failed: jsonPath($.data.itinerary[*].segments[*].legs[*].arrival).find.exists, found nothing
+[ERROR] - [2017-07-18 14:01:46,084] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[ERROR] - [2017-07-18 14:01:46,944] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[ERROR] - [2017-07-18 14:01:47,043] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[ERROR] - [2017-07-18 14:01:47,253] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[ERROR] - [2017-07-18 14:01:47,313] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[ERROR] - [2017-07-18 14:01:47,323] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[ERROR] - [2017-07-18 14:01:47,354] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[ERROR] - [2017-07-18 14:01:47,563] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[ERROR] - [2017-07-18 14:01:47,563] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[ERROR] - [2017-07-18 14:01:47,763] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[WARN] - [2017-07-18 15:18:48,631] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[ERROR] - [2017-07-18 15:18:53,628] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'rebookingOpportunity' is defined
+[ERROR] - [2017-07-18 15:18:58,636] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'optionId' is defined
+[ERROR] - [2017-07-18 15:18:58,637] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: rebookingOpportunity', forwarding to the next one
+[ERROR] - [2017-07-18 15:18:58,642] - [akka.dispatch.TaskInvocation] key not found: rebookingOpportunity
+java.util.NoSuchElementException: key not found: rebookingOpportunity
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.TestSetup$class.extractedResponseForRebookedTrip(TestSetup.scala:205)
+	at com.freebird.stresstest.getScenarioBuilder$.extractedResponseForRebookedTrip(getScenarioBuilder.scala:8)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:115)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:114)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[WARN] - [2017-07-18 16:23:18,358] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH TRIP INFO OF MY PURCHASED TRIP.' failed: jsonPath($.data.itinerary[*].segments[*].legs[*].arrival).find.exists, found nothing
+[ERROR] - [2017-07-18 16:23:27,960] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: Original_Departure_Airport', forwarding to the next one
+[ERROR] - [2017-07-18 16:23:27,960] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: Original_Departure_Airport', forwarding to the next one
+[ERROR] - [2017-07-18 16:23:28,060] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: Original_Departure_Airport', forwarding to the next one
+[ERROR] - [2017-07-18 16:23:28,101] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: Original_Departure_Airport', forwarding to the next one
+[ERROR] - [2017-07-18 16:23:28,121] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: Original_Departure_Airport', forwarding to the next one
+[ERROR] - [2017-07-18 16:23:28,171] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: Original_Departure_Airport', forwarding to the next one
+[ERROR] - [2017-07-18 16:23:28,171] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: Original_Departure_Airport', forwarding to the next one
+[ERROR] - [2017-07-18 16:23:28,310] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: Original_Departure_Airport', forwarding to the next one
+[ERROR] - [2017-07-18 16:23:28,330] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: Original_Departure_Airport', forwarding to the next one
+[ERROR] - [2017-07-18 16:23:28,351] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: Original_Departure_Airport', forwarding to the next one
+[WARN] - [2017-07-18 16:28:45,427] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: status.find.is(200), but actually found 422
+[ERROR] - [2017-07-18 16:28:50,352] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-18 16:28:50,361] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-18 16:28:50,380] - [akka.dispatch.TaskInvocation] key not found: priceRequestId
+java.util.NoSuchElementException: key not found: priceRequestId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.Authenticate$$anonfun$purchaseOutBoundTrip$1.apply(Authenticate.scala:56)
+	at com.freebird.stresstest.Authenticate$$anonfun$purchaseOutBoundTrip$1.apply(Authenticate.scala:55)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[INFO] - [2017-07-18 16:31:00,586] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: f4343ecf-7e7a-41bd-ac76-0a2a988af1cf, c5e37414-f5f5-4083-a370-11c68c129f29
+[INFO] - [2017-07-18 16:31:00,586] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: f4343ecf-7e7a-41bd-ac76-0a2a988af1cf, c5e37414-f5f5-4083-a370-11c68c129f29
+[INFO] - [2017-07-18 16:36:18,668] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: a1236028-2673-4327-b488-85e831f362e4, c9e867c1-0691-490a-ad68-4946ba5ab68a
+[INFO] - [2017-07-18 16:36:18,668] - [com.freebird.stresstest.Authenticate] Extracted Response attribute: a1236028-2673-4327-b488-85e831f362e4, c9e867c1-0691-490a-ad68-4946ba5ab68a
+[WARN] - [2017-07-18 18:20:04,704] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.' failed: status.find.is(200), but actually found 500
+[ERROR] - [2017-07-18 18:20:04,765] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-12' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-18 18:20:06,634] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-10' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 18:20:11,641] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-8' failed to execute: No attribute named 'legId' is defined
+[ERROR] - [2017-07-18 18:20:26,641] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-6' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-18 18:20:31,640] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'rebookingOpportunity' is defined
+[WARN] - [2017-07-18 18:22:05,077] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[ERROR] - [2017-07-18 18:22:10,082] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'rebookingOpportunity' is defined
+[ERROR] - [2017-07-18 18:22:15,080] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'optionId' is defined
+[ERROR] - [2017-07-18 18:22:15,081] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: Original_Departure_Airport', forwarding to the next one
+[ERROR] - [2017-07-18 18:22:15,086] - [akka.dispatch.TaskInvocation] key not found: Original_Departure_Airport
+java.util.NoSuchElementException: key not found: Original_Departure_Airport
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.TestSetup$class.extractedResponseForRebookedTrip(TestSetup.scala:206)
+	at com.freebird.stresstest.getScenarioBuilder$.extractedResponseForRebookedTrip(getScenarioBuilder.scala:8)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:115)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:114)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[WARN] - [2017-07-18 18:23:33,271] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[ERROR] - [2017-07-18 18:23:38,269] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-4' failed to execute: No attribute named 'rebookingOpportunity' is defined
+[ERROR] - [2017-07-18 18:23:43,278] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'optionId' is defined
+[ERROR] - [2017-07-18 18:23:43,279] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: Original_Departure_Airport', forwarding to the next one
+[ERROR] - [2017-07-18 18:23:43,284] - [akka.dispatch.TaskInvocation] key not found: Original_Departure_Airport
+java.util.NoSuchElementException: key not found: Original_Departure_Airport
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.TestSetup$class.extractedResponseForRebookedTrip(TestSetup.scala:206)
+	at com.freebird.stresstest.getScenarioBuilder$.extractedResponseForRebookedTrip(getScenarioBuilder.scala:8)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:115)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$rebookingFlow$1.apply(getScenarioBuilder.scala:114)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)

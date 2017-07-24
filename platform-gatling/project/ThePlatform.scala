@@ -26,7 +26,7 @@ object ThePlatform extends Build {
     .settings(Defaults.itSettings: _*)
     .enablePlugins(GatlingPlugin)
     .settings(libraryDependencies ++=
-      it(akkaTestKit, scalaTest, akkaHttpTestKit, gatlingCore, gatlingHighcharts, gatlingTestFramework, mockito, akkaHttp))
+      it(akkaTestKit, scalaTest, akkaHttpTestKit, gatlingCore, gatlingHighcharts, gatlingTestFramework, mockito, akkaHttp, json4sNative, json4sExt))
 	 .dependsOn(util)
 
  lazy val util = BaseProject("util")

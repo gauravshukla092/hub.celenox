@@ -1,0 +1,101 @@
+RUN	com.freebird.stresstest.Authenticate		authenticate	1500271715366	 	2.0
+USER	***************Purchase  Outbound Trip****************	1	START	1500271716636	1500271716636
+USER	***************Purchase  Outbound Trip****************	2	START	1500271716652	1500271716652
+USER	***************Purchase  Outbound Trip****************	3	START	1500271716652	1500271716652
+USER	***************Purchase  Outbound Trip****************	4	START	1500271716652	1500271716652
+USER	***************Purchase  Outbound Trip****************	5	START	1500271716652	1500271716652
+USER	***************Purchase  Outbound Trip****************	6	START	1500271716652	1500271716652
+USER	***************Purchase  Outbound Trip****************	7	START	1500271716653	1500271716653
+USER	***************Purchase  Outbound Trip****************	8	START	1500271716653	1500271716653
+USER	***************Purchase  Outbound Trip****************	9	START	1500271716653	1500271716653
+USER	***************Purchase  Outbound Trip****************	10	START	1500271716653	1500271716653
+USER	***************Purchase  Outbound Trip****************	11	START	1500271716653	1500271716653
+USER	***************Purchase  Outbound Trip****************	12	START	1500271716653	1500271716653
+USER	***************Purchase  Outbound Trip****************	13	START	1500271716653	1500271716653
+USER	***************Purchase  Outbound Trip****************	14	START	1500271716653	1500271716653
+USER	***************Purchase  Outbound Trip****************	15	START	1500271716653	1500271716653
+USER	***************Purchase  Outbound Trip****************	16	START	1500271716653	1500271716653
+USER	***************Purchase  Outbound Trip****************	17	START	1500271716653	1500271716653
+USER	***************Purchase  Outbound Trip****************	18	START	1500271716654	1500271716654
+USER	***************Purchase  Outbound Trip****************	19	START	1500271716654	1500271716654
+USER	***************Purchase  Outbound Trip****************	20	START	1500271716654	1500271716654
+USER	***************Purchase  Outbound Trip****************	21	START	1500271716654	1500271716654
+USER	***************Purchase  Outbound Trip****************	22	START	1500271716654	1500271716654
+USER	***************Purchase  Outbound Trip****************	23	START	1500271716654	1500271716654
+USER	***************Purchase  Outbound Trip****************	24	START	1500271716654	1500271716654
+USER	***************Purchase  Outbound Trip****************	25	START	1500271716654	1500271716654
+REQUEST	***************Purchase  Outbound Trip****************	2		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716709	1500271717652	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	7		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716717	1500271717627	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	3		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716711	1500271717649	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	1		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716701	1500271717685	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	6		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716715	1500271717596	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	25		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716742	1500271717712	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	14		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716727	1500271717714	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	10		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716721	1500271717732	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	9		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716720	1500271717733	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	8		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716718	1500271717752	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	5		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716714	1500271717752	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	15		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716729	1500271717757	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	17		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716731	1500271717777	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	13		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716726	1500271717785	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	4		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716712	1500271717794	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	18		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716733	1500271717794	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	24		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716740	1500271717794	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	22		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716738	1500271718097	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	23		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716739	1500271718261	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	11		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716723	1500271718331	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	21		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716737	1500271718407	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	19		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716734	1500271718570	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	16		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716730	1500271718576	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	20		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716736	1500271719055	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	12		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500271716724	1500271719205	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	6		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722625	1500271733504	OK	 
+USER	***************Purchase  Outbound Trip****************	6	END	1500271716652	1500271733513
+REQUEST	***************Purchase  Outbound Trip****************	1		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722703	1500271733897	OK	 
+USER	***************Purchase  Outbound Trip****************	1	END	1500271716636	1500271733900
+REQUEST	***************Purchase  Outbound Trip****************	14		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722733	1500271733925	OK	 
+USER	***************Purchase  Outbound Trip****************	14	END	1500271716653	1500271733928
+REQUEST	***************Purchase  Outbound Trip****************	5		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722774	1500271733932	OK	 
+USER	***************Purchase  Outbound Trip****************	5	END	1500271716652	1500271733934
+REQUEST	***************Purchase  Outbound Trip****************	13		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722803	1500271733955	OK	 
+USER	***************Purchase  Outbound Trip****************	13	END	1500271716653	1500271733957
+REQUEST	***************Purchase  Outbound Trip****************	8		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722775	1500271733961	OK	 
+USER	***************Purchase  Outbound Trip****************	8	END	1500271716653	1500271733962
+REQUEST	***************Purchase  Outbound Trip****************	25		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722733	1500271733974	OK	 
+REQUEST	***************Purchase  Outbound Trip****************	3		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722683	1500271733974	OK	 
+USER	***************Purchase  Outbound Trip****************	25	END	1500271716654	1500271733975
+USER	***************Purchase  Outbound Trip****************	3	END	1500271716652	1500271733975
+REQUEST	***************Purchase  Outbound Trip****************	2		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722683	1500271734016	OK	 
+USER	***************Purchase  Outbound Trip****************	2	END	1500271716652	1500271734018
+REQUEST	***************Purchase  Outbound Trip****************	9		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722753	1500271734073	OK	 
+USER	***************Purchase  Outbound Trip****************	9	END	1500271716653	1500271734074
+REQUEST	***************Purchase  Outbound Trip****************	17		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722793	1500271734157	OK	 
+USER	***************Purchase  Outbound Trip****************	17	END	1500271716653	1500271734158
+REQUEST	***************Purchase  Outbound Trip****************	18		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722813	1500271734667	OK	 
+USER	***************Purchase  Outbound Trip****************	18	END	1500271716654	1500271734669
+REQUEST	***************Purchase  Outbound Trip****************	24		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722813	1500271734826	OK	 
+USER	***************Purchase  Outbound Trip****************	24	END	1500271716654	1500271734827
+REQUEST	***************Purchase  Outbound Trip****************	7		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722653	1500271735044	OK	 
+USER	***************Purchase  Outbound Trip****************	7	END	1500271716653	1500271735045
+REQUEST	***************Purchase  Outbound Trip****************	4		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722813	1500271735059	OK	 
+USER	***************Purchase  Outbound Trip****************	4	END	1500271716652	1500271735060
+REQUEST	***************Purchase  Outbound Trip****************	10		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722753	1500271736822	OK	 
+USER	***************Purchase  Outbound Trip****************	10	END	1500271716653	1500271736824
+REQUEST	***************Purchase  Outbound Trip****************	15		PURCHASE A TRIP FOR QUOTED PRICE.	1500271722774	1500271737215	OK	 
+USER	***************Purchase  Outbound Trip****************	15	END	1500271716653	1500271737217
+REQUEST	***************Purchase  Outbound Trip****************	22		PURCHASE A TRIP FOR QUOTED PRICE.	1500271723113	1500271737227	OK	 
+USER	***************Purchase  Outbound Trip****************	22	END	1500271716654	1500271737229
+REQUEST	***************Purchase  Outbound Trip****************	11		PURCHASE A TRIP FOR QUOTED PRICE.	1500271723353	1500271737302	OK	 
+USER	***************Purchase  Outbound Trip****************	11	END	1500271716653	1500271737304
+REQUEST	***************Purchase  Outbound Trip****************	23		PURCHASE A TRIP FOR QUOTED PRICE.	1500271723273	1500271737313	OK	 
+USER	***************Purchase  Outbound Trip****************	23	END	1500271716654	1500271737316
+REQUEST	***************Purchase  Outbound Trip****************	19		PURCHASE A TRIP FOR QUOTED PRICE.	1500271723583	1500271737691	OK	 
+USER	***************Purchase  Outbound Trip****************	19	END	1500271716654	1500271737692
+REQUEST	***************Purchase  Outbound Trip****************	21		PURCHASE A TRIP FOR QUOTED PRICE.	1500271723423	1500271737843	OK	 
+USER	***************Purchase  Outbound Trip****************	21	END	1500271716654	1500271737844
+REQUEST	***************Purchase  Outbound Trip****************	16		PURCHASE A TRIP FOR QUOTED PRICE.	1500271723593	1500271738201	OK	 
+USER	***************Purchase  Outbound Trip****************	16	END	1500271716653	1500271738202
+REQUEST	***************Purchase  Outbound Trip****************	20		PURCHASE A TRIP FOR QUOTED PRICE.	1500271724073	1500271738482	OK	 
+USER	***************Purchase  Outbound Trip****************	20	END	1500271716654	1500271738483
+REQUEST	***************Purchase  Outbound Trip****************	12		PURCHASE A TRIP FOR QUOTED PRICE.	1500271724223	1500271738488	OK	 
+USER	***************Purchase  Outbound Trip****************	12	END	1500271716653	1500271738488

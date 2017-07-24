@@ -1,0 +1,10 @@
+{
+  "simulation": "com.freebird.stresstest.RebookingFlow",
+  "simulationId": "rebookingflow",
+  "start": 1500800188192,
+  "description": "",
+  "scenarios": ["PURCHASE TRIP FROM FREEBIRD."],
+  "assertions": [
+
+  ]
+}

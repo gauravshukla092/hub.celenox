@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="docs"
 		confs="compile, runtime, test, provided, optional, gatling, it, gatling-it, compile-internal, runtime-internal, test-internal, it-internal, plugin, sources, docs, pom, scala-tool, cpd"
-		date="20170711152143"/>
+		date="20170719134409"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>

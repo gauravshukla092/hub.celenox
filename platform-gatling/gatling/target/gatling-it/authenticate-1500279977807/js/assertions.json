@@ -1,0 +1,10 @@
+{
+  "simulation": "com.freebird.stresstest.Authenticate",
+  "simulationId": "authenticate",
+  "start": 1500279977807,
+  "description": "",
+  "scenarios": ["***************Purchase  Outbound Trip****************"],
+  "assertions": [
+
+  ]
+}

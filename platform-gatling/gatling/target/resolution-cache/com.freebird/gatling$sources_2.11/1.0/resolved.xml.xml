@@ -4,7 +4,7 @@
 		module="gatling$sources_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20170711152143"
+		publication="20170719134409"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -29,11 +29,17 @@
 	<publications>
 	</publications>
 	<dependencies>
+		<dependency org="org.json4s" name="json4s-native_2.11" rev="3.5.0" transitive="false" conf="it->default,compile,runtime,default(compile),master;gatling-it->default,compile,runtime,default(compile),master;it-internal->default,compile,runtime,default(compile),master">
+			<artifact name="json4s-native_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
 		<dependency org="org.jodd" name="jodd-log" rev="3.8.0" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="jodd-log" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
 		<dependency org="com.typesafe.netty" name="netty-reactive-streams" rev="1.0.8" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="netty-reactive-streams" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="com.thoughtworks.paranamer" name="paranamer" rev="2.8" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="paranamer" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
 		<dependency org="io.gatling" name="gatling-jdbc" rev="2.2.5" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="gatling-jdbc" type="src" ext="jar" conf="sources" e:classifier="sources"/>
@@ -44,7 +50,7 @@
 		<dependency org="org.apache.commons" name="commons-lang3" rev="3.1" transitive="false" conf="cpd->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="commons-lang3" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
-		<dependency org="org.scala-lang" name="scala-library" rev="2.11.8" transitive="false" conf="compile->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*);runtime->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*);test->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*);gatling->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*);it->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;gatling-it->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;compile-internal->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*);runtime-internal->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*);test-internal->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*);it-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;scala-tool->default,compile,runtime(*),master(compile),runtime,optional,optional(default),compile(*),master" info.apiURL="http://www.scala-lang.org/api/2.11.8/">
+		<dependency org="org.scala-lang" name="scala-library" rev="2.11.8" transitive="false" conf="compile->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;gatling->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;it->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;gatling-it->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;compile-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;it-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;scala-tool->default,compile,runtime(*),master(compile),runtime,optional,optional(default),compile(*),master" info.apiURL="http://www.scala-lang.org/api/2.11.8/">
 			<artifact name="scala-library" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
 		<dependency org="me.chrons" name="boopickle_2.11" rev="1.2.4" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
@@ -113,6 +119,9 @@
 		<dependency org="commons-io" name="commons-io" rev="2.2" transitive="false" conf="cpd->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="commons-io" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
+		<dependency org="org.json4s" name="json4s-ext_2.11" rev="3.5.0" transitive="false" conf="it->default,compile,runtime,default(compile),master;gatling-it->default,compile,runtime,default(compile),master;it-internal->default,compile,runtime,default(compile),master">
+			<artifact name="json4s-ext_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
 		<dependency org="ch.qos.logback" name="logback-core" rev="1.1.7" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="logback-core" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
@@ -125,6 +134,9 @@
 		<dependency org="com.typesafe.akka" name="akka-testkit_2.11" rev="2.4.17" transitive="false" conf="it->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;gatling-it->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;it-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master" info.apiURL="http://doc.akka.io/api/akka/2.4.17">
 			<artifact name="akka-testkit_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-xml_2.11" rev="1.0.6" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scala-xml_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.8" transitive="false" conf="scala-tool->default,compile,runtime,optional,optional(default),master">
 			<artifact name="scala-compiler" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
@@ -134,11 +146,17 @@
 		<dependency org="org.scala-lang.modules" name="scala-swing_2.11" rev="1.0.2" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="scala-swing_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
+		<dependency org="org.json4s" name="json4s-core_2.11" rev="3.5.0" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json4s-core_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
 		<dependency org="com.typesafe.akka" name="akka-parsing_2.11" rev="10.0.4" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="akka-parsing_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
 		<dependency org="ch.qos.logback" name="logback-classic" rev="1.1.7" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="logback-classic" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="org.joda" name="joda-convert" rev="1.8.1" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="joda-convert" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
 		<dependency org="net.java.dev.javacc" name="javacc" rev="5.0" transitive="false" conf="cpd->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="javacc" type="src" ext="jar" conf="sources" e:classifier="sources"/>
@@ -182,9 +200,6 @@
 		<dependency org="com.typesafe.akka" name="akka-slf4j_2.11" rev="2.4.12" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master" info.apiURL="http://doc.akka.io/api/akka/2.4.12">
 			<artifact name="akka-slf4j_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
-		<dependency org="org.scala-lang.modules" name="scala-xml_2.11" rev="1.0.5" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
-			<artifact name="scala-xml_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		</dependency>
 		<dependency org="org.bouncycastle" name="bcpkix-jdk15on" rev="1.55" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="bcpkix-jdk15on" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
@@ -223,6 +238,12 @@
 		</dependency>
 		<dependency org="com.typesafe.akka" name="akka-actor_2.11" rev="2.4.17" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master" info.apiURL="http://doc.akka.io/api/akka/2.4.17">
 			<artifact name="akka-actor_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-scalap_2.11" rev="3.5.0" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json4s-scalap_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-ast_2.11" rev="3.5.0" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json4s-ast_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
 		<dependency org="org.scaldi" name="scaldi_2.11" rev="0.4" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="scaldi_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
@@ -278,9 +299,6 @@
 		<dependency org="com.dongxiguo" name="fastring_2.11" rev="0.2.4" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="fastring_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
-		<dependency org="org.scala-lang" name="scala-reflect" rev="2.11.6" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master" info.apiURL="http://www.scala-lang.org/api/2.11.6/">
-			<artifact name="scala-reflect" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		</dependency>
 		<dependency org="com.typesafe.akka" name="akka-http-core_2.11" rev="10.0.4" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="akka-http-core_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
@@ -302,7 +320,7 @@
 		<dependency org="org.scoverage" name="scalac-scoverage-plugin_2.11" rev="1.1.1" transitive="false" conf="provided->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master;it-internal->default,compile,runtime,default(compile),master">
 			<artifact name="scalac-scoverage-plugin_2.11" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
-		<dependency org="org.scala-lang" name="scala-reflect" rev="2.11.8" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master;scala-tool->compile,runtime(*),master(compile),runtime,compile(*),master" info.apiURL="http://www.scala-lang.org/api/2.11.8/">
+		<dependency org="org.scala-lang" name="scala-reflect" rev="2.11.8" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;gatling->compile,runtime(*),master(compile),runtime,compile(*),master;it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master;scala-tool->compile,runtime(*),master(compile),runtime,compile(*),master" info.apiURL="http://www.scala-lang.org/api/2.11.8/">
 			<artifact name="scala-reflect" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
 		<dependency org="org.reactivestreams" name="reactive-streams" rev="1.0.0" transitive="false" conf="it->compile,runtime(*),master(compile),runtime,compile(*),master;gatling-it->compile,runtime(*),master(compile),runtime,compile(*),master;it-internal->compile,runtime(*),master(compile),runtime,compile(*),master">

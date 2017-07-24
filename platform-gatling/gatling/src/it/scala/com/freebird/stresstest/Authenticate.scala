@@ -1,9 +1,8 @@
 package com.freebird.stresstest
 
-
-
-import com.freebird.stresstest.getScenarioBuilder.{tripIdFeeder}
+import com.freebird.stresstest.getScenarioBuilder.tripIdFeeder
 import io.gatling.core.Predef._
+import io.gatling.core.protocol.Protocol
 import io.gatling.core.scenario.Simulation
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef.{bodyString, http, jsonPath, status}
@@ -12,15 +11,11 @@ import io.gatling.jdbc.Predef.jdbcFeeder
 
 class Authenticate extends Simulation with TestSetup {
 
+  val flightFeeder = jdbcFeeder("jdbc:postgresql://fpymkpwiux5qjk.cfapp5cxcqxb.us-west-2.rds.amazonaws.com:5432/freebird_bi_staging", "staging4DBUX3GsPa59y", "passyXWsuarrzfZhf6", "select airline_code, flight_number, flight_date, origin_airport, destination_airport from flight order by id desc limit 30")
 
-  val BASE_URL = sys.env.get("APP_ENV")
-  ("$APP_ENV")
-
-  val flightfeeder = jdbcFeeder("jdbc:postgresql://fpymkpwiux5qjk.cfapp5cxcqxb.us-west-2.rds.amazonaws.com:5432/freebird_bi_staging", "staging4DBUX3GsPa59y",  "passyXWsuarrzfZhf6", "select airline_code, flight_number, flight_date, origin_airport, destination_airport from flight order by id desc limit 10")
-
-  val PRICING_REQUEST_FOR_1_SLICE_1_SEGMENT_1_LEG = """{"passengerCounts":{"adult":1,"child":0},"metaData":{"data":"abc"},"slices":[{"segments":[{"flight":{"airlineCode":"${airline_code}","flightNumber":"${flight_number}"},"cabin":"C","legs":[{"departure":"2017-07-18","origin":"${origin_airport}","destination":"${destination_airport}"}]}]}]}"""
+  val PRICING_REQUEST_FOR_1_SLICE_1_SEGMENT_1_LEG = """{"passengerCounts":{"adult":1,"child":0},"metaData":{"data":"abc"},"slices":[{"segments":[{"flight":{"airlineCode":"DL","flightNumber":"6047"},"cabin":"C","legs":[{"departure":"2017-07-28","origin":"BOS","destination":"LGA"}]}]}]}"""
   val outboundTripPricingRequestBuilderForOneLeg: HttpRequestBuilder = http("QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.")
-    .post(route.pricingUri).basicAuth(stg.apiUserName, stg.apiPassword)
+    .post(route.pricingUri).basicAuth(ENV.apiUserName, ENV.apiPassword)
     .header(CONTENT_TYPE, RAW_JSON)
     .body(StringBody(PRICING_REQUEST_FOR_1_SLICE_1_SEGMENT_1_LEG)).asJSON
     .check(status.is(200), bodyString.saveAs("pricing_response"))
@@ -54,7 +49,7 @@ class Authenticate extends Simulation with TestSetup {
 
   def purchaseOutBoundTrip: ScenarioBuilder =
     scenario("***************Purchase  Outbound Trip****************")
-      .feed(flightfeeder)
+      //      .feed(flightFeeder)
       .exec(outboundTripPricingRequestBuilderForOneLeg).pause(5)
       .exec(purchaseRequestBuilder)
       .exec(purchaseOutboundTrip => {
@@ -69,15 +64,14 @@ class Authenticate extends Simulation with TestSetup {
       .feed(tripIdFeeder)
       .exec(getTripInfo).pause(15)
       .exec(tripInfo => {
-        extractedResponseForRebookedTrip(tripInfo)
+        extractedResponseForTripInfo(tripInfo)
         tripInfo
       })
 
 
-
   def quotePriceWithSingleSegment: ScenarioBuilder =
     scenario("****************************Price For Trip with one segment and one leg")
-//      .feed(jdbcFileFeeder)
+      //      .feed(jdbcFileFeeder)
       .exec(outboundTripPricingRequestBuilderForOneLeg).pause(5)
       .exec(priceForTrip => {
         extractedPricingInfo(priceForTrip)
@@ -85,13 +79,11 @@ class Authenticate extends Simulation with TestSetup {
       })
       .exec(purchaseRequestBuilder)
 
-
-
-
   setUp(
-    purchaseOutBoundTrip.inject(atOnceUsers(10)).protocols(stgBaseUrlBuilder)
+    purchaseOutBoundTrip.inject(atOnceUsers(1)).protocols(baseUrlBuilder)
 
   )
 
 
 }
+

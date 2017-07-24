@@ -1,0 +1,10 @@
+{
+  "simulation": "com.freebird.stresstest.AdminSearch",
+  "simulationId": "adminsearch",
+  "start": 1500363262933,
+  "description": "",
+  "scenarios": ["SEARCH QUERY WITH DIFFERENT PARAMETERS"],
+  "assertions": [
+
+  ]
+}

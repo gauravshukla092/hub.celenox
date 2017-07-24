@@ -54,12 +54,12 @@ object Requests {
   val traveler2 = Person("Anurag[Test]", None, "Shukla[Test]", "1978-08-11", "Male", "gaurav+test@knoldus.com", "+918505847053", false, true, false)
   val travelAgent = Person("Anurag", None, "Shukla", "1978-08-11", "Male", "gaurav@knoldus.com", "+918505847053", false, false, false, Some(true))
 
-  val firstItinerary =  Itinerary("DL", "1485", "2017-07-17T00:00:00Z", "LGA", "MCO", "", "", "")
+  val firstItinerary =  Itinerary("UA", "387", "2017-08-11T00:00:00Z", "ORD", "BWI", "", "", "")
   val secondItinerary = Itinerary("DL", "1634", "2017-07-28T00:00:00Z", "ATL", "CAK", "", "", "")
   val thirdItinerary = Itinerary("AA", "1885", "2017-07-28T00:00:00Z", "DFW", "CLT", "", "", "")
   val fourthItinerary = Itinerary("DL", "2488", "2017-07-28T00:00:00Z", "BOS", "SFO", "", "", "")
 
-  val fifthItinerary = Itinerary("AA", "1885", "2017-06-30T00:00:00Z", "DFW", "CLT",  "2017-06-30T00:00:00Z", "CLT", "BUF")
+  val fifthItinerary = Itinerary("AA", "1885", "2017-06-30T00:00:00Z", "DFW", "CLT",  "2017-06-T00:00:00Z", "CLT", "BUF")
   val sixthItinerary = Itinerary("WN", "5010", "2017-06-18T00:00:00Z", "HOU", "BWI", "2017-06-18T00:00:00Z", "BWI", "MHT")
   val seventhItinerary = Itinerary("DL", "1478", "2017-06-30T00:00:00Z", "ATL", "PHL", "2017-06-30T00:00:00Z", "PHL", "HOU")
   val eighthItinerary = Itinerary("WN", "1289", "2017-06-18T00:00:00Z", "MHT", "ORD", "2017-06-18T00:00:00Z", "ORD", "HOU")
@@ -102,6 +102,8 @@ object Requests {
       case ex: Exception => println("oops...")
     }
   }
+
+
 
   def legIdWriter(legId: String): Unit = {
     val fileAlreadyExist = new File(legIds).exists()
