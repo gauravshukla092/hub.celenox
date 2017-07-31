@@ -1,0 +1,29 @@
+[WARN] - [2017-07-28 10:50:55,223] - [io.gatling.http.ahc.ResponseProcessor] Request 'Disrupt a leg for multi leg segment.' failed: j.n.ConnectException: connection timed out: /52.32.106.42:9191
+[INFO] - [2017-07-28 10:56:37,816] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 370ca8ea-c8f9-4edd-b7ba-bf5b8392f501, 7209d06e-0eee-4698-9807-5557de0202ae
+[INFO] - [2017-07-28 10:56:37,816] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 370ca8ea-c8f9-4edd-b7ba-bf5b8392f501, 7209d06e-0eee-4698-9807-5557de0202ae
+[WARN] - [2017-07-28 11:21:18,856] - [io.gatling.http.ahc.ResponseProcessor] Request 'Disrupt a leg for multi leg segment.' failed: j.n.ConnectException: connection timed out: /192.168.2.154:9191
+[WARN] - [2017-07-28 11:22:12,276] - [io.gatling.http.ahc.ResponseProcessor] Request 'Disrupt a leg for multi leg segment.' failed: j.n.ConnectException: connection timed out: /192.168.2.154:9191
+[WARN] - [2017-07-28 11:55:04,048] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS ONE LEG.' failed: status.find.is(200), but actually found 403
+[ERROR] - [2017-07-28 11:55:04,122] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-14' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-28 11:55:05,875] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-12' failed to execute: No attribute named 'tripId' is defined
+[ERROR] - [2017-07-28 11:55:10,873] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-10' failed to execute: No attribute named 'legId' is defined
+[WARN] - [2017-07-28 12:42:45,672] - [io.gatling.http.ahc.ResponseProcessor] Request 'Disrupt a leg for multi leg segment.' failed: status.find.is(200), but actually found 503
+[INFO] - [2017-07-28 13:06:05,043] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 37f1076c-7e1c-4fd6-a34f-17d95779d242, d6c4fb17-764b-4f02-bf48-e3752ef101cb
+[INFO] - [2017-07-28 13:06:05,043] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 37f1076c-7e1c-4fd6-a34f-17d95779d242, d6c4fb17-764b-4f02-bf48-e3752ef101cb
+[INFO] - [2017-07-28 13:33:00,216] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 219152f4-1407-421d-b81a-4f46fc59f623, 15fd81ad-ac84-4d1f-b5a1-6c0c55a82ea0
+[INFO] - [2017-07-28 13:33:00,216] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 219152f4-1407-421d-b81a-4f46fc59f623, 15fd81ad-ac84-4d1f-b5a1-6c0c55a82ea0
+[WARN] - [2017-07-28 13:40:30,037] - [io.gatling.http.ahc.ResponseProcessor] Request 'Disrupt a leg for multi leg segment.' failed: j.n.ConnectException: connection timed out: /192.168.2.154:9191
+[WARN] - [2017-07-28 15:02:53,940] - [io.gatling.http.ahc.ResponseProcessor] Request 'Disrupt a leg for multi leg segment.' failed: j.n.ConnectException: Connection refused: /192.168.2.160:9191
+[WARN] - [2017-07-28 15:10:17,099] - [io.gatling.http.ahc.ResponseProcessor] Request 'Disrupt a leg for multi leg segment.' failed: j.n.ConnectException: Connection refused: /192.168.2.154:9191
+[WARN] - [2017-07-28 15:10:32,907] - [io.gatling.http.ahc.ResponseProcessor] Request 'Disrupt a leg for multi leg segment.' failed: j.n.ConnectException: Connection refused: /192.168.2.160:9191
+[INFO] - [2017-07-28 15:37:38,116] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: fb43a7e2-c252-4114-8a70-e2c5cad1d016, 5ff8667c-ffb2-4111-a32f-824a6d5b36fe
+[INFO] - [2017-07-28 15:37:38,116] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: fb43a7e2-c252-4114-8a70-e2c5cad1d016, 5ff8667c-ffb2-4111-a32f-824a6d5b36fe
+[INFO] - [2017-07-28 15:39:44,784] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: c3774811-3c5d-4c35-bd02-cab0631ff14c, 321132cc-fda0-480a-830f-5db3954c6664
+[INFO] - [2017-07-28 15:39:44,784] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: c3774811-3c5d-4c35-bd02-cab0631ff14c, 321132cc-fda0-480a-830f-5db3954c6664
+[INFO] - [2017-07-28 15:48:52,828] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: f90c33a6-7db7-43ea-a9c3-4661a81b3153, 8354b8c9-7056-490a-8627-551007899c62
+[INFO] - [2017-07-28 15:48:52,828] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: f90c33a6-7db7-43ea-a9c3-4661a81b3153, 8354b8c9-7056-490a-8627-551007899c62
+[WARN] - [2017-07-28 16:05:15,604] - [io.gatling.http.ahc.ResponseProcessor] Request 'Disrupt a leg for multi leg segment.' failed: j.n.ConnectException: Connection refused: /192.168.2.160:9191
+[INFO] - [2017-07-28 16:47:13,173] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: c1230c46-61c9-48dc-a74d-5917097414de, 59a197e2-ce54-473d-b951-2ac963f98fdf
+[INFO] - [2017-07-28 16:47:13,173] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: c1230c46-61c9-48dc-a74d-5917097414de, 59a197e2-ce54-473d-b951-2ac963f98fdf
+[INFO] - [2017-07-28 17:03:28,424] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 91028874-7c24-4dc1-8411-e6f83457f93c, 0cdcac72-91bf-49bb-8bc3-6956a3a93fa3
+[INFO] - [2017-07-28 17:03:28,424] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 91028874-7c24-4dc1-8411-e6f83457f93c, 0cdcac72-91bf-49bb-8bc3-6956a3a93fa3

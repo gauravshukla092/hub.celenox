@@ -1,0 +1,4 @@
+RUN	com.freebird.stresstest.TestMissedConnection		testmissedconnection	1501234831247	 	2.0
+USER	--------'CREATE DISRUPTION FOR REAL TIME FLIGHT'--------	1	START	1501234832822	1501234832822
+REQUEST	--------'CREATE DISRUPTION FOR REAL TIME FLIGHT'--------	1		Disrupt a leg for multi leg segment.	1501234832870	1501234832870	KO	j.n.ConnectException: Connection refused: /192.168.2.160:9191
+USER	--------'CREATE DISRUPTION FOR REAL TIME FLIGHT'--------	1	END	1501234832822	1501234832916

@@ -1,0 +1,707 @@
+{
+  "type": "GROUP",
+"name": "Global Information",
+"path": "",
+"pathFormatted": "group_missing-name-b06d1",
+"stats": {
+    "name": "Global Information",
+    "numberOfRequests": {
+        "total": 8,
+        "ok": 5,
+        "ko": 3
+    },
+    "minResponseTime": {
+        "total": 409,
+        "ok": 639,
+        "ko": 409
+    },
+    "maxResponseTime": {
+        "total": 1316,
+        "ok": 1316,
+        "ko": 1010
+    },
+    "meanResponseTime": {
+        "total": 911,
+        "ok": 973,
+        "ko": 807
+    },
+    "standardDeviation": {
+        "total": 280,
+        "ok": 260,
+        "ko": 281
+    },
+    "percentiles1": {
+        "total": 1006,
+        "ok": 1096,
+        "ko": 1001
+    },
+    "percentiles2": {
+        "total": 1100,
+        "ok": 1112,
+        "ko": 1006
+    },
+    "percentiles3": {
+        "total": 1245,
+        "ok": 1275,
+        "ko": 1009
+    },
+    "percentiles4": {
+        "total": 1302,
+        "ok": 1308,
+        "ko": 1010
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 2,
+        "percentage": 25
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 2,
+        "percentage": 25
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 1,
+        "percentage": 13
+    },
+    "group4": {
+        "name": "failed",
+        "count": 3,
+        "percentage": 38
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.6153846153846154,
+        "ok": 0.38461538461538464,
+        "ko": 0.23076923076923078
+    }
+},
+"contents": {
+"req_quote-price-for-4ae42": {
+        "type": "REQUEST",
+        "name": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.",
+"path": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.",
+"pathFormatted": "req_quote-price-for-4ae42",
+"stats": {
+    "name": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 1,
+        "ko": 0
+    },
+    "minResponseTime": {
+        "total": 1112,
+        "ok": 1112,
+        "ko": 0
+    },
+    "maxResponseTime": {
+        "total": 1112,
+        "ok": 1112,
+        "ko": 0
+    },
+    "meanResponseTime": {
+        "total": 1112,
+        "ok": 1112,
+        "ko": 0
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 1112,
+        "ok": 1112,
+        "ko": 0
+    },
+    "percentiles2": {
+        "total": 1112,
+        "ok": 1112,
+        "ko": 0
+    },
+    "percentiles3": {
+        "total": 1112,
+        "ok": 1112,
+        "ko": 0
+    },
+    "percentiles4": {
+        "total": 1112,
+        "ok": 1112,
+        "ko": 0
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 1,
+        "percentage": 100
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 0,
+        "percentage": 0
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.07692307692307693,
+        "ok": 0.07692307692307693,
+        "ko": 0
+    }
+}
+    },"req_quote-price-for-71420": {
+        "type": "REQUEST",
+        "name": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS ONE LEG.",
+"path": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS ONE LEG.",
+"pathFormatted": "req_quote-price-for-71420",
+"stats": {
+    "name": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS ONE LEG.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 1,
+        "ko": 0
+    },
+    "minResponseTime": {
+        "total": 1316,
+        "ok": 1316,
+        "ko": 0
+    },
+    "maxResponseTime": {
+        "total": 1316,
+        "ok": 1316,
+        "ko": 0
+    },
+    "meanResponseTime": {
+        "total": 1316,
+        "ok": 1316,
+        "ko": 0
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 1316,
+        "ok": 1316,
+        "ko": 0
+    },
+    "percentiles2": {
+        "total": 1316,
+        "ok": 1316,
+        "ko": 0
+    },
+    "percentiles3": {
+        "total": 1316,
+        "ok": 1316,
+        "ko": 0
+    },
+    "percentiles4": {
+        "total": 1316,
+        "ok": 1316,
+        "ko": 0
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 1,
+        "percentage": 100
+    },
+    "group4": {
+        "name": "failed",
+        "count": 0,
+        "percentage": 0
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.07692307692307693,
+        "ok": 0.07692307692307693,
+        "ko": 0
+    }
+}
+    },"req_quote-price-for-a2399": {
+        "type": "REQUEST",
+        "name": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT TWO LEGS.",
+"path": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT TWO LEGS.",
+"pathFormatted": "req_quote-price-for-a2399",
+"stats": {
+    "name": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT TWO LEGS.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 1,
+        "ko": 0
+    },
+    "minResponseTime": {
+        "total": 1096,
+        "ok": 1096,
+        "ko": 0
+    },
+    "maxResponseTime": {
+        "total": 1096,
+        "ok": 1096,
+        "ko": 0
+    },
+    "meanResponseTime": {
+        "total": 1096,
+        "ok": 1096,
+        "ko": 0
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 1096,
+        "ok": 1096,
+        "ko": 0
+    },
+    "percentiles2": {
+        "total": 1096,
+        "ok": 1096,
+        "ko": 0
+    },
+    "percentiles3": {
+        "total": 1096,
+        "ok": 1096,
+        "ko": 0
+    },
+    "percentiles4": {
+        "total": 1096,
+        "ok": 1096,
+        "ko": 0
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 1,
+        "percentage": 100
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 0,
+        "percentage": 0
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.07692307692307693,
+        "ok": 0.07692307692307693,
+        "ko": 0
+    }
+}
+    },"req_quote-price-for-3c615": {
+        "type": "REQUEST",
+        "name": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS TWO LEGS.",
+"path": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS TWO LEGS.",
+"pathFormatted": "req_quote-price-for-3c615",
+"stats": {
+    "name": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS TWO LEGS.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 0,
+        "ko": 1
+    },
+    "minResponseTime": {
+        "total": 1010,
+        "ok": 0,
+        "ko": 1010
+    },
+    "maxResponseTime": {
+        "total": 1010,
+        "ok": 0,
+        "ko": 1010
+    },
+    "meanResponseTime": {
+        "total": 1010,
+        "ok": 0,
+        "ko": 1010
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 1010,
+        "ok": 0,
+        "ko": 1010
+    },
+    "percentiles2": {
+        "total": 1010,
+        "ok": 0,
+        "ko": 1010
+    },
+    "percentiles3": {
+        "total": 1010,
+        "ok": 0,
+        "ko": 1010
+    },
+    "percentiles4": {
+        "total": 1010,
+        "ok": 0,
+        "ko": 1010
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 1,
+        "percentage": 100
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.07692307692307693,
+        "ok": 0,
+        "ko": 0.07692307692307693
+    }
+}
+    },"req_quote-price-for-1d1f9": {
+        "type": "REQUEST",
+        "name": "QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE TWO SEGMENTS TWO LEGS.",
+"path": "QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE TWO SEGMENTS TWO LEGS.",
+"pathFormatted": "req_quote-price-for-1d1f9",
+"stats": {
+    "name": "QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE TWO SEGMENTS TWO LEGS.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 0,
+        "ko": 1
+    },
+    "minResponseTime": {
+        "total": 409,
+        "ok": 0,
+        "ko": 409
+    },
+    "maxResponseTime": {
+        "total": 409,
+        "ok": 0,
+        "ko": 409
+    },
+    "meanResponseTime": {
+        "total": 409,
+        "ok": 0,
+        "ko": 409
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 409,
+        "ok": 0,
+        "ko": 409
+    },
+    "percentiles2": {
+        "total": 409,
+        "ok": 0,
+        "ko": 409
+    },
+    "percentiles3": {
+        "total": 409,
+        "ok": 0,
+        "ko": 409
+    },
+    "percentiles4": {
+        "total": 409,
+        "ok": 0,
+        "ko": 409
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 1,
+        "percentage": 100
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.07692307692307693,
+        "ok": 0,
+        "ko": 0.07692307692307693
+    }
+}
+    },"req_quote-price-for-4feab": {
+        "type": "REQUEST",
+        "name": "QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE ONE SEGMENT TWO LEG.",
+"path": "QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE ONE SEGMENT TWO LEG.",
+"pathFormatted": "req_quote-price-for-4feab",
+"stats": {
+    "name": "QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE ONE SEGMENT TWO LEG.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 0,
+        "ko": 1
+    },
+    "minResponseTime": {
+        "total": 1001,
+        "ok": 0,
+        "ko": 1001
+    },
+    "maxResponseTime": {
+        "total": 1001,
+        "ok": 0,
+        "ko": 1001
+    },
+    "meanResponseTime": {
+        "total": 1001,
+        "ok": 0,
+        "ko": 1001
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 1001,
+        "ok": 0,
+        "ko": 1001
+    },
+    "percentiles2": {
+        "total": 1001,
+        "ok": 0,
+        "ko": 1001
+    },
+    "percentiles3": {
+        "total": 1001,
+        "ok": 0,
+        "ko": 1001
+    },
+    "percentiles4": {
+        "total": 1001,
+        "ok": 0,
+        "ko": 1001
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 1,
+        "percentage": 100
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.07692307692307693,
+        "ok": 0,
+        "ko": 0.07692307692307693
+    }
+}
+    },"req_quote-price-for-6d0c2": {
+        "type": "REQUEST",
+        "name": "QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE ONE SEGMENT ONE LEG.",
+"path": "QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE ONE SEGMENT ONE LEG.",
+"pathFormatted": "req_quote-price-for-6d0c2",
+"stats": {
+    "name": "QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE ONE SEGMENT ONE LEG.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 1,
+        "ko": 0
+    },
+    "minResponseTime": {
+        "total": 639,
+        "ok": 639,
+        "ko": 0
+    },
+    "maxResponseTime": {
+        "total": 639,
+        "ok": 639,
+        "ko": 0
+    },
+    "meanResponseTime": {
+        "total": 639,
+        "ok": 639,
+        "ko": 0
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 639,
+        "ok": 639,
+        "ko": 0
+    },
+    "percentiles2": {
+        "total": 639,
+        "ok": 639,
+        "ko": 0
+    },
+    "percentiles3": {
+        "total": 639,
+        "ok": 639,
+        "ko": 0
+    },
+    "percentiles4": {
+        "total": 639,
+        "ok": 639,
+        "ko": 0
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 1,
+        "percentage": 100
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 0,
+        "percentage": 0
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.07692307692307693,
+        "ok": 0.07692307692307693,
+        "ko": 0
+    }
+}
+    },"req_quote-price-for-19b3a": {
+        "type": "REQUEST",
+        "name": "QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE TWO SEGMENTS ONE LEG.",
+"path": "QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE TWO SEGMENTS ONE LEG.",
+"pathFormatted": "req_quote-price-for-19b3a",
+"stats": {
+    "name": "QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE TWO SEGMENTS ONE LEG.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 1,
+        "ko": 0
+    },
+    "minResponseTime": {
+        "total": 701,
+        "ok": 701,
+        "ko": 0
+    },
+    "maxResponseTime": {
+        "total": 701,
+        "ok": 701,
+        "ko": 0
+    },
+    "meanResponseTime": {
+        "total": 701,
+        "ok": 701,
+        "ko": 0
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 701,
+        "ok": 701,
+        "ko": 0
+    },
+    "percentiles2": {
+        "total": 701,
+        "ok": 701,
+        "ko": 0
+    },
+    "percentiles3": {
+        "total": 701,
+        "ok": 701,
+        "ko": 0
+    },
+    "percentiles4": {
+        "total": 701,
+        "ok": 701,
+        "ko": 0
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 1,
+        "percentage": 100
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 0,
+        "percentage": 0
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.07692307692307693,
+        "ok": 0.07692307692307693,
+        "ko": 0
+    }
+}
+    }
+}
+
+}

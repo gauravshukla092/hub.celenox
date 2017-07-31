@@ -8,24 +8,7 @@ import io.gatling.http.Predef.{http, jsonPath, status}
 import io.gatling.http.request.builder.HttpRequestBuilder
 
 
-case class TripInformation  (
-                       tripId : String,
-                       firstName: String,
-                       lastName: String,
-                       email: String,
-                       legId : String,
-                       airlineCode : String,
-                       flightNumber : String,
-                       origin :String,
-                       destination : String,
-                       arrival : String,
-                       departure : String,
-                       arrivalLocal : String,
-                       departureLocal: String
-                     )
-
 class TripInfo extends Simulation with TestSetup {
-
 
   val getTripInfo: HttpRequestBuilder = http("FETCH TRIP INFO OF MY PURCHASED TRIP.")
     .get(route.tripInfoUri).basicAuth(ENV.apiUserName, ENV.apiPassword)
@@ -63,25 +46,6 @@ class TripInfo extends Simulation with TestSetup {
     logger.info(s"tripId -> ${tripId},\n status -> ${status}.\n LegId -> ${legId},\n airline -> ${airline},\n flightNumber -> ${flightNumber},\n origin -> ${origin},\n destination -> ${destination},\n arrival -> ${arrival},\n departure -> ${departure},\n arrivalLocal -> ${arrivalLocal},\n departureLocal -> ${departureLocal}\n")
     verifyNearBy(origin, destination)
     }
-
-  //    val extractedTripInfoJson = TripInformation(tripId, firstName, lastName, email, legId, airline, flightNumber, origin, destination, arrival, departure, arrivalLocal, departureLocal)
-  /*val tripInfoJsonObject = (
-      "tripId" -> extractedTripInfoJson.tripId,
-    "firstName" -> extractedTripInfoJson.firstName,
-    "lastName" -> extractedTripInfoJson.lastName,
-    "email" -> extractedTripInfoJson.email,
-    "legId" -> extractedTripInfoJson.legId,
-    "airlineCode" -> extractedTripInfoJson.airlineCode,
-    "flightNumber" -> extractedTripInfoJson.flightNumber,
-    "origin" -> extractedTripInfoJson.origin,
-    "destination" -> extractedTripInfoJson.destination,
-    "arrival" -> extractedTripInfoJson.arrival,
-    "departure" -> extractedTripInfoJson.destination,
-    "arrivalLocal" -> extractedTripInfoJson.arrivalLocal,
-    "departurelocal" -> extractedTripInfoJson.departureLocal
-  )*/
-
-
 
   def tripInfo: ScenarioBuilder =
     scenario("GET TRIP INFO")

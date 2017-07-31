@@ -1,0 +1,10 @@
+{
+  "simulation": "com.freebird.stresstest.TestMissedConnection",
+  "simulationId": "testmissedconnection",
+  "start": 1501074292603,
+  "description": "",
+  "scenarios": ["--------'CREATE DISRUPTION FOR REAL TIME FLIGHT'--------"],
+  "assertions": [
+
+  ]
+}

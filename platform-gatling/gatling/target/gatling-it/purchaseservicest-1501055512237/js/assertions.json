@@ -1,0 +1,10 @@
+{
+  "simulation": "com.freebird.stresstest.PurchaseServiceST",
+  "simulationId": "purchaseservicest",
+  "start": 1501055512237,
+  "description": "",
+  "scenarios": ["***************Purchase  Outbound Trip****************", "***************Purchase Return Trip*******************"],
+  "assertions": [
+
+  ]
+}

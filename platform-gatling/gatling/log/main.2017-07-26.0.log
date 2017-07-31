@@ -1,0 +1,175 @@
+[INFO] - [2017-07-26 11:26:57,106] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: a08d4ae7-2fa5-44de-98f6-77efb0b7f9bc, 12f80cf2-fde8-4ec2-be64-1387c5852295
+[INFO] - [2017-07-26 11:26:57,106] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: a08d4ae7-2fa5-44de-98f6-77efb0b7f9bc, 12f80cf2-fde8-4ec2-be64-1387c5852295
+[INFO] - [2017-07-26 11:28:07,123] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: c8a65c5e-8bc2-4205-a212-2f4389c06ba1, 6f01574e-dc5a-45b1-a644-99328ee28ba4
+[INFO] - [2017-07-26 11:28:07,123] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: c8a65c5e-8bc2-4205-a212-2f4389c06ba1, 6f01574e-dc5a-45b1-a644-99328ee28ba4
+[INFO] - [2017-07-26 11:32:46,395] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: cb50ac10-d43a-4038-9137-e0fbbd498fc0, 25839ded-9abd-4ce3-93d2-ea83eff48d0d
+[INFO] - [2017-07-26 11:32:46,395] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: cb50ac10-d43a-4038-9137-e0fbbd498fc0, 25839ded-9abd-4ce3-93d2-ea83eff48d0d
+[WARN] - [2017-07-26 11:44:37,769] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 503
+[INFO] - [2017-07-26 11:44:37,813] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 2ae7f6b0-0e07-464c-a3c1-3b435039989d, 50261fe3-84e1-42ff-876e-d14155be1b0f
+[INFO] - [2017-07-26 11:44:37,813] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 2ae7f6b0-0e07-464c-a3c1-3b435039989d, 50261fe3-84e1-42ff-876e-d14155be1b0f
+[WARN] - [2017-07-26 12:02:27,421] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 503
+[INFO] - [2017-07-26 12:02:27,424] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 3f502e8d-ca78-4a59-85cd-9243b499f70f, 45719139-2feb-48bb-9741-c2141d8c10cd
+[INFO] - [2017-07-26 12:02:27,424] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 3f502e8d-ca78-4a59-85cd-9243b499f70f, 45719139-2feb-48bb-9741-c2141d8c10cd
+[WARN] - [2017-07-26 12:04:54,646] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 503
+[INFO] - [2017-07-26 12:04:54,648] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: e86080ea-9c1c-45c9-9109-73a7563bb635, 28ab50bd-a3d3-40c0-b035-a3a26bfb86c7
+[INFO] - [2017-07-26 12:04:54,648] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: e86080ea-9c1c-45c9-9109-73a7563bb635, 28ab50bd-a3d3-40c0-b035-a3a26bfb86c7
+[WARN] - [2017-07-26 12:09:12,778] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 503
+[INFO] - [2017-07-26 12:09:12,780] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: c5fb4118-0aeb-4102-9fd4-39a391971b19, 668d65e8-2cf2-49ab-97e5-9c0473c6e889
+[INFO] - [2017-07-26 12:09:12,780] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: c5fb4118-0aeb-4102-9fd4-39a391971b19, 668d65e8-2cf2-49ab-97e5-9c0473c6e889
+[WARN] - [2017-07-26 12:32:05,790] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 503
+[INFO] - [2017-07-26 12:32:05,835] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 082bec9e-4e80-47cd-8dd2-938e9fb9f4e5, 2c0d413c-5d8e-40af-b866-65ce0462ce91
+[INFO] - [2017-07-26 12:32:05,835] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 082bec9e-4e80-47cd-8dd2-938e9fb9f4e5, 2c0d413c-5d8e-40af-b866-65ce0462ce91
+[WARN] - [2017-07-26 12:34:12,400] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 503
+[INFO] - [2017-07-26 12:34:12,402] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 9c85d9a7-00cd-480a-936c-0b464c26958d, 70c62fdb-7d71-4c40-977f-78c0360d0f0c
+[INFO] - [2017-07-26 12:34:12,402] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 9c85d9a7-00cd-480a-936c-0b464c26958d, 70c62fdb-7d71-4c40-977f-78c0360d0f0c
+[WARN] - [2017-07-26 12:38:36,778] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 503
+[INFO] - [2017-07-26 12:38:36,781] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: c26b59af-0146-4383-a506-894613faa363, 6386120b-393a-4ba4-8312-3bbfbb624b7b
+[INFO] - [2017-07-26 12:38:36,781] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: c26b59af-0146-4383-a506-894613faa363, 6386120b-393a-4ba4-8312-3bbfbb624b7b
+[WARN] - [2017-07-26 12:41:06,689] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 503
+[INFO] - [2017-07-26 12:41:06,692] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 4fa3be28-6b92-4c24-ba48-720ee4119310, aa480964-91b0-416a-bd05-b80d45055b08
+[INFO] - [2017-07-26 12:41:06,692] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 4fa3be28-6b92-4c24-ba48-720ee4119310, aa480964-91b0-416a-bd05-b80d45055b08
+[WARN] - [2017-07-26 12:49:49,410] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 503
+[WARN] - [2017-07-26 12:50:11,417] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH TRIP INFO OF MY PURCHASED TRIP.' failed: status.find.is(200), but actually found 503
+[ERROR] - [2017-07-26 12:50:16,439] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-10' failed to execute: No attribute named 'legId' is defined
+[WARN] - [2017-07-26 12:51:47,618] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 503
+[INFO] - [2017-07-26 12:51:47,620] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 5a6edb0d-43f2-419c-9d7f-3e891f8fdb04, d0aa5376-e5a4-4cae-9436-bc815fcdaf87
+[INFO] - [2017-07-26 12:51:47,620] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 5a6edb0d-43f2-419c-9d7f-3e891f8fdb04, d0aa5376-e5a4-4cae-9436-bc815fcdaf87
+[INFO] - [2017-07-26 12:52:28,353] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: c104794f-afac-47aa-8357-f1532401dd14, d0d7cb8c-6532-4736-8e93-d492125a12f6
+[INFO] - [2017-07-26 12:52:28,353] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: c104794f-afac-47aa-8357-f1532401dd14, d0d7cb8c-6532-4736-8e93-d492125a12f6
+[WARN] - [2017-07-26 12:55:58,523] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS ONE LEG.' failed: status.find.is(200), but actually found 500
+[ERROR] - [2017-07-26 12:56:03,513] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-26 12:56:03,515] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-26 12:56:03,554] - [akka.dispatch.TaskInvocation] key not found: priceRequestId
+java.util.NoSuchElementException: key not found: priceRequestId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$purchaseOutBoundTrip$1.apply(getScenarioBuilder.scala:65)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$purchaseOutBoundTrip$1.apply(getScenarioBuilder.scala:64)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[WARN] - [2017-07-26 12:57:19,925] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS ONE LEG.' failed: j.n.ConnectException: Connection refused: /192.168.2.160:8181
+[ERROR] - [2017-07-26 12:57:24,915] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[INFO] - [2017-07-26 12:58:01,212] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 1547f247-7aa3-4b8c-9370-7f542739e7cb, 8f5567c6-2156-4312-8aed-8e8c76c95205
+[INFO] - [2017-07-26 12:58:01,212] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 1547f247-7aa3-4b8c-9370-7f542739e7cb, 8f5567c6-2156-4312-8aed-8e8c76c95205
+[WARN] - [2017-07-26 12:59:37,987] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS ONE LEG.' failed: status.find.is(200), but actually found 500
+[ERROR] - [2017-07-26 12:59:42,967] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[INFO] - [2017-07-26 13:12:04,678] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: aad83917-d08a-42fe-bd47-1c52cc7cd221, 3f3da06b-92c8-45f0-90fb-46b6794c6909
+[INFO] - [2017-07-26 13:12:04,678] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: aad83917-d08a-42fe-bd47-1c52cc7cd221, 3f3da06b-92c8-45f0-90fb-46b6794c6909
+[WARN] - [2017-07-26 13:21:55,415] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS TWO LEGS.' failed: status.find.is(200), but actually found 422
+[ERROR] - [2017-07-26 13:22:00,422] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[INFO] - [2017-07-26 13:22:00,936] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 3f69532c-814e-403a-ac3d-abc55c53b149, 21b5e7dc-c1a8-4236-93a0-6b8149675cac
+[INFO] - [2017-07-26 13:22:00,936] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 3f69532c-814e-403a-ac3d-abc55c53b149, 21b5e7dc-c1a8-4236-93a0-6b8149675cac
+[WARN] - [2017-07-26 13:28:44,146] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE TWO SEGMENTS TWO LEGS.' failed: status.find.is(200), but actually found 422
+[ERROR] - [2017-07-26 13:28:49,165] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-26 13:28:49,169] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-26 13:28:49,173] - [akka.dispatch.TaskInvocation] key not found: priceRequestId
+java.util.NoSuchElementException: key not found: priceRequestId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$purchaseOutBoundTrip$1.apply(getScenarioBuilder.scala:65)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$purchaseOutBoundTrip$1.apply(getScenarioBuilder.scala:64)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[INFO] - [2017-07-26 13:28:50,142] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 5f445cc5-9f92-48a0-8d01-aea1024943c4, af3e01ae-7e29-41ca-affb-d21d47802700
+[INFO] - [2017-07-26 13:28:50,142] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 5f445cc5-9f92-48a0-8d01-aea1024943c4, af3e01ae-7e29-41ca-affb-d21d47802700
+[WARN] - [2017-07-26 13:30:43,765] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE TWO SEGMENTS TWO LEGS.' failed: status.find.is(200), but actually found 422
+[ERROR] - [2017-07-26 13:30:48,698] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-26 13:30:48,700] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-26 13:30:48,706] - [akka.dispatch.TaskInvocation] key not found: priceRequestId
+java.util.NoSuchElementException: key not found: priceRequestId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$purchaseOutBoundTrip$1.apply(getScenarioBuilder.scala:65)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$purchaseOutBoundTrip$1.apply(getScenarioBuilder.scala:64)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[WARN] - [2017-07-26 13:39:09,152] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE TWO SEGMENTS TWO LEGS.' failed: status.find.is(200), but actually found 422
+[ERROR] - [2017-07-26 13:39:14,095] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-26 13:39:14,133] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-26 13:39:14,137] - [akka.dispatch.TaskInvocation] key not found: priceRequestId
+java.util.NoSuchElementException: key not found: priceRequestId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$purchaseOutBoundTrip$1.apply(getScenarioBuilder.scala:65)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$purchaseOutBoundTrip$1.apply(getScenarioBuilder.scala:64)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[WARN] - [2017-07-26 13:45:16,042] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 503
+[INFO] - [2017-07-26 13:45:16,045] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 1c34d40e-be20-4c83-b2e1-4f439e8bc897, 30ea15ef-a747-4e2f-b517-15bb60741174
+[INFO] - [2017-07-26 13:45:16,045] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 1c34d40e-be20-4c83-b2e1-4f439e8bc897, 30ea15ef-a747-4e2f-b517-15bb60741174
+[WARN] - [2017-07-26 13:46:01,769] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 503
+[INFO] - [2017-07-26 13:46:01,771] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 1b370bca-0c21-4bca-a9c2-e57db01d9985, 09fc3285-4e77-4d77-ac7f-2b91f99dabe4
+[INFO] - [2017-07-26 13:46:01,771] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 1b370bca-0c21-4bca-a9c2-e57db01d9985, 09fc3285-4e77-4d77-ac7f-2b91f99dabe4
+[WARN] - [2017-07-26 13:57:09,204] - [io.gatling.http.ahc.ResponseProcessor] Request 'PURCHASE A TRIP FOR QUOTED PRICE.' failed: status.find.is(200), but actually found 503
+[INFO] - [2017-07-26 13:57:09,207] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 5b0d1da7-4d38-44a7-ace2-df70b4702597, ddb6319c-a585-4dd0-8bba-ebe4db02316e
+[INFO] - [2017-07-26 13:57:09,207] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 5b0d1da7-4d38-44a7-ace2-df70b4702597, ddb6319c-a585-4dd0-8bba-ebe4db02316e
+[INFO] - [2017-07-26 15:27:03,463] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 2af6ecb1-28d6-4c83-bae4-f45c8b38f43b, b2a93af4-8b20-474f-ba64-a3c001cd9bf4
+[INFO] - [2017-07-26 15:27:03,463] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 2af6ecb1-28d6-4c83-bae4-f45c8b38f43b, b2a93af4-8b20-474f-ba64-a3c001cd9bf4
+[WARN] - [2017-07-26 17:11:15,740] - [io.gatling.http.ahc.ResponseProcessor] Request 'Disrupt a leg for multi leg segment.' failed: status.find.is(200), but actually found 503
+[WARN] - [2017-07-26 17:11:53,378] - [io.gatling.http.ahc.ResponseProcessor] Request 'Disrupt a leg for multi leg segment.' failed: j.n.ConnectException: Connection refused: /192.168.2.160:9191
+[INFO] - [2017-07-26 17:20:55,092] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 890a379c-f052-4fcf-ac12-0eec1f7d8181, a4ef2b48-f69a-4716-b1b8-1e9822e9d6bf
+[INFO] - [2017-07-26 17:20:55,092] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 890a379c-f052-4fcf-ac12-0eec1f7d8181, a4ef2b48-f69a-4716-b1b8-1e9822e9d6bf
+[INFO] - [2017-07-26 17:45:55,212] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 898d2596-9a8a-46e7-a40e-ccae8191e113, ecdbd590-ccae-4a67-a10f-0e07b0472a5d
+[INFO] - [2017-07-26 17:45:55,212] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 898d2596-9a8a-46e7-a40e-ccae8191e113, ecdbd590-ccae-4a67-a10f-0e07b0472a5d
+[INFO] - [2017-07-26 18:18:03,059] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 80e3aca4-9c09-4b8e-91c6-5840081966f4, 2dab8a87-fd85-4b07-98ac-630c82172192
+[INFO] - [2017-07-26 18:18:03,059] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 80e3aca4-9c09-4b8e-91c6-5840081966f4, 2dab8a87-fd85-4b07-98ac-630c82172192
+[INFO] - [2017-07-26 18:32:56,213] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: d524609c-f495-4932-a28f-14187c66cbbd, f7b475d7-d33e-4798-9987-e3e8149302cf
+[INFO] - [2017-07-26 18:32:56,213] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: d524609c-f495-4932-a28f-14187c66cbbd, f7b475d7-d33e-4798-9987-e3e8149302cf
+[INFO] - [2017-07-26 18:34:43,287] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 9797073b-3fbf-4cad-ad8d-9c2cff57aada, ebfc80a1-a36a-4bd8-ad1f-4bb4595fc3a1
+[INFO] - [2017-07-26 18:34:43,287] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 9797073b-3fbf-4cad-ad8d-9c2cff57aada, ebfc80a1-a36a-4bd8-ad1f-4bb4595fc3a1

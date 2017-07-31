@@ -1,0 +1,629 @@
+{
+  "type": "GROUP",
+"name": "Global Information",
+"path": "",
+"pathFormatted": "group_missing-name-b06d1",
+"stats": {
+    "name": "Global Information",
+    "numberOfRequests": {
+        "total": 11,
+        "ok": 6,
+        "ko": 5
+    },
+    "minResponseTime": {
+        "total": 391,
+        "ok": 391,
+        "ko": 735
+    },
+    "maxResponseTime": {
+        "total": 4630,
+        "ok": 1015,
+        "ko": 4630
+    },
+    "meanResponseTime": {
+        "total": 1520,
+        "ok": 716,
+        "ko": 2484
+    },
+    "standardDeviation": {
+        "total": 1377,
+        "ok": 239,
+        "ko": 1548
+    },
+    "percentiles1": {
+        "total": 948,
+        "ok": 725,
+        "ko": 2243
+    },
+    "percentiles2": {
+        "total": 1629,
+        "ok": 935,
+        "ko": 3864
+    },
+    "percentiles3": {
+        "total": 4247,
+        "ok": 1008,
+        "ko": 4477
+    },
+    "percentiles4": {
+        "total": 4553,
+        "ok": 1014,
+        "ko": 4599
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 4,
+        "percentage": 36
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 2,
+        "percentage": 18
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 5,
+        "percentage": 45
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.03873239436619718,
+        "ok": 0.02112676056338028,
+        "ko": 0.017605633802816902
+    }
+},
+"contents": {
+"req_quote-price-for-4ae42": {
+        "type": "REQUEST",
+        "name": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.",
+"path": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.",
+"pathFormatted": "req_quote-price-for-4ae42",
+"stats": {
+    "name": "QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 1,
+        "ko": 0
+    },
+    "minResponseTime": {
+        "total": 666,
+        "ok": 666,
+        "ko": 0
+    },
+    "maxResponseTime": {
+        "total": 666,
+        "ok": 666,
+        "ko": 0
+    },
+    "meanResponseTime": {
+        "total": 666,
+        "ok": 666,
+        "ko": 0
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 666,
+        "ok": 666,
+        "ko": 0
+    },
+    "percentiles2": {
+        "total": 666,
+        "ok": 666,
+        "ko": 0
+    },
+    "percentiles3": {
+        "total": 666,
+        "ok": 666,
+        "ko": 0
+    },
+    "percentiles4": {
+        "total": 666,
+        "ok": 666,
+        "ko": 0
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 1,
+        "percentage": 100
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 0,
+        "percentage": 0
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.0035211267605633804,
+        "ok": 0.0035211267605633804,
+        "ko": 0
+    }
+}
+    },"req_purchase-a-trip-d01d7": {
+        "type": "REQUEST",
+        "name": "PURCHASE A TRIP FOR QUOTED PRICE.",
+"path": "PURCHASE A TRIP FOR QUOTED PRICE.",
+"pathFormatted": "req_purchase-a-trip-d01d7",
+"stats": {
+    "name": "PURCHASE A TRIP FOR QUOTED PRICE.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 1,
+        "ko": 0
+    },
+    "minResponseTime": {
+        "total": 986,
+        "ok": 986,
+        "ko": 0
+    },
+    "maxResponseTime": {
+        "total": 986,
+        "ok": 986,
+        "ko": 0
+    },
+    "meanResponseTime": {
+        "total": 986,
+        "ok": 986,
+        "ko": 0
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 986,
+        "ok": 986,
+        "ko": 0
+    },
+    "percentiles2": {
+        "total": 986,
+        "ok": 986,
+        "ko": 0
+    },
+    "percentiles3": {
+        "total": 986,
+        "ok": 986,
+        "ko": 0
+    },
+    "percentiles4": {
+        "total": 986,
+        "ok": 986,
+        "ko": 0
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 1,
+        "percentage": 100
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 0,
+        "percentage": 0
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.0035211267605633804,
+        "ok": 0.0035211267605633804,
+        "ko": 0
+    }
+}
+    },"req_fetch-trip-info-c4431": {
+        "type": "REQUEST",
+        "name": "FETCH TRIP INFO OF MY PURCHASED TRIP.",
+"path": "FETCH TRIP INFO OF MY PURCHASED TRIP.",
+"pathFormatted": "req_fetch-trip-info-c4431",
+"stats": {
+    "name": "FETCH TRIP INFO OF MY PURCHASED TRIP.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 1,
+        "ko": 0
+    },
+    "minResponseTime": {
+        "total": 1015,
+        "ok": 1015,
+        "ko": 0
+    },
+    "maxResponseTime": {
+        "total": 1015,
+        "ok": 1015,
+        "ko": 0
+    },
+    "meanResponseTime": {
+        "total": 1015,
+        "ok": 1015,
+        "ko": 0
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 1015,
+        "ok": 1015,
+        "ko": 0
+    },
+    "percentiles2": {
+        "total": 1015,
+        "ok": 1015,
+        "ko": 0
+    },
+    "percentiles3": {
+        "total": 1015,
+        "ok": 1015,
+        "ko": 0
+    },
+    "percentiles4": {
+        "total": 1015,
+        "ok": 1015,
+        "ko": 0
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 1,
+        "percentage": 100
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 0,
+        "percentage": 0
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.0035211267605633804,
+        "ok": 0.0035211267605633804,
+        "ko": 0
+    }
+}
+    },"req_disrupt-purchas-8153e": {
+        "type": "REQUEST",
+        "name": "DISRUPT PURCHASED TRIP.",
+"path": "DISRUPT PURCHASED TRIP.",
+"pathFormatted": "req_disrupt-purchas-8153e",
+"stats": {
+    "name": "DISRUPT PURCHASED TRIP.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 1,
+        "ko": 0
+    },
+    "minResponseTime": {
+        "total": 391,
+        "ok": 391,
+        "ko": 0
+    },
+    "maxResponseTime": {
+        "total": 391,
+        "ok": 391,
+        "ko": 0
+    },
+    "meanResponseTime": {
+        "total": 391,
+        "ok": 391,
+        "ko": 0
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 391,
+        "ok": 391,
+        "ko": 0
+    },
+    "percentiles2": {
+        "total": 391,
+        "ok": 391,
+        "ko": 0
+    },
+    "percentiles3": {
+        "total": 391,
+        "ok": 391,
+        "ko": 0
+    },
+    "percentiles4": {
+        "total": 391,
+        "ok": 391,
+        "ko": 0
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 1,
+        "percentage": 100
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 0,
+        "percentage": 0
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.0035211267605633804,
+        "ok": 0.0035211267605633804,
+        "ko": 0
+    }
+}
+    },"req_fetch-rebooking-bd812": {
+        "type": "REQUEST",
+        "name": "FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.",
+"path": "FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.",
+"pathFormatted": "req_fetch-rebooking-bd812",
+"stats": {
+    "name": "FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.",
+    "numberOfRequests": {
+        "total": 5,
+        "ok": 1,
+        "ko": 4
+    },
+    "minResponseTime": {
+        "total": 735,
+        "ok": 783,
+        "ko": 735
+    },
+    "maxResponseTime": {
+        "total": 4630,
+        "ok": 783,
+        "ko": 4630
+    },
+    "meanResponseTime": {
+        "total": 2192,
+        "ok": 783,
+        "ko": 2544
+    },
+    "standardDeviation": {
+        "total": 1697,
+        "ok": 0,
+        "ko": 1726
+    },
+    "percentiles1": {
+        "total": 948,
+        "ok": 783,
+        "ko": 2406
+    },
+    "percentiles2": {
+        "total": 3864,
+        "ok": 783,
+        "ko": 4056
+    },
+    "percentiles3": {
+        "total": 4477,
+        "ok": 783,
+        "ko": 4515
+    },
+    "percentiles4": {
+        "total": 4599,
+        "ok": 783,
+        "ko": 4607
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 1,
+        "percentage": 20
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 4,
+        "percentage": 80
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.017605633802816902,
+        "ok": 0.0035211267605633804,
+        "ko": 0.014084507042253521
+    }
+}
+    },"req_fetch-the-avail-685c4": {
+        "type": "REQUEST",
+        "name": "FETCH THE AVAILABLE REBOOKING OPTIONS FOR MY TRIP.",
+"path": "FETCH THE AVAILABLE REBOOKING OPTIONS FOR MY TRIP.",
+"pathFormatted": "req_fetch-the-avail-685c4",
+"stats": {
+    "name": "FETCH THE AVAILABLE REBOOKING OPTIONS FOR MY TRIP.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 0,
+        "ko": 1
+    },
+    "minResponseTime": {
+        "total": 2243,
+        "ok": 0,
+        "ko": 2243
+    },
+    "maxResponseTime": {
+        "total": 2243,
+        "ok": 0,
+        "ko": 2243
+    },
+    "meanResponseTime": {
+        "total": 2243,
+        "ok": 0,
+        "ko": 2243
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 2243,
+        "ok": 0,
+        "ko": 2243
+    },
+    "percentiles2": {
+        "total": 2243,
+        "ok": 0,
+        "ko": 2243
+    },
+    "percentiles3": {
+        "total": 2243,
+        "ok": 0,
+        "ko": 2243
+    },
+    "percentiles4": {
+        "total": 2243,
+        "ok": 0,
+        "ko": 2243
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 1,
+        "percentage": 100
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.0035211267605633804,
+        "ok": 0,
+        "ko": 0.0035211267605633804
+    }
+}
+    },"req_select-a-option-4fdfb": {
+        "type": "REQUEST",
+        "name": "SELECT A OPTION FROM AVAILABLE OPTIONS.",
+"path": "SELECT A OPTION FROM AVAILABLE OPTIONS.",
+"pathFormatted": "req_select-a-option-4fdfb",
+"stats": {
+    "name": "SELECT A OPTION FROM AVAILABLE OPTIONS.",
+    "numberOfRequests": {
+        "total": 1,
+        "ok": 1,
+        "ko": 0
+    },
+    "minResponseTime": {
+        "total": 456,
+        "ok": 456,
+        "ko": 0
+    },
+    "maxResponseTime": {
+        "total": 456,
+        "ok": 456,
+        "ko": 0
+    },
+    "meanResponseTime": {
+        "total": 456,
+        "ok": 456,
+        "ko": 0
+    },
+    "standardDeviation": {
+        "total": 0,
+        "ok": 0,
+        "ko": 0
+    },
+    "percentiles1": {
+        "total": 456,
+        "ok": 456,
+        "ko": 0
+    },
+    "percentiles2": {
+        "total": 456,
+        "ok": 456,
+        "ko": 0
+    },
+    "percentiles3": {
+        "total": 456,
+        "ok": 456,
+        "ko": 0
+    },
+    "percentiles4": {
+        "total": 456,
+        "ok": 456,
+        "ko": 0
+    },
+    "group1": {
+        "name": "t < 800 ms",
+        "count": 1,
+        "percentage": 100
+    },
+    "group2": {
+        "name": "800 ms < t < 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group3": {
+        "name": "t > 1200 ms",
+        "count": 0,
+        "percentage": 0
+    },
+    "group4": {
+        "name": "failed",
+        "count": 0,
+        "percentage": 0
+    },
+    "meanNumberOfRequestsPerSecond": {
+        "total": 0.0035211267605633804,
+        "ok": 0.0035211267605633804,
+        "ko": 0
+    }
+}
+    }
+}
+
+}

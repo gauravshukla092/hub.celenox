@@ -1,0 +1,5 @@
+RUN	com.freebird.stresstest.PurchaseServiceST		purchaseservicest	1501240625092	 	2.0
+USER	***************Purchase Return Trip*******************	1	START	1501240626505	1501240626505
+REQUEST	***************Purchase Return Trip*******************	1		QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE ONE SEGMENT ONE LEG.	1501240626550	1501240627727	OK	 
+REQUEST	***************Purchase Return Trip*******************	1		PURCHASE A TRIP FOR QUOTED PRICE.	1501240632742	1501240633170	OK	 
+USER	***************Purchase Return Trip*******************	1	END	1501240626505	1501240633199

@@ -1,0 +1,437 @@
+[WARN] - [2017-07-25 10:46:06,362] - [io.gatling.http.ahc.ResponseProcessor] Request 'SELECT A OPTION FROM AVAILABLE OPTIONS.' failed: j.u.c.TimeoutException: Request timeout to not-connected after 60000 ms
+[INFO] - [2017-07-25 10:46:06,418] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> fea689a9-8ec3-46b8-a638-871d3a6b1b39,
+ status -> Disrupted, 
+ LegId -> 228cfed1-ac1e-4325-830f-0793e12e3b66,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(2ba617b0-21b7-4d5d-b44d-d2cb6a727b26),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 10:46:06,418] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> fea689a9-8ec3-46b8-a638-871d3a6b1b39,
+ status -> Disrupted, 
+ LegId -> 228cfed1-ac1e-4325-830f-0793e12e3b66,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(2ba617b0-21b7-4d5d-b44d-d2cb6a727b26),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 10:46:06,479] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondLegOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondLegDestination -> CLT
+[INFO] - [2017-07-25 10:46:06,479] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondLegOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondLegDestination -> CLT
+[INFO] - [2017-07-25 10:46:06,483] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Next Day available Rebooking options : 
+ Date -> 2017-07-27,
+ nextDayOptionOrigin -> EWR,JFK,LGA,
+ nextDayOptionDestination -> CLT,
+ nextDayOneStopOptionOrigin -> EWR,JFK,LGA,
+ nextDayOneStopOptionDestination -> ATL,BOS,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ nextDayOneStopOptionSecondLegOrigin -> ATL,BOS,DTW,IAD,MSP,ORD,STL,YYZ,
+ nextDayOneStopOptionSecondLegDestination -> CLT
+[INFO] - [2017-07-25 10:46:06,483] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Next Day available Rebooking options : 
+ Date -> 2017-07-27,
+ nextDayOptionOrigin -> EWR,JFK,LGA,
+ nextDayOptionDestination -> CLT,
+ nextDayOneStopOptionOrigin -> EWR,JFK,LGA,
+ nextDayOneStopOptionDestination -> ATL,BOS,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ nextDayOneStopOptionSecondLegOrigin -> ATL,BOS,DTW,IAD,MSP,ORD,STL,YYZ,
+ nextDayOneStopOptionSecondLegDestination -> CLT
+[ERROR] - [2017-07-25 10:46:06,486] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: RebookingSelection', forwarding to the next one
+[INFO] - [2017-07-25 10:49:20,320] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> cc0bd24e-d071-41cc-8fb6-415f2a5c936a,
+ status -> Disrupted, 
+ LegId -> 45ba59a2-75be-44c6-9c77-78a768e671fa,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(62b9f6ef-36e5-4355-a40c-4cde598827bd),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 10:49:20,320] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> cc0bd24e-d071-41cc-8fb6-415f2a5c936a,
+ status -> Disrupted, 
+ LegId -> 45ba59a2-75be-44c6-9c77-78a768e671fa,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(62b9f6ef-36e5-4355-a40c-4cde598827bd),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 10:49:20,552] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondLegOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondLegDestination -> CLT
+[INFO] - [2017-07-25 10:49:20,552] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondLegOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondLegDestination -> CLT
+[INFO] - [2017-07-25 10:49:20,556] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Next Day available Rebooking options : 
+ Date -> 2017-07-27,
+ nextDayOptionOrigin -> EWR,JFK,LGA,
+ nextDayOptionDestination -> CLT,
+ nextDayOneStopOptionOrigin -> EWR,JFK,LGA,
+ nextDayOneStopOptionDestination -> ATL,BOS,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ nextDayOneStopOptionSecondLegOrigin -> ATL,BOS,DTW,IAD,MSP,ORD,STL,YYZ,
+ nextDayOneStopOptionSecondLegDestination -> CLT
+[INFO] - [2017-07-25 10:49:20,556] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Next Day available Rebooking options : 
+ Date -> 2017-07-27,
+ nextDayOptionOrigin -> EWR,JFK,LGA,
+ nextDayOptionDestination -> CLT,
+ nextDayOneStopOptionOrigin -> EWR,JFK,LGA,
+ nextDayOneStopOptionDestination -> ATL,BOS,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ nextDayOneStopOptionSecondLegOrigin -> ATL,BOS,DTW,IAD,MSP,ORD,STL,YYZ,
+ nextDayOneStopOptionSecondLegDestination -> CLT
+[INFO] - [2017-07-25 10:49:20,559] - [com.freebird.stresstest.getScenarioBuilder$] Rebooking Selection vertex Id : 115361aa-3cea-4897-a130-c7be21de461c
+[INFO] - [2017-07-25 10:49:20,559] - [com.freebird.stresstest.getScenarioBuilder$] Rebooking Selection vertex Id : 115361aa-3cea-4897-a130-c7be21de461c
+[WARN] - [2017-07-25 10:58:01,126] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[INFO] - [2017-07-25 10:59:00,865] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> c852b638-b2b9-4499-84a4-e49dbe60531e,
+ status -> Disrupted, 
+ LegId -> 3fa86a05-6d3a-4daa-bcb8-a30a2f354e85,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(25da447c-a8f1-459e-bc47-850142416311),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 10:59:00,865] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> c852b638-b2b9-4499-84a4-e49dbe60531e,
+ status -> Disrupted, 
+ LegId -> 3fa86a05-6d3a-4daa-bcb8-a30a2f354e85,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(25da447c-a8f1-459e-bc47-850142416311),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 10:59:00,881] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondLegOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondLegDestination -> CLT
+[INFO] - [2017-07-25 10:59:00,881] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondLegOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondLegDestination -> CLT
+[INFO] - [2017-07-25 10:59:00,885] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Next Day available Rebooking options : 
+ Date -> 2017-07-27,
+ nextDayOptionOrigin -> EWR,JFK,LGA,
+ nextDayOptionDestination -> CLT,
+ nextDayOneStopOptionOrigin -> EWR,JFK,LGA,
+ nextDayOneStopOptionDestination -> ATL,BOS,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ nextDayOneStopOptionSecondLegOrigin -> ATL,BOS,DTW,IAD,MSP,ORD,STL,YYZ,
+ nextDayOneStopOptionSecondLegDestination -> CLT
+[INFO] - [2017-07-25 10:59:00,885] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Next Day available Rebooking options : 
+ Date -> 2017-07-27,
+ nextDayOptionOrigin -> EWR,JFK,LGA,
+ nextDayOptionDestination -> CLT,
+ nextDayOneStopOptionOrigin -> EWR,JFK,LGA,
+ nextDayOneStopOptionDestination -> ATL,BOS,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ nextDayOneStopOptionSecondLegOrigin -> ATL,BOS,DTW,IAD,MSP,ORD,STL,YYZ,
+ nextDayOneStopOptionSecondLegDestination -> CLT
+[INFO] - [2017-07-25 10:59:00,887] - [com.freebird.stresstest.getScenarioBuilder$] Rebooking Selection vertex Id : a6bfa727-7347-4f53-b1fc-a0087c9ed413
+[INFO] - [2017-07-25 10:59:00,887] - [com.freebird.stresstest.getScenarioBuilder$] Rebooking Selection vertex Id : a6bfa727-7347-4f53-b1fc-a0087c9ed413
+[WARN] - [2017-07-25 12:11:57,318] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[INFO] - [2017-07-25 12:12:57,196] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> 6e263cfa-cc6c-4ca6-8115-9503d0b0c787,
+ status -> Disrupted, 
+ LegId -> 5f2ec33f-9a1e-43fe-8a42-a29ca0718c3b,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(d3738cc5-ad2a-49c4-a1f0-d52bde567283),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 12:12:57,196] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> 6e263cfa-cc6c-4ca6-8115-9503d0b0c787,
+ status -> Disrupted, 
+ LegId -> 5f2ec33f-9a1e-43fe-8a42-a29ca0718c3b,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(d3738cc5-ad2a-49c4-a1f0-d52bde567283),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 12:12:57,207] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopFirstSegmentOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopFirstSegmentOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentDestination -> CLT
+[INFO] - [2017-07-25 12:12:57,207] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopFirstSegmentOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopFirstSegmentOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentDestination -> CLT
+[ERROR] - [2017-07-25 12:12:57,209] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: nextDayOneStopOrigin', forwarding to the next one
+[WARN] - [2017-07-25 12:42:11,644] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[WARN] - [2017-07-25 12:43:02,645] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[WARN] - [2017-07-25 12:43:52,968] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: j.n.ConnectException: Connection refused: /52.32.106.42:8181
+[WARN] - [2017-07-25 12:45:44,025] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[INFO] - [2017-07-25 12:46:44,978] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> 34a87da5-1d17-47f3-b081-243d9b264784,
+ status -> Disrupted, 
+ LegId -> 4834d06a-7600-45cc-8a96-6e37c70af8da,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(305497c8-9597-496f-a7d5-5b87752293e7),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 12:46:44,978] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> 34a87da5-1d17-47f3-b081-243d9b264784,
+ status -> Disrupted, 
+ LegId -> 4834d06a-7600-45cc-8a96-6e37c70af8da,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(305497c8-9597-496f-a7d5-5b87752293e7),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 12:46:45,018] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopFirstSegmentOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopFirstSegmentOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentDestination -> CLT
+[INFO] - [2017-07-25 12:46:45,018] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopFirstSegmentOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopFirstSegmentOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentDestination -> CLT
+[ERROR] - [2017-07-25 12:46:45,020] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: nextDayOneStopOrigin', forwarding to the next one
+[WARN] - [2017-07-25 15:01:27,436] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[WARN] - [2017-07-25 15:02:18,221] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[INFO] - [2017-07-25 15:03:21,526] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> 4a828f88-05c0-4bd1-a2fe-eb05f92abeab,
+ status -> Scheduled, 
+ LegId -> 4161fc51-3c1f-4a30-bf59-b947b7e23f93,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(47120344-ce7f-4758-8266-4161092e362f),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 15:03:21,526] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> 4a828f88-05c0-4bd1-a2fe-eb05f92abeab,
+ status -> Scheduled, 
+ LegId -> 4161fc51-3c1f-4a30-bf59-b947b7e23f93,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(47120344-ce7f-4758-8266-4161092e362f),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 15:03:21,589] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopFirstSegmentOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopFirstSegmentOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentDestination -> CLT
+[INFO] - [2017-07-25 15:03:21,589] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopFirstSegmentOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopFirstSegmentOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentDestination -> CLT
+[ERROR] - [2017-07-25 15:03:21,591] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: nextDayOneStopOrigin', forwarding to the next one
+[WARN] - [2017-07-25 18:43:39,153] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[WARN] - [2017-07-25 18:44:30,371] - [io.gatling.http.ahc.ResponseProcessor] Request 'FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.' failed: jsonPath($..rebookingToken).find.exists, found nothing
+[INFO] - [2017-07-25 18:45:29,962] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> efd25ec1-3c32-4caa-8674-03bd4d572673,
+ status -> Scheduled, 
+ LegId -> 1304cf2b-52dd-411f-82b8-cfdfe26410b1,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(03e25f5d-99e7-44c1-bed5-c19fd3e74257),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 18:45:29,962] - [com.freebird.stresstest.getScenarioBuilder$] tripId -> efd25ec1-3c32-4caa-8674-03bd4d572673,
+ status -> Scheduled, 
+ LegId -> 1304cf2b-52dd-411f-82b8-cfdfe26410b1,
+ airline -> AA,
+ flightNumber -> 2577,
+ origin -> EWR,
+ destination -> CLT,
+ arrival -> 2017-07-26T21:35:00.000Z,
+ departure -> 2017-07-26T19:31:00.000Z,
+ arrivalLocal -> 2017-07-26 17:35,
+ departureLocal -> 2017-07-26 15:31,
+ rebookingOpportunity -> Some(03e25f5d-99e7-44c1-bed5-c19fd3e74257),
+ partnerName -> Knoldus Testing Partner
+[INFO] - [2017-07-25 18:45:30,021] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopFirstSegmentOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopFirstSegmentOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentDestination -> CLT
+[INFO] - [2017-07-25 18:45:30,021] - [com.freebird.stresstest.getScenarioBuilder$] 
+ Same Day available Rebooking options : 
+ Date -> 2017-07-26, 
+ Origin -> EWR,
+ destination -> CLT, 
+ sameDayOptionOrigin -> EWR,JFK,LGA,
+ sameDayOptionDestination -> CLT,
+ sameDayOneStopFirstSegmentOptionOrigin -> EWR,JFK,LGA,
+ sameDayOneStopFirstSegmentOptionDestination -> ATL,BOS,CVG,DCA,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentOrigin -> ATL,BOS,CVG,DTW,IAD,MSP,ORD,STL,YYZ,
+ sameDayOneStopOptionSecondSegmentDestination -> CLT
+[ERROR] - [2017-07-25 18:45:30,022] - [io.gatling.core.action.builder.SessionHookBuilder$$anon$1] 'hook-1' crashed with 'java.util.NoSuchElementException: key not found: nextDayOneStopOrigin', forwarding to the next one
+[WARN] - [2017-07-25 20:06:04,705] - [io.gatling.http.ahc.ResponseProcessor] Request 'QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS ONE LEG.' failed: status.find.is(200), but actually found 422
+[ERROR] - [2017-07-25 20:06:09,653] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' failed to execute: No attribute named 'priceRequestId' is defined
+[ERROR] - [2017-07-25 20:06:09,655] - [io.gatling.http.action.sync.HttpRequestAction] 'httpRequest-2' crashed with 'java.util.NoSuchElementException: key not found: priceRequestId', forwarding to the next one
+[ERROR] - [2017-07-25 20:06:09,699] - [akka.dispatch.TaskInvocation] key not found: priceRequestId
+java.util.NoSuchElementException: key not found: priceRequestId
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:59)
+	at io.gatling.core.session.SessionAttribute.as(Session.scala:42)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$purchaseOutBoundTrip$1.apply(getScenarioBuilder.scala:65)
+	at com.freebird.stresstest.getScenarioBuilder$$anonfun$purchaseOutBoundTrip$1.apply(getScenarioBuilder.scala:64)
+	at io.gatling.core.action.SessionHook.execute(SessionHook.scala:38)
+	at io.gatling.core.action.ChainableAction$class.$bang(Action.scala:69)
+	at io.gatling.http.action.RequestAction.io$gatling$core$action$ExitableAction$$super$$bang(RequestAction.scala:23)
+	at io.gatling.core.action.ExitableAction$class.$bang(BlockExit.scala:137)
+	at io.gatling.http.action.RequestAction.$bang(RequestAction.scala:23)
+	at io.gatling.core.action.Pause.io$gatling$core$action$Pause$$$anonfun$1(Pause.scala:59)
+	at akka.actor.Scheduler$$anon$4.run(Scheduler.scala:126)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[INFO] - [2017-07-25 20:07:54,330] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 22034a3d-6da1-4236-970f-9c19efa5947f, 677006ae-492e-459e-98d7-b570c30095e1
+[INFO] - [2017-07-25 20:07:54,330] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 22034a3d-6da1-4236-970f-9c19efa5947f, 677006ae-492e-459e-98d7-b570c30095e1

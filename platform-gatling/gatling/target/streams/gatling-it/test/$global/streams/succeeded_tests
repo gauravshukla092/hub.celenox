@@ -1,7 +1,9 @@
 #Successful Tests
-#Mon Jul 24 01:04:17 IST 2017
+#Mon Jul 31 12:11:28 IST 2017
+com.freebird.stresstest.PricingServiceST=1501137861966
 com.freebird.stresstest.Authenticate=1500375979583
 com.freebird.stresstest.AdminSearch=1500366672631
-com.freebird.stresstest.PurchaseServiceST=1500625709157
-com.freebird.stresstest.RebookingFlow=1500838457416
+com.freebird.stresstest.PurchaseServiceST=1501241608970
+com.freebird.stresstest.RebookingFlow=1501483288783
 com.freebird.stresstest.TripInfo=1500628269352
+com.freebird.stresstest.TestMissedConnection=1501238116100

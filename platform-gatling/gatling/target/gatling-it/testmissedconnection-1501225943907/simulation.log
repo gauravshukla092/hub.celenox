@@ -1,0 +1,4 @@
+RUN	com.freebird.stresstest.TestMissedConnection		testmissedconnection	1501225943907	 	2.0
+USER	--------'CREATE DISRUPTION FOR REAL TIME FLIGHT'--------	1	START	1501225945505	1501225945505
+REQUEST	--------'CREATE DISRUPTION FOR REAL TIME FLIGHT'--------	1		Disrupt a leg for multi leg segment.	1501225945555	1501225965646	KO	status.find.is(200), but actually found 503
+USER	--------'CREATE DISRUPTION FOR REAL TIME FLIGHT'--------	1	END	1501225945505	1501225965764

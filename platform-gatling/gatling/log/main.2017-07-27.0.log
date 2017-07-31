@@ -1,0 +1,18 @@
+[INFO] - [2017-07-27 11:03:10,289] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 38b838f6-3a78-4d15-8ab1-32a8e2309fc0, f2a9b165-a9b0-42de-99f6-6b76342059b6
+[INFO] - [2017-07-27 11:03:10,289] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 38b838f6-3a78-4d15-8ab1-32a8e2309fc0, f2a9b165-a9b0-42de-99f6-6b76342059b6
+[INFO] - [2017-07-27 11:05:57,822] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 5b39d81d-48e3-4270-8bc5-f38ec1f24aa7, 6c1695f8-ec6d-4a1c-909c-9e4f71248217
+[INFO] - [2017-07-27 11:05:57,822] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 5b39d81d-48e3-4270-8bc5-f38ec1f24aa7, 6c1695f8-ec6d-4a1c-909c-9e4f71248217
+[INFO] - [2017-07-27 11:09:40,610] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 63408906296, 160115372192
+[INFO] - [2017-07-27 11:09:40,610] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 63408906296, 160115372192
+[INFO] - [2017-07-27 11:13:10,624] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 8c9f155b-c6b9-4c83-a377-020d37adfd10, c444e00b-683d-4d91-831d-d63d11cd9406
+[INFO] - [2017-07-27 11:13:10,624] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 8c9f155b-c6b9-4c83-a377-020d37adfd10, c444e00b-683d-4d91-831d-d63d11cd9406
+[INFO] - [2017-07-27 11:41:37,687] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 61852299376, 63408951352
+[INFO] - [2017-07-27 11:41:37,687] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: 61852299376, 63408951352
+[INFO] - [2017-07-27 12:06:04,819] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: ad426c1f-810a-473f-ae99-84e7da6a853b, 9c1b11d0-1cf6-498b-869e-a8579d18836e
+[INFO] - [2017-07-27 12:06:04,819] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: ad426c1f-810a-473f-ae99-84e7da6a853b, 9c1b11d0-1cf6-498b-869e-a8579d18836e
+[INFO] - [2017-07-27 12:07:36,260] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: cb99debd-daa8-4b17-ba14-435f81321ca2, ceacbf83-6cc2-4c13-83d0-0806adc768d6
+[INFO] - [2017-07-27 12:07:36,260] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: cb99debd-daa8-4b17-ba14-435f81321ca2, ceacbf83-6cc2-4c13-83d0-0806adc768d6
+[INFO] - [2017-07-27 12:14:21,323] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: f0d92a37-b801-4fdb-a7da-b3a5ef52b45f, 8299af38-78d0-44a9-bbd3-1f6ad7f127a3
+[INFO] - [2017-07-27 12:14:21,323] - [com.freebird.stresstest.getScenarioBuilder$] Extracted Response attribute: f0d92a37-b801-4fdb-a7da-b3a5ef52b45f, 8299af38-78d0-44a9-bbd3-1f6ad7f127a3
+[WARN] - [2017-07-27 12:51:54,464] - [io.gatling.http.ahc.ResponseProcessor] Request 'Disrupt a leg for multi leg segment.' failed: j.n.ConnectException: connection timed out: /52.32.106.42:9191
+[WARN] - [2017-07-27 12:52:39,804] - [io.gatling.http.ahc.ResponseProcessor] Request 'Disrupt a leg for multi leg segment.' failed: j.n.ConnectException: connection timed out: /52.32.106.42:9191

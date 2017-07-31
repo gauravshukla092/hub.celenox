@@ -1,0 +1,12 @@
+RUN	com.freebird.stresstest.RebookingFlow		rebookingflow	1500898652778	 	2.0
+USER	PURCHASE TRIP FROM FREEBIRD.	1	START	1500898654340	1500898654340
+REQUEST	PURCHASE TRIP FROM FREEBIRD.	1		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500898654399	1500898656593	KO	status.find.is(200), but actually found 422
+GROUP	Failed to build request PURCHASE A TRIP FOR QUOTED PRICE.: No attribute named 'priceRequestId' is defined 	1500898656693
+GROUP	Failed to build request FETCH TRIP INFO OF MY PURCHASED TRIP.: No attribute named 'tripId' is defined 	1500898658624
+GROUP	Failed to build request DISRUPT PURCHASED TRIP.: No attribute named 'legId' is defined 	1500898663621
+GROUP	Failed to build request FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.: No attribute named 'tripId' is defined 	1500898718631
+GROUP	Failed to build request FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.: No attribute named 'tripId' is defined 	1500898768630
+GROUP	Failed to build request FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.: No attribute named 'tripId' is defined 	1500898818670
+GROUP	Failed to build request FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.: No attribute named 'tripId' is defined 	1500898868700
+GROUP	Failed to build request FETCH REBOOKING OPPORTUNITY FROM FREEBIRD.: No attribute named 'tripId' is defined 	1500898918701
+USER	PURCHASE TRIP FROM FREEBIRD.	1	END	1500898654340	1500898918704

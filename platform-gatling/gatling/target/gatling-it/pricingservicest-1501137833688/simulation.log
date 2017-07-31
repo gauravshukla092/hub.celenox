@@ -1,0 +1,5 @@
+RUN	com.freebird.stresstest.PricingServiceST		pricingservicest	1501137833688	 	2.0
+USER	****************************Price For Trip with one segment and one leg	1	START	1501137835088	1501137835088
+REQUEST	****************************Price For Trip with one segment and one leg	1		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1501137835143	1501137843273	OK	 
+REQUEST	****************************Price For Trip with one segment and one leg	1		QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE ONE SEGMENT ONE LEG.	1501137848302	1501137856336	OK	 
+USER	****************************Price For Trip with one segment and one leg	1	END	1501137835088	1501137861326

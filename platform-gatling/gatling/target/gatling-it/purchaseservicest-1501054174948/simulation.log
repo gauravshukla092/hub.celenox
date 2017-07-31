@@ -1,0 +1,4 @@
+RUN	com.freebird.stresstest.PurchaseServiceST		purchaseservicest	1501054174948	 	2.0
+USER	***************Purchase  Outbound Trip****************	1	START	1501054176386	1501054176386
+REQUEST	***************Purchase  Outbound Trip****************	1		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS ONE LEG.	1501054176443	1501054177943	KO	status.find.is(200), but actually found 500
+USER	***************Purchase  Outbound Trip****************	1	END	1501054176386	1501054182969

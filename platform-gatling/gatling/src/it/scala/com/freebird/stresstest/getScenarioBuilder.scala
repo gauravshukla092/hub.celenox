@@ -59,7 +59,7 @@ object getScenarioBuilder extends TestSetup {
 
   def purchaseOutBoundTrip: ScenarioBuilder =
     scenario("***************Purchase  Outbound Trip****************")
-      .exec(Scenario.outboundTripPricingRequestBuilderForOneLeg).pause(5)
+      .exec(Scenario.outboundTripPricingRequestBuilderForTwoSegmentsOneLeg).pause(5)
       .exec(Scenario.purchaseRequestBuilder)
       .exec(purchaseOutboundTrip => {
         val priceId = purchaseOutboundTrip("priceRequestId").as[String]
@@ -107,14 +107,19 @@ object getScenarioBuilder extends TestSetup {
       .exec(Scenario.outboundTripPricingRequestBuilderForOneLeg)
       .exec(Scenario.purchaseRequestBuilder).pause(2)
       .exec(Scenario.getTripInfo).pause(5)
-      .exec(Scenario.disruptionRequestBuilder).pause(180)
-      .exec(Scenario.getRebookingOpportunity).pause(5)
+      .exec(Scenario.disruptionRequestBuilder).pause(5)
+        .tryMax(6) {
+          pause(50)
+            .exec(Scenario.getRebookingOpportunity)
+        }.exitHereIfFailed
       .exec(Scenario.getRebookingOptions).pause(5)
       .exec(Scenario.rebookingOptionSelectionBuilder)
       .exec(rebookingInfo => {
         extractedResponseForTripInfo(rebookingInfo)
-        extractedRebookingOption(rebookingInfo)
+        extractedSameDayRebookingOption(rebookingInfo)
+        extractedNextDayRebookingOption(rebookingInfo)
         extractedResponseForDirectedNearBy(rebookingInfo)
+        extractedResponseForRebookingSelection(rebookingInfo)
         rebookingInfo
       })
 

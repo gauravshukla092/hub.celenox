@@ -1,0 +1,4 @@
+RUN	com.freebird.stresstest.PurchaseServiceST		purchaseservicest	1501054038432	 	2.0
+USER	***************Purchase  Outbound Trip****************	1	START	1501054039835	1501054039835
+REQUEST	***************Purchase  Outbound Trip****************	1		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS ONE LEG.	1501054039894	1501054039894	KO	j.n.ConnectException: Connection refused: /192.168.2.160:8181
+USER	***************Purchase  Outbound Trip****************	1	END	1501054039835	1501054044917

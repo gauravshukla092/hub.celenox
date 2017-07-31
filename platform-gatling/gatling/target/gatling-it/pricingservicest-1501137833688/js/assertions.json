@@ -1,0 +1,10 @@
+{
+  "simulation": "com.freebird.stresstest.PricingServiceST",
+  "simulationId": "pricingservicest",
+  "start": 1501137833688,
+  "description": "",
+  "scenarios": ["****************************Price For Trip with one segment and one leg"],
+  "assertions": [
+
+  ]
+}

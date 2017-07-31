@@ -1,0 +1,17 @@
+RUN	com.freebird.stresstest.PricingServiceST		pricingservicest	1500909915077	 	2.0
+USER	****************************Price For Trip with one segment and one leg	1	START	1500909916676	1500909916676
+USER	****************************Price For Trip with two segments and one leg in each segment	2	START	1500909916729	1500909916729
+USER	****************************Price For Trip with one segment and two legs in each segment.	3	START	1500909916731	1500909916731
+USER	****************************Price For Trip with two segment and two legs in each segment.	4	START	1500909916734	1500909916734
+REQUEST	****************************Price For Trip with two segments and one leg in each segment	2		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS ONE LEG.	1500909916729	1500909917553	OK	 
+REQUEST	****************************Price For Trip with one segment and one leg	1		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT ONE LEG.	1500909916720	1500909917645	OK	 
+REQUEST	****************************Price For Trip with two segment and two legs in each segment.	4		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE TWO SEGMENTS TWO LEGS.	1500909916735	1500909918066	KO	status.find.is(200), but actually found 422
+REQUEST	****************************Price For Trip with one segment and two legs in each segment.	3		QUOTE PRICE FOR OUTBOUND TRIP WITH ONE SLICE ONE SEGMENT TWO LEGS.	1500909916731	1500909918115	KO	status.find.is(200), but actually found 422
+REQUEST	****************************Price For Trip with two segments and one leg in each segment	2		QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE TWO SEGMENTS ONE LEG.	1500909922579	1500909923035	OK	 
+REQUEST	****************************Price For Trip with one segment and one leg	1		QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE ONE SEGMENT ONE LEG.	1500909922659	1500909923066	OK	 
+REQUEST	****************************Price For Trip with two segment and two legs in each segment.	4		QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE TWO SEGMENTS TWO LEGS.	1500909923089	1500909923516	KO	status.find.is(200), but actually found 422
+REQUEST	****************************Price For Trip with one segment and two legs in each segment.	3		QUOTE PRICE FOR RETURN TRIP WITH TWO SLICE ONE SEGMENT TWO LEG.	1500909923130	1500909923525	KO	status.find.is(200), but actually found 422
+USER	****************************Price For Trip with two segments and one leg in each segment	2	END	1500909916729	1500909928032
+USER	****************************Price For Trip with one segment and one leg	1	END	1500909916676	1500909928070
+USER	****************************Price For Trip with two segment and two legs in each segment.	4	END	1500909916734	1500909928510
+USER	****************************Price For Trip with one segment and two legs in each segment.	3	END	1500909916731	1500909928530
