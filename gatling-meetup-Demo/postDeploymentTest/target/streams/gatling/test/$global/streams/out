@@ -1,0 +1,10 @@
+[0m[[0m[0mdebug[0m] [0m[0mjavaOptions: Vector(-Djna.platform.library.path=/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu:/lib64:/usr/lib:/lib:/lib/i386-linux-gnu:/usr/lib32:/usr/lib/i386-linux-gnu:/lib32:/usr/lib/i386-linux-gnu/sse2:/usr/lib/x86_64-linux-gnu/libfakeroot:/usr/lib/x86_64-linux-gnu/mesa-egl:/usr/lib/x86_64-linux-gnu/mesa:/usr/lib/i386-linux-gnu/mesa, -Djna.loaded=true, -Djna.nosys=true, -Djnidispatch.path=/tmp/jna--566319230/jna4460443947278409015.tmp, -server, -Xmx1G, -XX:+UseG1GC, -XX:MaxGCPauseMillis=30, -XX:G1HeapRegionSize=16m, -XX:InitiatingHeapOccupancyPercent=75, -XX:+ParallelRefProcEnabled, -XX:+PerfDisableSharedMem, -XX:+AggressiveOpts, -XX:+OptimizeStringConcat, -XX:+HeapDumpOnOutOfMemoryError, -Djava.net.preferIPv4Stack=true, -Djava.net.preferIPv6Addresses=false)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForking tests - parallelism = false[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreate a single-thread test executor[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunner for io.gatling.sbt.GatlingFramework produced 1 initial tasks for 1 tests.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(SimulationDemo, sbt.ForkMain$SubclassFingerscan@1eb46573, false, [SuiteSelector])[0m
+[0m[[0m[31merror[0m] [0m[0mSimulation SimulationDemo failed.[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 1 events.[0m
+[0m[[0m[0minfo[0m] [0m[0mSimulation(s) execution ended.[0m
+[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
+[0m[[0m[31merror[0m] [0m[0m	SimulationDemo[0m

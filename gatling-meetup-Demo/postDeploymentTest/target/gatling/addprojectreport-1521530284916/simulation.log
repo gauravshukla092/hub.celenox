@@ -1,0 +1,5 @@
+RUN	AddProjectReport		addprojectreport	1521530284916	 	2.0
+USER	Add report as an admin	1	START	1521530286421	1521530286421
+REQUEST	Add report as an admin	1		Login Request	1521530286471	1521530287224	OK	 
+REQUEST	Add report as an admin	1		Login Request	1521530292319	1521530292845	OK	 
+USER	Add report as an admin	1	END	1521530286421	1521530297850

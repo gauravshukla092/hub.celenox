@@ -1,0 +1,21 @@
+compile
+clean
+compile
+cleanFiles
+compile
+;s
+ls
+clear
+gatling:test
+gatling:testOnly SimulationDemo
+gatling:test
+gatling:testOnly AddReport
+gatling:testOnly AddReports
+gatling:testOnly RegisterUser
+gatling:testOnly UserLogin
+gatling:testOnly AddReports
+gatling:testOnly AddProjectReports
+gatling:testOnly import io.gatling.http.Predef._
+gatling:testOnly AddProjectReport
+gatling:testOnly RegisterUser
+gatling:testOnly AddProjectReport

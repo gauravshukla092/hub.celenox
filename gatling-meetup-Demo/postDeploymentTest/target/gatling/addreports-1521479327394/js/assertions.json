@@ -1,0 +1,27 @@
+{
+  "simulation": "AddReports",
+  "simulationId": "addreports",
+  "start": 1521479327394,
+  "description": "",
+  "scenarios": ["User login"],
+  "assertions": [
+{
+  "path": "Global",
+  "target": "max of response time",
+  "condition": "is less than",
+  "expectedValues": [50.0],
+  "result": false,
+  "message": "Global: max of response time is less than 50.0",
+  "actualValue": [691.0]
+},
+{
+  "path": "Global",
+  "target": "percentage of successful requests",
+  "condition": "is greater than",
+  "expectedValues": [95.0],
+  "result": false,
+  "message": "Global: percentage of successful requests is greater than 95.0",
+  "actualValue": [0.0]
+}
+  ]
+}

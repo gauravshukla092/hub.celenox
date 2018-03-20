@@ -1,0 +1,27 @@
+{
+  "simulation": "RegisterUser",
+  "simulationId": "registeruser",
+  "start": 1521486595447,
+  "description": "",
+  "scenarios": ["Register User"],
+  "assertions": [
+{
+  "path": "Global",
+  "target": "max of response time",
+  "condition": "is less than",
+  "expectedValues": [1000.0],
+  "result": false,
+  "message": "Global: max of response time is less than 1000.0",
+  "actualValue": [1054.0]
+},
+{
+  "path": "Global",
+  "target": "percentage of successful requests",
+  "condition": "is less than",
+  "expectedValues": [1000.0],
+  "result": true,
+  "message": "Global: percentage of successful requests is less than 1000.0",
+  "actualValue": [100.0]
+}
+  ]
+}
