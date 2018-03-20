@@ -1,0 +1,8 @@
+<testsuite name="SimulationDemo" tests="2" errors="0" failures="2" time="0">
+<testcase name="Global: max of response time is less than 50.0" status="false" time="0">
+  <failure type="Global">Actual value: 666.0</failure>
+</testcase>
+<testcase name="Global: percentage of successful requests is greater than 95.0" status="false" time="0">
+  <failure type="Global">Actual value: 0.0</failure>
+</testcase>
+</testsuite>

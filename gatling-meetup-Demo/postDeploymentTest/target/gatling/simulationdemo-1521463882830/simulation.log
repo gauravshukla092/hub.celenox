@@ -1,0 +1,6 @@
+ASSERTION	AAMEAAEBBgAAAAAAAABJQA==
+ASSERTION	AAMDAAMCAAAAAAAAwFdA
+RUN	SimulationDemo		simulationdemo	1521463882830	 	2.0
+USER	Register User	1	START	1521463884381	1521463884381
+GROUP	Failed to build request Registration Request: No attribute named 'password' is defined 	1521463884423
+USER	Register User	1	END	1521463884381	1521463884428

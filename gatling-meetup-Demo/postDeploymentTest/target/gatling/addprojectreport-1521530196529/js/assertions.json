@@ -1,0 +1,10 @@
+{
+  "simulation": "AddProjectReport",
+  "simulationId": "addprojectreport",
+  "start": 1521530196529,
+  "description": "",
+  "scenarios": ["Add report as an admin"],
+  "assertions": [
+
+  ]
+}

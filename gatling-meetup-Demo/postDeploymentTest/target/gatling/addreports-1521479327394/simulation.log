@@ -1,0 +1,6 @@
+ASSERTION	AAMEAAEBBgAAAAAAAABJQA==
+ASSERTION	AAMDAAMCAAAAAAAAwFdA
+RUN	AddReports		addreports	1521479327394	 	2.0
+USER	User login	1	START	1521479329035	1521479329035
+REQUEST	User login	1		Login Request	1521479329123	1521479329814	KO	jsonPath($.status).find.is(Success) failed, could not prepare: Boon failed to parse into a valid AST: JsonException: Unable to determine the current character, it is not a string, number, array, or object  The current character read is 'T' with an int value of 84 Unable to determine the current character, it is not a string, number, array, or object line number 1 index number 0 The request's Content-Type is not supported. Expected: ^
+USER	User login	1	END	1521479329035	1521479329899

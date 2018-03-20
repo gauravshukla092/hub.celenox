@@ -1,0 +1,6 @@
+ASSERTION	AAMEAAEBBgAAAAAAAABJQA==
+ASSERTION	AAMDAAMCAAAAAAAAwFdA
+RUN	SimulationDemo		simulationdemo	1521463957618	 	2.0
+USER	Register User	1	START	1521463959217	1521463959217
+REQUEST	Register User	1		Registration Request	1521463959276	1521463960044	KO	jsonPath($.status).find.is(success) failed, could not prepare: Boon failed to parse into a valid AST: JsonException: Unable to determine the current character, it is not a string, number, array, or object  The current character read is 'T' with an int value of 84 Unable to determine the current character, it is not a string, number, array, or object line number 1 index number 0 There was an internal server error. ^
+USER	Register User	1	END	1521463959217	1521463960115
